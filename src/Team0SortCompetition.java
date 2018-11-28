@@ -53,16 +53,6 @@ public class Team0SortCompetition extends SortCompetition {
         }
 
 
-
-
-        public String toString(){
-        String str = "";
-        for(int i = 0; i < arr.length; i++){
-            str += arr[i] + "  ";
-        }
-        return str;
-    }
-
     }
 
     @Override
