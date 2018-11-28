@@ -14,17 +14,21 @@ public class Team1SortCompetition extends SortCompetition {
 
             for(int i=0;i<arr.length;i++)
             {
-                if(query.substring(index,index+1)==arr[i].substring(index,index+1))
+                if(query.substring(index,index+1).equals(arr[i].substring(index,index+1)))
                 {
+
                     index++;
-                    if(query.substring(index,index+1)==arr[i].substring(index,index+1))
+                    if(query.substring(index,index+1).equals(arr[i].substring(index,index+1)))
                     {
+
                         index++;
-                        if(query.substring(index,index+1)==arr[i].substring(index,index+1))
+                        if(query.substring(index,index+1).equals(arr[i].substring(index,index+1)))
                         {
+
                             index++;
-                            if(query.substring(index,index+1)==arr[i].substring(index,index+1))
+                            if(query.substring(index,index+1).equals(arr[i].substring(index,index+1)))
                             {
+
                                 return i;
                             }
                         }
