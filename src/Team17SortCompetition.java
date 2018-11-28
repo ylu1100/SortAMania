@@ -36,21 +36,6 @@ public class Team17SortCompetition extends SortCompetition {
     public String greeting() {
         return null;
     }
-    //toString
-    public void toString(int[] list) {
-
-            for (int x = 0; x < list.length; x++) {
-                System.out.println(list[x]);
-            }
-
-    }
-    public static void generateIntList(int[] arr, int numCount)
-    {
-        for (int x = 0; x < numCount; x++)
-        {
-            arr[x] = (int) (Math.random() * numCount);
-        }
-    }
 
     /**
      * Sorts an array of integers using quickSort
@@ -104,5 +89,41 @@ public class Team17SortCompetition extends SortCompetition {
         int temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
+    }
+
+
+
+    
+    public static int findMed(int[] arr)
+    {
+        int idx = arr.length/2;
+        int mid = arr[idx];
+        if(arr.length%2 == 1)
+        {
+            System.out.println(mid);
+            return(mid);
+        }
+        else
+        {
+            System.out.println((mid + arr[idx-1])/2);
+            return((mid + arr[idx-1])/2);
+        }
+    }
+
+    //toString
+    public void toString(int[] list) {
+
+        for (int x = 0; x < list.length; x++) {
+            System.out.println(list[x]);
+        }
+
+    }
+
+    public static void generateIntList(int[] arr, int numCount)
+    {
+        for (int x = 0; x < numCount; x++)
+        {
+            arr[x] = (int) (Math.random() * numCount);
+        }
     }
 }
