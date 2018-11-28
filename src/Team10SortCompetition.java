@@ -23,3 +23,26 @@ public abstract class Team10SortCompetition extends SortCompetition {
 
     }
 }
+public int challengeTwo(String[] arr, String query)
+{
+    String temp = "";
+    int x = 0;
+    boolean sorting = false;
+    {
+        while (sorting = false)
+        {
+            for (int i = 0; i < arr.length; i++)
+            {
+                x = arr[i].compareTo(arr[i + 1]);
+                if (x < 0)
+                {
+                    temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+
+            }
+        }
+    }
+}
+}
