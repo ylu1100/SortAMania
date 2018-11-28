@@ -61,9 +61,21 @@ public class Team18SortCompetition extends SortCompetition
 
 
     @Override
-    public int challengeFour(int[][] arr) {
-
-        
+    public int challengeFour(int[][] arr)
+    {
+        int median = 0;
+        for(int i = 0;i<arr.length; i++)
+        {
+            insertionSort(arr[i]);
+        }
+        if(arr.length%2!=0)
+        {
+            median = arr[500][500];
+        }
+        else
+        {
+            median = (arr[])
+        }
         return 0;
     }
 
