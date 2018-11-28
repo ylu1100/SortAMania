@@ -44,7 +44,13 @@ public class Team17SortCompetition extends SortCompetition {
             }
 
     }
-
+    public static void generateIntList(int[] arr, int numCount)
+    {
+        for (int x = 0; x < numCount; x++)
+        {
+            arr[x] = (int) (Math.random() * numCount);
+        }
+    }
 
     /**
      * Sorts an array of integers using quickSort
