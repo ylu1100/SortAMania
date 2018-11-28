@@ -7,7 +7,7 @@ public abstract class SortCompetition {
 	
 	public abstract int challengeTwo(String[] arr, String query);
 	
-	public abstract int challengeThree(int[] arr);
+	public abstract double challengeThree(int[] arr);
 	
 	public abstract int challengeFour(int[][] arr);
 	
