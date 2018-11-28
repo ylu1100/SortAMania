@@ -1,6 +1,8 @@
-//Implement this abstract class in your own class in this project.
-//Name your class Team#SortCompetition.
-//e.g. Team 1 should name their class Team1SortCompetition
+// Afaq Anwar
+
+/**
+ * Predefined Abstract Class.
+ */
 public abstract class SortCompetition {
 	
 	public abstract int challengeOne(int[] arr);
