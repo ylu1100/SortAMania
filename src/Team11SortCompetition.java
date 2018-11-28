@@ -9,7 +9,7 @@ public class Team11SortCompetition extends SortCompetition {
     @Override
     public int challengeTwo(String[] arr, String query) {
 
-        for (int j = 0; j < arr.length;j++) {
+        for (int j = 0; j < arr.length; j++) {
             String value = "";
             value += letterGenerator();
             value += letterGenerator();
@@ -19,8 +19,12 @@ public class Team11SortCompetition extends SortCompetition {
             arr[j] = value;
         }
         merge(arr);
-        
-        return 0;
+        for (int k = 0; k < arr.length; k++) {
+            if (arr[k] == query) {
+                return k;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -30,6 +34,12 @@ public class Team11SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFour(int[][] arr) {
+        for (int x = 0; x < arr.length; x++) {
+            merge(arr);
+            for (int y = 0; y < arr[x].length; y++) {
+
+            }
+        }
         return 0;
     }
 
@@ -42,59 +52,70 @@ public class Team11SortCompetition extends SortCompetition {
     public String greeting() {
         return null;
     }
+
     public String letterGenerator() {
         String alpha = "abcdefghijklmnopqrstuvwxyz";
-        int getPlace = (int)(Math.random() * 25) + 1;
-        return alpha.substring(getPlace-1,getPlace);
+        int getPlace = (int) (Math.random() * 25) + 1;
+        return alpha.substring(getPlace - 1, getPlace);
 
     }
+
     public static void merge(String[] arr) {
         int n = arr.length;
         String[] temp = new String[n];
-        mergeSortHelper(arr,0,n-1,temp);
+        mergeSortHelper(arr, 0, n - 1, temp);
     }
-    public static void mergeSortHelper(String[] arr,int left,int right, String[] temp) {
+
+    public static void mergeSortHelper(String[] arr, int left, int right, String[] temp) {
         if (left < right) {
-            int mid = (left+right)/2;
-            mergeSortHelper(arr,left,mid,temp);
-            mergeSortHelper(arr,mid+1,right,temp);
-            merge(arr,left,mid,right,temp);
+            int mid = (left + right) / 2;
+            mergeSortHelper(arr, left, mid, temp);
+            mergeSortHelper(arr, mid + 1, right, temp);
+            merge(arr, left, mid, right, temp);
         }
     }
 
-    public static void merge(String[] arr,int left,int mid,int right,String[] temp) {
+    public static void merge(String[] arr, int left, int mid, int right, String[] temp) {
         int i = left;
-        int j = mid +1;
+        int j = mid + 1;
         int k = left;
-        while (i <=mid && j<=right) {
+        while (i <= mid && j <= right) {
             if (arr[i].compareTo(arr[j]) == -1) {
                 temp[k] = arr[i];
                 i++;
-            }
-            else {
-                temp[k]= arr[j];
+            } else {
+                temp[k] = arr[j];
                 j++;
             }
             k++;
         }
-        while (i<=mid) {
+        while (i <= mid) {
             temp[k] = arr[i];
             i++;
             k++;
         }
-        while(j<=right) {
+        while (j <= right) {
             temp[k] = arr[j];
             j++;
             k++;
         }
-        for (int m = left; m <right; m++) {
+        for (int m = left; m < right; m++) {
             arr[m] = temp[m];
         }
         System.out.println("This is the new Arr:");
-        for (int n = 0; n <arr.length; n++) {
+        for (int n = 0; n < arr.length; n++) {
 
             System.out.println(arr[n]);
         }
-
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
+        //
     }
+
 }
