@@ -9,7 +9,7 @@ public class Team17SortCompetition extends SortCompetition {
     @Override
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
-
+        toString(arr);
         return 0;
     }
 
@@ -37,6 +37,13 @@ public class Team17SortCompetition extends SortCompetition {
     @Override
     public String greeting() {
         return null;
+    }
+    public void toString(int[] list) {
+
+            for (int x = 0; i < list.length; x++) {
+                System.out.println(list[x]);
+            }
+
     }
 
 
