@@ -18,8 +18,27 @@ public class Team18SortCompetition extends SortCompetition
     }
 
     @Override
-    public int challengeTwo(String[] arr, String query) {
-        return 0;
+    public int challengeTwo(String[] arr, String query)
+    {
+        bubbleSort(arr);
+        int i=0;
+        int result = 0;
+        boolean check = false;
+        while(check != true)
+        {
+            i +=1;
+            if(arr[i].compareTo(query)>=0)
+            {
+                result = i;
+                check = true;
+            }
+            else if((arr[i].compareTo(query)<=0)&&(i == arr.length))
+            {
+                result = -1;
+                check = true;
+            }
+        }
+        return result;
     }
 
     @Override
