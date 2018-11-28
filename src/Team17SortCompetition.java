@@ -93,7 +93,7 @@ public class Team17SortCompetition extends SortCompetition {
 
 
 
-    
+
     public static int findMed(int[] arr)
     {
         int idx = arr.length/2;
