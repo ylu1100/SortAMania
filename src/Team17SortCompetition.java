@@ -7,6 +7,7 @@ public class Team17SortCompetition extends SortCompetition {
     @Override
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
+        findMed(arr);
 
         return 0;
     }
@@ -90,5 +91,21 @@ public class Team17SortCompetition extends SortCompetition {
         int temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
+    }
+
+    public static int findMed(int[] arr)
+    {
+        int idx = arr.length/2;
+        int mid = arr[idx];
+        if(arr.length%2 == 1)
+        {
+            System.out.println(mid);
+            return(mid);
+        }
+        else
+        {
+            System.out.println((mid + arr[idx-1])/2);
+            return((mid + arr[idx-1])/2);
+        }
     }
 }
