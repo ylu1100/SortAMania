@@ -2,7 +2,7 @@ public class Runner
 {
     public static void main(String[] args)
     {
-        int[] arr= new int[1000];
+        int[] arr= new int[10000];
         for(int i=0;i<arr.length;i++)
         {
             arr[i]=(int)(Math.random()*10)+1;
@@ -11,13 +11,16 @@ public class Runner
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i]+" ");
         }
-        System.out.println(challengeOne);
+
+        Team0SortCompetition a1 = new Team0SortCompetition();
 
         long time = System.nanoTime();
 
-
+        a1.challengeOne(arr);
+        System.out.println();
         System.out.println((double)(System.nanoTime() - time)/(100000000)+" secs");
-        System.out.print(a);
+
+        System.out.println(a1);
 
 
     }

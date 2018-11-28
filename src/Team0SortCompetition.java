@@ -1,25 +1,29 @@
-public class Team0SortCompetition extends SortCompetition {
-    @Override
-    public int challengeOne(int[] arr) {
-            boolean done=false;
-            while(!done)
+public class Team0SortCompetition extends SortCompetition
+{
+    public int challengeOne(int[] arr)
+    {
+        boolean done=false;
+        while(!done)
+        {
+            done=true;
+            for(int i=0;i<arr.length-1;i++)
             {
-                done=true;
-                for(int i=0;i<arr.length-1;i++)
+                int a=arr[i];
+                int b=arr[i+1];
+                if(a>b)
                 {
-                    int a=arr[i];
-                    int b=arr[i+1];
-                    if(a>b)
-                    {
-                        done=false;
-                        arr[i]=b;
-                        arr[i+1]=a;
+                    done=false;
+                    arr[i]=b;
+                    arr[i+1]=a;
 
-                    }
                 }
             }
         }
+        int sum =arr[5000]+arr[4999];
+        int a= sum/2;
+        return a;
     }
+
 
     @Override
     public int challengeTwo(String[] arr, String query) {
