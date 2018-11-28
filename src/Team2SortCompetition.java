@@ -48,7 +48,81 @@ public class Team2SortCompetition extends SortCompetition{
      */
     public int challengeTwo(String[] challenge2, String query)
     {
+        mergeSortStrings(challenge2);
+    }
 
+    /**
+     * Merge Sort for Strings
+     * @param string1
+     */
+    public static void mergeSortStrings(String[] string1)
+    {
+        int n = string1.length;
+        String[] tempstring = new String[n];
+        mergeSortStringHelper(string1, 0,n-1,tempstring);
+    }
+
+    /**
+     * Creates merges calls for recursion.
+     * @param string1
+     * @param strleft
+     * @param strright
+     * @param tempstring
+     */
+    public static void mergeSortStringHelper(String[] string1, int strleft, int strright, String[] tempstring)
+    {
+        if(strleft < strright)
+        {
+            int strmiddle = (strleft + strright) / 2;
+            mergeSortStringHelper(string1, strleft, strmiddle, tempstring);
+            mergeSortStringHelper(string1, strmiddle + 1, strright, tempstring);
+            mergeStrings(string1, strleft, strmiddle, strright, tempstring);
+        }
+    }
+
+    /**
+     * Merges the String arrays back together.
+     * @param string1
+     * @param strleft
+     * @param strmiddle
+     * @param strright
+     * @param tempstring
+     */
+    public static void mergeStrings(String[] string1, int strleft, int strmiddle, int strright, String[] tempstring)
+    {
+        for(int i = strleft; i <= strright; i++)
+        {
+            tempstring[i] = string1[i];
+        }
+        int i = strleft;
+        int j = strmiddle + 1;
+        int k = strleft;
+        while(i <= strmiddle && j <= strright)
+        {
+            if(tempstring[i].compareTo(tempstring[j]) < 0)
+            {
+                string1[k] = tempstring[i];
+                i++;
+            }
+            else
+            {
+                string1[k] = tempstring[j];
+                j++;
+            }
+            k++;
+        }
+        while(i <= strmiddle)
+        {
+            string1[k] = tempstring[i];
+            k++;
+            i++;
+        }
+        while(j <= strright)
+        {
+            string1[k] = tempstring[j];
+            k++;
+            j++;
+        }
     }
 
     /**
