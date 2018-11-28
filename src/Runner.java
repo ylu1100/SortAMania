@@ -19,8 +19,13 @@ public class Runner
         a1.challengeOne(arr);
         System.out.println();
         System.out.println((double)(System.nanoTime() - time)/(100000000)+" secs");
-
-        System.out.println(a1);
+        
+        System.out.print("sorted Array: ");
+        for(int i=0;i<arr.length;i++) {
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+        System.out.println(a1.challengeOne(arr));
 
 
     }
