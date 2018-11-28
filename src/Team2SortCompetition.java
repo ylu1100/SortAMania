@@ -90,6 +90,6 @@ public class Team2SortCompetition extends SortCompetition{
 
     public String greeting()
     {
-
+        return "Welcome to Team Super Sorter's Very Cool Omega Sorting Bot";
     }
 }
