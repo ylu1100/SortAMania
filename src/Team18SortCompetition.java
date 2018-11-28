@@ -16,6 +16,7 @@ public class Team18SortCompetition extends SortCompetition
         }
         return (int) median;
     }
+
     @Override
     public int challengeTwo(String[] arr, String query) {
         return 0;
@@ -23,11 +24,27 @@ public class Team18SortCompetition extends SortCompetition
 
     @Override
     public int challengeThree(int[] arr) {
-        return 0;
+
+        double median;
+        insertionSort(arr);
+        if(arr.length%2 == 0)
+        {
+            int i = arr[(arr.length/2)+1];
+            int j = arr[arr.length/2];
+            median = (i+j)/2;
+        }
+        else
+        {
+            median = arr[arr.length/2];
+        }
+        return (int) median;
     }
+
 
     @Override
     public int challengeFour(int[][] arr) {
+
+        
         return 0;
     }
 
@@ -87,9 +104,7 @@ public class Team18SortCompetition extends SortCompetition
                         intSwap(arr,j,i);
                     }
                     else
-                        {
-                            break;
-                        }
+                        { break; }
                 }
             }
         }
