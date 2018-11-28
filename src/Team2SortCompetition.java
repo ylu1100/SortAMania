@@ -10,13 +10,33 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Data Set - an array of 10,000 random integers between 0-10000
-     * Task: Sort the list and return the median
+     * Task: Sort the list and return the median(Round down if double)
      * @param challenge1
      * @return
      */
     public int challengeOne(int[] challenge1)
     {
-
+        double median;
+        for(int i=0;i<challenge1.length;i++)
+        {
+            int cMin = challenge1[i];
+            int x = i - 1;
+            while(x>=0 && challenge1[x] > cMin)
+            {
+                challenge1[x+1] = challenge1[x];
+                x--;
+            }
+            challenge1[x+1] = cMin;
+        }
+        if(challenge1.length % 2 == 0)
+        {
+            median = ((double)challenge1[(challenge1.length/2)] + (double)challenge1[(challenge1.length/2) - 1])/2;
+        }
+        else
+        {
+            median = (double)challenge1[challenge1.length/2];
+        }
+        return (int)median;
     }
 
     /**
