@@ -9,19 +9,29 @@ public class Runner
         {
             array[i] = (int)(Math.random() * 10000) + 1;
         }
+
         alphaArray = alphaMake(10, 10000);
+        Team5SortCompetition a = new Team5SortCompetition();
+
         double startTime = System.currentTimeMillis();
-        System.out.println(SortCompetition.challengeOne(array));
+        System.out.println(a.challengeOne(array));
         double endTime = System.currentTimeMillis();
-        System.out.println("Bubble Sort took " + (endTime - startTime) + " milliseconds.");
+        System.out.println("C1 took " + (endTime - startTime) + " milliseconds.");
+
+        for(int i = 0; i < array.length - 1; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
+
         startTime = System.currentTimeMillis();
-        Team5SortCompetition.challengeTwo(array);
+        System.out.println(a.challengeThree(array));
         endTime = System.currentTimeMillis();
-        System.out.println("Selection Sort took " + (endTime - startTime) + " milliseconds.");
-        startTime = System.currentTimeMillis();
-        Team5SortCompetition.challengeThree(array);
-        endTime = System.currentTimeMillis();
-        System.out.println("Insertion Sort took " + (endTime - startTime) + " milliseconds.");
+        System.out.println("C3 took " + (endTime - startTime) + " milliseconds.");
+
+        for(int i = 0; i < array.length - 1; i++)
+        {
+            System.out.print(array[i] + " ");
+        }
     }
 
     public static String[] alphaMake(int num, int len)

@@ -6,12 +6,12 @@ public class Team5SortCompetition extends SortCompetition
         int b = 0;
         for(int i = 0; i < arr.length - 1; i++)
         {
-            for(int j = i; j >= 0; j--)
+            for(int j = i; j <= arr.length - 1; j++)
             {
-                if (arr[i] < arr[j])
+                if (arr[i] > arr[j])
                 {
-                    arr[i] = a;
-                    arr[j] = b;
+                    a = arr[i];
+                    b = arr[j];
                     arr[i] = b;
                     arr[j] = a;
                 }
@@ -24,7 +24,7 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeTwo(String[] arr, String query)
     {
-
+        return 0;
     }
 
     public int challengeThree(int[] arr)
@@ -33,12 +33,12 @@ public class Team5SortCompetition extends SortCompetition
         int b = 0;
         for(int i = 0; i < arr.length - 1; i++)
         {
-            for(int j = i; j >= 0; j--)
+            for(int j = i; j <= arr.length - 1; j++)
             {
-                if (arr[i] < arr[j])
+                if (arr[i] > arr[j])
                 {
-                    arr[i] = a;
-                    arr[j] = b;
+                    a = arr[i];
+                    b = arr[j];
                     arr[i] = b;
                     arr[j] = a;
                 }
@@ -51,16 +51,16 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeFour(int[][] arr)
     {
-
+        return 0;
     }
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-
+        return 0;
     }
 
     public String greeting()
     {
-
+        return "e";
     }
 }
