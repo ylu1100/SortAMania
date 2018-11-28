@@ -2,14 +2,20 @@ public class Team18SortCompetition extends SortCompetition
 {
     public int challengeOne(int[] arr)
     {
-        for(int i = 0; i < arr.length; i++)
+        double median;
+        insertionSort(arr);
+        if(arr.length%2 == 0)
         {
-
+            int i = arr[(arr.length/2)+1];
+            int j = arr[arr.length/2];
+            median = (i+j)/2;
         }
-        int i = 1;
-        return i;
+        else
+        {
+            median = arr[arr.length/2];
+        }
+        return (int) median;
     }
-
     @Override
     public int challengeTwo(String[] arr, String query) {
         return 0;
@@ -80,7 +86,10 @@ public class Team18SortCompetition extends SortCompetition
                     {
                         intSwap(arr,j,i);
                     }
-                    else { break; }
+                    else
+                        {
+                            break;
+                        }
                 }
             }
         }
