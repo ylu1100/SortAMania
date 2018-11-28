@@ -3,11 +3,9 @@ public abstract class Team10SortCompetition extends SortCompetition {
     {
         int temp1 = 0;
         int temp2 = 0;
-        int temp3 = 0;
         int median = 0;
         for (int i = 0;i<arr.length;i++)
         {
-            temp3 = arr[i+1];
             temp1 = i;
             for(int x = i;x<arr.length;x++)
             {
@@ -20,6 +18,7 @@ public abstract class Team10SortCompetition extends SortCompetition {
             arr[temp1] = arr[i];
             arr[i] = temp2;
         }
-
+        median = ((arr[5000]+arr[5001])/2);
+        return median;
     }
 }
