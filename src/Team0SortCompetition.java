@@ -1,8 +1,12 @@
-public class Team0SortCompetition implements SortCompetition {
+public class Team0SortCompetition extends SortCompetition {
     @Override
     public int challengeOne(int[] arr)
     {
-        private static void mergeSortHelper(int[] elements, int from, int to, int[] temp)
+        int n = arr.length;
+        int[] temp = new int[n];
+        mergeSortHelper(arr, 0, n-1, temp);
+
+        public void mergeSortHelper(int[] elements, int from, int to, int[] temp)
         {
             if (from < to)
             {
@@ -12,7 +16,7 @@ public class Team0SortCompetition implements SortCompetition {
                 merge(elements, from, middle, to, temp);
             }
         }
-        public static void merge(int[] arr, int left, int mid, int right, int[] temp)
+        public void merge(int[] arr, int left, int mid, int right, int[] temp)
         {
             int i = left;
             int j= mid+1;
@@ -47,12 +51,17 @@ public class Team0SortCompetition implements SortCompetition {
                 arr[m]=temp[m];
             }
         }
-        public static void mergeSort(int[] elements)
-        {
-            int n = elements.length;
-            int[] temp = new int[n];
-            mergeSortHelper(elements, 0, n-1, temp);
+
+
+
+
+        public String toString(){
+        String str = "";
+        for(int i = 0; i < arr.length; i++){
+            str += arr[i] + "  ";
         }
+        return str;
+    }
 
     }
 
