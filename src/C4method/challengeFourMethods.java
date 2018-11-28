@@ -11,7 +11,7 @@ public class challengeFourMethods {
             int mid = (left+right)/2;
             mergeSortHelper(arr,left,mid,temp,index);
             mergeSortHelper(arr,mid+1,right,temp,index);
-            merge(arr,left,mid,right,temp);
+            merge(arr,left,mid,right,temp,index);
         }
     }
 
@@ -21,27 +21,27 @@ public class challengeFourMethods {
         int k = left;
         while (i <=mid && j<=right) {
             if (arr[index][i] <= arr[index][j]) {
-                temp[k] = arr[i];
+                temp[k] = arr[index][i];
                 i++;
             }
             else {
-                temp[k]= arr[j];
+                temp[k]= arr[index][j];
                 j++;
             }
             k++;
         }
         while (i<=mid) {
-            temp[k] = arr[i];
+            temp[k] = arr[index][i];
             i++;
             k++;
         }
         while(j<=right) {
-            temp[k] = arr[j];
+            temp[k] = arr[index][j];
             j++;
             k++;
         }
         for (int m = left; m <right; m++) {
-            arr[m] = temp[m];
+            arr[index][m] = temp[m];
         }
         System.out.println("This is the new Arr:");
         for (int n = 0; n <arr.length; n++) {
@@ -52,4 +52,4 @@ public class challengeFourMethods {
 
     }
 }
-}
+
