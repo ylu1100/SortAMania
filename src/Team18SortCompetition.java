@@ -16,7 +16,6 @@ public class Team18SortCompetition extends SortCompetition
         }
         return (int) median;
     }
-
     @Override
     public int challengeTwo(String[] arr, String query) {
         return 0;
