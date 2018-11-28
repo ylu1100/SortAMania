@@ -16,6 +16,17 @@ public class Runner {
 
         printIntArray(c1);
 
+
+
+
+        String[] c2 = {"abcde","cdefe","aaaaa","bbbbb"};
+        printStringArray(c2);
+        timer = System.nanoTime();
+        System.out.println(x.challengeTwo(c2,"abcde"));
+        timer = System.nanoTime() - timer;
+        System.out.println(timer*.000000001 + " seconds");
+
+        printStringArray(c2);
     }
 
     public static int[] generateIntArr(int x)
@@ -51,6 +62,7 @@ public class Runner {
         }
         System.out.println(temp);
     }
+
 
    public static void printStringArray(String[] arr){
         String temp = "";

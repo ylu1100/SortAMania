@@ -11,35 +11,27 @@ public class Team1SortCompetition extends SortCompetition {
     public int challengeTwo (String[] arr, String query){
         mergeSort(arr);
         int index = 0;
-        while(query.substring(0,1)!= arr[index].substring(0,1))
-        {
-            if(query.substring(0,1).compareTo(arr[index].substring(0,1))>0)
-            {
-                return -1;
-            }
-            while(query.substring(1,2)!= arr[index].substring(1,2))
-            {
 
-                while(query.substring(2,3)!= arr[index].substring(2,3))
+            for(int i=0;i<arr.length;i++)
+            {
+                if(query.substring(index,index+1)==arr[i].substring(index,index+1))
                 {
-
-                    while(query.substring(3,4)!= arr[index].substring(3,4))
+                    index++;
+                    if(query.substring(index,index+1)==arr[i].substring(index,index+1))
                     {
-
-                        while(query.substring(4,5)!= arr[index].substring(4,5))
+                        index++;
+                        if(query.substring(index,index+1)==arr[i].substring(index,index+1))
                         {
-
-                            if(query.substring(5,6)== arr[index].substring(5,6))
+                            index++;
+                            if(query.substring(index,index+1)==arr[i].substring(index,index+1))
                             {
-                                return index;
+                                return i;
                             }
                         }
                     }
                 }
+                index = 0;
             }
-
-            index++;
-        }
         return -1;
     }
 
