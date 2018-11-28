@@ -40,6 +40,7 @@ public class Team2SortCompetition extends SortCompetition{
     public int challengeThree(int[] challenge3)
     {
         int n = challenge3.length;
+        double median;
         for(int i = 1; i < n; i++)
         {
             int key = challenge3[i];
@@ -51,7 +52,15 @@ public class Team2SortCompetition extends SortCompetition{
             }
             challenge3[j + 1] = key;
         }
-
+        if(challenge3.length % 2 == 0)
+        {
+            median = ((double)challenge3[(challenge3.length/2)] + (double)challenge3[(challenge3.length/2) - 1])/2;
+        }
+        else
+        {
+            median = (double)challenge3[challenge3.length/2];
+        }
+        return (int)median;
     }
 
     /**
