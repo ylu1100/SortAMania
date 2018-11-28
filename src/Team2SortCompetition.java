@@ -1,4 +1,4 @@
-public abstract class Team2SortCompetition extends SortCompetition{
+public class Team2SortCompetition extends SortCompetition{
 
     private int[] challenge1;
     private String[] challenge2;
@@ -39,6 +39,18 @@ public abstract class Team2SortCompetition extends SortCompetition{
      */
     public int challengeThree(int[] challenge3)
     {
+        int n = challenge3.length;
+        for(int i = 1; i < n; i++)
+        {
+            int key = challenge3[i];
+            int j = i - 1;
+            while(j >= 0 && challenge3[j] > key)
+            {
+                challenge3[j + 1] = challenge3[j];
+                j = j - 1;
+            }
+            challenge3[j + 1] = key;
+        }
 
     }
 
@@ -63,6 +75,11 @@ public abstract class Team2SortCompetition extends SortCompetition{
      * @return
      */
     public int challengeFive(Comparable[] challenge5, Comparable cquery)
+    {
+
+    }
+
+    public String greeting()
     {
 
     }
