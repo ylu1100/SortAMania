@@ -1,8 +1,8 @@
-public class Runner implements SortCompetition{
+public class Runner{
 
     public static void main(String[] args){
         int[] arr1 = randomIntArray(10000);
-        System.out.println(SortCompetition.challengeOne(arr1));
+        //System.out.println(SortCompetition.challengeOne(arr1));
     }
 
     public static int[] randomIntArray(int length){
@@ -16,4 +16,5 @@ public class Runner implements SortCompetition{
     public static int getRandomInteger(int min, int max){
         return (int)(Math.random()*(max-min));
     }
+
 }
