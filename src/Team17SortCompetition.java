@@ -37,7 +37,7 @@ public class Team17SortCompetition extends SortCompetition {
         return null;
     }
     //toString
-    public void toString(int[] list) {
+    public static void toString(int[] list) {
 
             for (int x = 0; x < list.length; x++) {
                 System.out.println(list[x]);

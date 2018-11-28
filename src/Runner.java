@@ -4,5 +4,6 @@ public class Runner {
         int numCount =  1000;
         int[] challengeOneList = new int[numCount];
         Team17SortCompetition.generateIntList(challengeOneList, numCount);
+        Team17SortCompetition.toString(challengeOneList);
     }
 }
