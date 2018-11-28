@@ -1,4 +1,4 @@
-public abstract class Team18SortCompetition extends SortCompetition
+public class Team18SortCompetition extends SortCompetition
 {
     public int challengeOne(int[] arr)
     {
@@ -9,6 +9,32 @@ public abstract class Team18SortCompetition extends SortCompetition
         int i = 1;
         return i;
     }
+
+    @Override
+    public int challengeTwo(String[] arr, String query) {
+        return 0;
+    }
+
+    @Override
+    public int challengeThree(int[] arr) {
+        return 0;
+    }
+
+    @Override
+    public int challengeFour(int[][] arr) {
+        return 0;
+    }
+
+    @Override
+    public int challengeFive(Comparable[] arr, Comparable query) {
+        return 0;
+    }
+
+    @Override
+    public String greeting() {
+        return null;
+    }
+
     public static void intSwap(int[] arr, int pos1, int pos2){
         int temp = arr[pos1];
         arr[pos1] = arr[pos2];
