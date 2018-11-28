@@ -1,4 +1,4 @@
-public class Team6SortCompetition extends  SortCompetition{
+public class Team6SortCompetition extends SortCompetition{
 
     public int challengeOne(int[] arr) {
         return 0;
