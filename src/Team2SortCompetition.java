@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Team2SortCompetition extends SortCompetition{
 
     private int[] challenge1;
@@ -10,9 +13,8 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Data Set - an array of 10,000 random integers between 0-10000
-     * Task: Sort the list and return the median(Round down if double)
-     * @param challenge1
-     * @return
+     * @param challenge1 First challenge array.
+     * @return Task: Sort the list and return the median(Round down if double)
      */
     public int challengeOne(int[] challenge1)
     {
@@ -41,19 +43,27 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Data Set - an array of 10,000 random strings (strings will be of length 5)
-     * Task: Sort the list and determine if it contains a given string, return the index of the first instance of that string, or -1 if not found
-     * @param challenge2
-     * @param query
-     * @return
+     * @param challenge2 Array for challenge 2.
+     * @param query String to check for.
+     * @return Task: Sort the list and determine if it contains a given string, return the index of the first instance of that string, or -1 if not found
      */
     public int challengeTwo(String[] challenge2, String query)
     {
         mergeSortStrings(challenge2);
+        if(Arrays.asList(challenge2).contains(query))
+        {
+            List<String> challenger2 = Arrays.asList(challenge2);
+            return (challenger2.indexOf(query));
+        }
+        else
+        {
+            return (-1);
+        }
     }
 
     /**
      * Merge Sort for Strings
-     * @param string1
+     * @param string1 Array to be sorted.
      */
     public static void mergeSortStrings(String[] string1)
     {
@@ -64,10 +74,10 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Creates merges calls for recursion.
-     * @param string1
-     * @param strleft
-     * @param strright
-     * @param tempstring
+     * @param string1 Array to be sorted.
+     * @param strleft Left.
+     * @param strright Right.
+     * @param tempstring Temporary array to move elements to.
      */
     public static void mergeSortStringHelper(String[] string1, int strleft, int strright, String[] tempstring)
     {
@@ -82,11 +92,11 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Merges the String arrays back together.
-     * @param string1
-     * @param strleft
-     * @param strmiddle
-     * @param strright
-     * @param tempstring
+     * @param string1 Array to be sorted.
+     * @param strleft Left.
+     * @param strmiddle Middle.
+     * @param strright Right.
+     * @param tempstring Temp array to move elements to.
      */
     public static void mergeStrings(String[] string1, int strleft, int strmiddle, int strright, String[] tempstring)
     {
@@ -127,9 +137,8 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Data Set - a mostly sorted array of 100,000 integers (>75% of elements are in the correct order)
-     * Task: Sort the list and return the median
-     * @param challenge3
-     * @return
+     * @param challenge3 Array for third challenge.
+     * @return Task: Sort the list and return the median
      */
     public int challengeThree(int[] challenge3)
     {
@@ -159,10 +168,9 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Data Set - a multi-dimensional array int[1000][1000] all elements are random integers between 0-10000
-     * Task: Sort each sub-array and then sort the arrays by their median value
      * Return the median of the median array
-     * @param challenge4
-     * @return
+     * @param challenge4 Array for challenge 4.
+     * @return Task: Sort each sub-array and then sort the arrays by their median value
      */
     public int challengeFour(int[][] challenge4)
     {
@@ -171,17 +179,20 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Data Set - an array of 10,000 objects that implement the comparable interface
-     * Task: Sort the array by the compareTo method, and determine if it contains the element given. Return the position of the object, or -1 if not found.
      * Hint: You must use a stable sort for this challenge, equivalent objects should stay in the same order.
-     * @param challenge5
-     * @param cquery
-     * @return
+     * @param challenge5 Array for Challenge 5.
+     * @param cquery Object to be found.
+     * @return Task: Sort the array by the compareTo method, and determine if it contains the element given. Return the position of the object, or -1 if not found.
      */
     public int challengeFive(Comparable[] challenge5, Comparable cquery)
     {
 
     }
 
+    /**
+     * Basic greeting.
+     * @return Greeting.
+     */
     public String greeting()
     {
         return "Welcome to Team Super Sorter's Very Cool Omega Sorting Bot";
