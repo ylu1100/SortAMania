@@ -15,7 +15,12 @@ public class Team17SortCompetition extends SortCompetition
 
     @Override
     public int challengeThree(int[] arr) {
-        return 0;
+
+
+        selectionSort(arr);
+        toString(arr);
+
+        return findMed(arr);
     }
 
     @Override
@@ -121,6 +126,28 @@ public class Team17SortCompetition extends SortCompetition
         }
         System.out.println(out);
 
+    }
+    public static void selectionSort(int[] list1)
+    {
+        int swapPos;
+        double min;
+
+        for(int i = 0;i<list1.length;i++)
+        {
+            swapPos = i;
+            min = list1[swapPos];
+
+            for(int a = i;a<list1.length;a++)
+            {
+                if(list1[a]<min)
+                {
+                    swapPos = a;
+                    min = list1[a];
+
+                    swap(list1,swapPos,i);
+                }
+            }
+        }
     }
 
     /**
