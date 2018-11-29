@@ -14,7 +14,7 @@ public class Team11SortCompetition extends SortCompetition {
     }
 
     @Override
-    public static int challengeTwo(String[] arr, String query) {
+    public int challengeTwo(String[] arr, String query) {
 
         for (int j = 0; j < arr.length; j++) {
             String value = "";
@@ -41,6 +41,11 @@ public class Team11SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFour(int[][] arr) {
+        for (int i = 0; i < 10000;i++) {
+            for (int j = 0;j< 10000; j++) {
+                arr[i][j] =  (int) ((Math.random() * 10000) + 1);
+            }
+        }
         int[] medianArr = new int[arr.length];
         for (int x = 0; x < arr.length; x++) {
             challengeFourMethods.merge(arr,x);
