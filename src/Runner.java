@@ -8,6 +8,6 @@ public class Runner {
         challengeOneList = Team17SortCompetition.randIntArr(numCount);
         Team17SortCompetition.toString(challengeOneList);
 
-        c1.challengeOne(challengeOneList);
+        System.out.println("Median: " + c1.challengeOne(challengeOneList));
     }
 }
