@@ -1,6 +1,8 @@
 package Challenges;
 
 import C4method.challengeFourMethods;
+import C4method.challengeFourMethods2;
+
 public class Team11SortCompetition extends SortCompetition {
 
 
@@ -45,7 +47,8 @@ public class Team11SortCompetition extends SortCompetition {
             medianArr[x] = arr[x][(arr[x].length)/2];
 
         }
-        challengeFourMethods.merge(arr,x);
+        int[] temp = new int[10000];
+        challengeFourMethods2.InsertionSort(arr,medianArr,temp);
 
         return 0;
     }
