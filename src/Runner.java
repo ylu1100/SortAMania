@@ -28,6 +28,7 @@ public class Runner {
 
         printStringArray(c2);
 
+        System.out.println("\nChallenge 3");
 
         int[] c3 = {1,2,3,4,5,6,7,8,11,15,17,19,12,14,16,10,9,13,18};
         printIntArray(c3);
@@ -38,14 +39,13 @@ public class Runner {
         System.out.println(timer*.000000001 + " seconds");
         printIntArray(c3);
 
-        int[][] c4 =  {
-                {3,2,1},
-                {1,3,2},
-                {2,3,1},
-        };
+        System.out.println("\nChallenge 4");
+        int[][] c4 =  generate2DIntArr(1000);
 
-        x.challengeFour(c4);
-
+        timer = System.nanoTime();
+        System.out.println(x.challengeFour(c4));
+        timer = System.nanoTime() - timer;
+        System.out.println(timer*.000000001 + " seconds");
 
     }
 
@@ -57,6 +57,16 @@ public class Runner {
         for(int i=0;i<x;i++)
         {
             z[i] = (int)(Math.random()*10000);
+        }
+        return z;
+    }
+
+    public static int[][] generate2DIntArr(int x){
+        int[][] z = new int[x][x];
+        for(int i=0;i<z.length;i++){
+            for(int j=0;j<z[i].length;j++){
+                z[i][j] = (int)(Math.random()*10001);
+            }
         }
         return z;
     }
