@@ -141,6 +141,7 @@ public class Team2SortCompetition extends SortCompetition{
         if(challenge3.length % 2 == 0)
         {
             median = ((double)challenge3[(challenge3.length/2)] + (double)challenge3[(challenge3.length/2) - 1])/2;
+            median = Math.floor(median);
         }
         else
         {
@@ -238,6 +239,8 @@ public class Team2SortCompetition extends SortCompetition{
     public int challengeFour(int[][] challenge4)
     {
         double median;
+        int[]rowMediums = new int[9999];
+        int[][]temp2d = new int[1000][1000];
         for(int i=0;i<challenge4.length;i++)
         {
             for(int j=0;j<challenge4.length;j++)
@@ -259,8 +262,28 @@ public class Team2SortCompetition extends SortCompetition{
         }
         for (int i=0;i<challenge4.length;i++)
         {
-            median = ((double)challenge4[(challenge4[i].length/2)] + (double)challenge3[(challenge3.length/2) - 1])/2;
+            median = ((double)challenge4[i][4999] + (double)challenge4[i][5000])/2;
+            median = Math.floor(median);
+            rowMediums[i] = (int)median;
         }
+        for(int i=0;i<challenge4.length;i++)
+        {
+            int cMin = rowMediums[i];
+            int x = i - 1;
+            while(x>=0 && rowMediums[x] > cMin)
+            {
+                rowMediums[x+1] = rowMediums[x];
+                for(int j=0;j<1000;j++)
+                {
+                    challenge4[i][x+1] = challenge4[i][x];
+                }
+
+                x--;
+            }
+            rowMediums[x+1] = cMin;
+        }
+        median = (double)rowMediums[rowMediums[4999]/2];
+        return (int)median;
     }
 
     /**
