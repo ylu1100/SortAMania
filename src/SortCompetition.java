@@ -1,5 +1,5 @@
 //Implement this abstract class in your own class in this project.
-public abstract class Team9SortCompetition {
+public abstract class SortCompetition {
 	
 	public abstract int challengeOne(int[] arr);
 	

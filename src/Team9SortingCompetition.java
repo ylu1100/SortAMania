@@ -1,4 +1,4 @@
-public class SortingMethods extends Team9SortCompetition {
+public class Team9SortingCompetition extends SortCompetition {
     @Override
     public int challengeOne(int[] arr) {
         mergeSortInt(arr);
