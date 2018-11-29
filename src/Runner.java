@@ -51,7 +51,7 @@ public class Runner
         System.out.println("\n"+(double)(System.nanoTime() - time2)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
-        for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
+        //for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
         System.out.println("\n"+a2.challengeTwo(arr2,"AAOBX"));
 
 
@@ -86,9 +86,10 @@ public class Runner
         int[][] arr4= new int[1000][1000];
         for(int i=0;i<1000;i++)
         {
-            for(int k=0;k<1;k++) {
+            for(int k=0;k<1000;k++) {
                 arr4[i][k] = (int) (Math.random() * 10000) + 0;
             }
         }
+
     }
 }
