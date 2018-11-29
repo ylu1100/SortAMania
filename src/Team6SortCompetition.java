@@ -26,8 +26,14 @@ public class Team6SortCompetition extends SortCompetition{
 
     public int challengeTwo(String[] arr, String query)
     {
-        for(int i = 0; i< arr.length)
-        //return index of the first instance of that string, or -1 if not found;
+        for (int i = 0; i < arr.length; i++)
+        {
+            if(query.equals(arr[i]))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public int challengeThree(int[] arr)
