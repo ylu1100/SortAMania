@@ -111,7 +111,7 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
-    //toString
+    //toString int array
     public static void toString(int[] list) {
 
         String out = "";
@@ -150,6 +150,23 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
+    //toString String array
+    public static void toString(String[] list)
+    {
+        String out = "";
+
+        for(int i =0;i<list.length;i++)
+        {
+            out += list[i];
+            if(i != list.length-1)
+            {
+                out += ", ";
+            }
+        }
+        System.out.println(out);
+
+    }
+
     /**
      * Creates array of random integers
      * @param count number of number in the array
@@ -164,5 +181,30 @@ public class Team17SortCompetition extends SortCompetition
             randArr[i] = (int)(Math.random()*10001);
         }
         return(randArr);
+    }
+
+    /**
+     * Makes a random array of Strings
+     * @param num the length of the array
+     * @param length the length of the Strings to be made
+     * @return array of random Strings
+     */
+    public static String[] randStringArr(int num, int length)
+    {
+        String[] arr = new String[num];
+        while(num>0)
+        {
+            int i = 0;
+            String s = "";
+            while(i<length)
+            {
+                char c = (char)((Math.random()*26)+97);
+                s = s+c;
+                i++;
+            }
+            num--;
+            arr[num] = s;
+        }
+        return(arr);
     }
 }
