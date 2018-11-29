@@ -51,6 +51,14 @@ public class Team1SortCompetition extends SortCompetition {
     }
 
     public int challengeFive(Comparable[] arr, Comparable query) {
+        mergeSort(arr);
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i].compareTo(query) == 0)
+            {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -172,6 +180,57 @@ public class Team1SortCompetition extends SortCompetition {
                     }
                 }
             }
+        }
+
+    }
+    public static void mergeSort(Comparable[] arr)
+    {
+        int n= arr.length;
+        Comparable[] temp = new Comparable[n];
+        mergeSortHelper(arr,0,n-1,temp);
+    }
+    public static void mergeSortHelper(Comparable[] arr,int left,int right, Comparable[] temp)
+    {
+        if(left<right)
+        {
+            int mid = (left+right)/2;
+            mergeSortHelper(arr,left,mid,temp);
+            mergeSortHelper(arr,mid+1,right,temp);
+            merge(arr,left,mid,right,temp);
+        }
+    }
+    public static void merge(Comparable[] arr,int left,int mid,int right,Comparable[] temp)
+    {
+        int i=left;
+        int j=mid+1;
+        int k=left;
+        while(i<=mid && j<=right){
+            if(arr[i].compareTo(arr[j])<0)
+            {
+                temp[k]=arr[i];
+                i++;
+            }
+            else{
+                temp[k]=arr[j];
+                j++;
+            }
+            k++;
+
+        }
+        while(i<=mid){
+            temp[k] = arr[i];
+            i++;
+            k++;
+        }
+        while(j<=right)
+        {
+            temp[k]  =arr[j] ;
+            j++;
+            k++;
+        }
+        for(int z=left;z<=right;z++)
+        {
+            arr[z] = temp[z];
         }
 
     }

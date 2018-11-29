@@ -47,6 +47,32 @@ public class Runner {
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
 
+
+        System.out.println("\nChallenge 5");
+        Comparable[] c5 = new Comparable[10];
+        String[] t = randomStringArr(c5.length,1);
+        for(int i=0;i<c5.length;i++)
+        {
+            c5[i] = new test(t[i]);
+        }
+        String s= "";
+        for(int i=0;i<c5.length;i++)
+        {
+            s+= c5[i] + " ";
+        }
+        System.out.println(s);
+        timer = System.nanoTime();
+        String a = "A";
+        test c = new test(a);
+        System.out.println(x.challengeFive(c5,c));
+        timer = System.nanoTime()-timer;
+        s= "";
+        for(int i=0;i<c5.length;i++)
+        {
+            s+= c5[i] + " ";
+        }
+        System.out.println(s);
+        System.out.println(timer*.000000001 + " seconds");
     }
 
 
@@ -104,4 +130,5 @@ public class Runner {
         }
         System.out.println(temp);
     }
+
 }
