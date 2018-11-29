@@ -25,7 +25,7 @@ public class Team5SortCompetition extends SortCompetition
     public int challengeTwo(String[] arr, String query)
     {
         /**
-         * We're doing a genric insertion sort, for correctness. May go back with new sorts later. arr is 10,000 elements long.
+         * We're doing a generic insertion sort, for correctness. May go back with new sorts later. arr is 10,000 elements long.
          * arr[] string lengths are 5.
          * @param arr
          * @param query
@@ -35,20 +35,21 @@ public class Team5SortCompetition extends SortCompetition
         //int b = 0;
         for(int i = 0; i < arr.length - 1; i++)
         {
-            String a=arr[i];
-            for(int j = i; j >= 0; j--)
+            for(int j = i; j <= arr.length-1; j++)
             {
-                if (arr[i].compareTo(arr[j])==-1)
+                if (arr[i].compareTo(arr[j])>0)
                 {
+                    String a=arr[i];
                     arr[i] = arr[j];
                     arr[j]=a;
                 }
             }
         }
-        for (int i=0; i<arr.length; i++)
+
+        /**for (int i=0; i<arr.length; i++)
         {
-            System.out.print(arr[i]);
-        }
+            System.out.print(arr[i]+"");
+        }**/
 
         //This part needs to come after the sort, since the sort is just a system out statement.
         for (int i=0; i<arr.length; i++)

@@ -23,6 +23,21 @@ public class Runner
             System.out.print(array[i] + " ");
         }
 
+        System.out.println("");
+        System.out.println("");
+        startTime = System.currentTimeMillis();
+        String[] arr= stringArrs();
+        System.out.println("je");
+        System.out.println(a.challengeTwo(arr, "je"));
+        endTime = System.currentTimeMillis();
+        System.out.println("C2 took " + (endTime - startTime) + " milliseconds.");
+
+        for(int i = 0; i < arr.length - 1; i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+
+
         startTime = System.currentTimeMillis();
         System.out.println(a.challengeThree(array));
         endTime = System.currentTimeMillis();
@@ -52,4 +67,17 @@ public class Runner
         }
         return arr;
     }
+
+    public static String[] stringArrs()
+    {
+        String alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String[] arr=new String[10000];
+        for(int i=0; i<10000; i++)
+        {
+            String stringStor=alphabet.substring((int)(Math.random()*25), alphabet.length()-1);
+            arr[i]=stringStor;
+        }
+        return arr;
+    }
+
 }
