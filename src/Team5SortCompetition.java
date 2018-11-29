@@ -60,7 +60,7 @@ public class Team5SortCompetition extends SortCompetition
         }
         return 0;
     }
-    
+
 
     public int challengeThree(int[] arr)
     {
