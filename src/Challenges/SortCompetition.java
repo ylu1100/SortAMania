@@ -1,7 +1,10 @@
+package Challenges;
+
 //Implement this abstract class in your own class in this project.
-//Name your class Team#SortCompetition.
+//Name your class Team#Challenges.SortCompetition.
 //e.g. Team 1 should name their class Team1SortCompetition
 public abstract class SortCompetition {
+
 	
 	public abstract int challengeOne(int[] arr);
 	

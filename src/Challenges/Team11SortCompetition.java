@@ -1,4 +1,9 @@
+package Challenges;
+
+import C4method.challengeFourMethods;
 public class Team11SortCompetition extends SortCompetition {
+
+
 
     @Override
     public int challengeOne(int[] arr) {
@@ -7,7 +12,7 @@ public class Team11SortCompetition extends SortCompetition {
     }
 
     @Override
-    public int challengeTwo(String[] arr, String query) {
+    public static int challengeTwo(String[] arr, String query) {
 
         for (int j = 0; j < arr.length; j++) {
             String value = "";
@@ -34,12 +39,14 @@ public class Team11SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFour(int[][] arr) {
+        int[] medianArr = new int[arr.length];
         for (int x = 0; x < arr.length; x++) {
-            merge(arr);
-            for (int y = 0; y < arr[x].length; y++) {
+            challengeFourMethods.merge(arr,x);
+            medianArr[x] = arr[x][(arr[x].length)/2];
 
-            }
         }
+        challengeFourMethods.merge(arr,x);
+
         return 0;
     }
 
@@ -53,7 +60,7 @@ public class Team11SortCompetition extends SortCompetition {
         return null;
     }
 
-    public String letterGenerator() {
+    public static String letterGenerator() {
         String alpha = "abcdefghijklmnopqrstuvwxyz";
         int getPlace = (int) (Math.random() * 25) + 1;
         return alpha.substring(getPlace - 1, getPlace);
