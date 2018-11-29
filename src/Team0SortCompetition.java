@@ -2,6 +2,7 @@ public class Team0SortCompetition extends SortCompetition
 {
     public int challengeOne(int[] arr)
     {
+
         boolean done=false;
         while(!done)
         {
