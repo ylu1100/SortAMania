@@ -39,6 +39,21 @@ public class runner
         }
         return z;
     }
+    public static void printIntArray(int[] arr){
+        String temp = "";
+        for(int i=0;i<arr.length;i++){
+            temp+= arr[i] + ", ";
+        }
+        System.out.println(temp);
+    }
 
+
+    public static void printStringArray(String[] arr){
+        String temp = "";
+        for(int i=0;i<arr.length;i++){
+            temp+= arr[i] + ", ";
+        }
+        System.out.println(temp);
+    }
 }
 
