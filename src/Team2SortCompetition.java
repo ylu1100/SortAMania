@@ -136,19 +136,8 @@ public class Team2SortCompetition extends SortCompetition{
      */
     public int challengeThree(int[] challenge3)
     {
-        int n = challenge3.length;
         double median;
-        for(int i = 1; i < n; i++)
-        {
-            int key = challenge3[i];
-            int j = i - 1;
-            while(j >= 0 && challenge3[j] > key)
-            {
-                challenge3[j + 1] = challenge3[j];
-                j = j - 1;
-            }
-            challenge3[j + 1] = key;
-        }
+        timSort3(challenge3,100000);
         if(challenge3.length % 2 == 0)
         {
             median = ((double)challenge3[(challenge3.length/2)] + (double)challenge3[(challenge3.length/2) - 1])/2;
@@ -158,6 +147,86 @@ public class Team2SortCompetition extends SortCompetition{
             median = (double)challenge3[challenge3.length/2];
         }
         return (int)median;
+    }
+
+    /**
+     * Insertion Sort for the TimSort
+     * @param arr array to be inputted.
+     * @param left self explanatory
+     * @param right self explanatory
+     */
+    public void insertionSort3(int arr[], int left, int right)
+    {
+        for (int i = left + 1; i <= right; i++)
+        {
+            int temp = arr[i];
+            int j = i - 1;
+            while (arr[j] > temp && j >= left)
+            {
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = temp;
+        }
+    }
+
+    /**
+     * Merge sort for the TimSort.
+     * @param arr array to be inputted.
+     * @param l left.
+     * @param m middle.
+     * @param r right.
+     */
+    void merge3(int arr[], int l, int m, int r)
+    {
+        int len1 = m - l + 1, len2 = r - m;
+        int[] left = new int[len1];
+        int[] right = new int[len2];
+        for (int i = 0; i < len1; i++) {
+            left[i] = arr[l + i];
+        }
+        for (int i = 0; i < len2; i++) {
+            right[i] = arr[m + 1 + i];
+        }
+
+        int i = 0;
+        int j = 0;
+        int k = l;
+
+        while (i < len1 && j < len2)
+        {
+            if (left[i] <= right[j])
+            {
+                arr[k] = left[i];
+                i++;
+            }
+            else {
+                arr[k] = right[j];
+                j++;
+            }
+            k++;
+        }
+    }
+
+    /**
+     * TimSort
+     * @param arr array to be inputted.
+     * @param n size of the array to be sorted.
+     */
+    public void timSort3(int arr[], int n)
+    {
+        for (int i = 0; i < n; i+=32) {
+            insertionSort3(arr, i, min((i + 31), (n - 1)));
+        }
+        for (int size = 32; size < n; size = 2*size)
+        {
+            for (int left = 0; left < n; left += 2*size)
+            {
+                int mid = left + size - 1;
+                int right = min((left + 2*size - 1), (n-1));
+                merge3(arr, left, mid, right);
+            }
+        }
     }
 
     /**
@@ -215,6 +284,12 @@ public class Team2SortCompetition extends SortCompetition{
         }
     }
 
+    /**
+     * Insertion Sort for the TimSort
+     * @param arr array to be inputted.
+     * @param left self explanatory
+     * @param right self explanatory
+     */
     public void insertionSortC(Comparable arr[], int left, int right)
     {
         for (int i = left + 1; i <= right; i++) {
@@ -228,6 +303,13 @@ public class Team2SortCompetition extends SortCompetition{
         }
     }
 
+    /**
+     * Merge sort for the TimSort.
+     * @param arr array to be inputted.
+     * @param l left.
+     * @param m middle.
+     * @param r right.
+     */
     public void mergeC(Comparable arr[], int l, int m, int r)
     {
         int len1 = m - l + 1, len2 = r - m;
@@ -268,6 +350,11 @@ public class Team2SortCompetition extends SortCompetition{
         }
     }
 
+    /**
+     * TimSort
+     * @param arr array to be inputted.
+     * @param n size of the array to be sorted.
+     */
     public void timSort(Comparable arr[], int n)
     {
         for (int i = 0; i < n; i+=32) {
