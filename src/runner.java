@@ -17,7 +17,7 @@ public class runner
         String[] c2 = {"bacon","apple","dog","cat"};
         printStringArray(c2);
         timer = System.nanoTime();
-        System.out.println(x.challengeTwo(c2,"asasfasf"));
+        System.out.println(x.challengeTwo(c2,"dog"));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
