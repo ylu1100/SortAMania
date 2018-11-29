@@ -11,23 +11,26 @@ public class runner
         long timer = System.nanoTime();
 
         System.out.println("median is " + x.challengeOne(c1));
-
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
+        System.out.println(x.challengeOne(c1));
 
-        printIntArray(c1);
-
-
-
-
+/*
         String[] c2 = {"abcde","cdefe","aaaaa","bbbbb"};
         printStringArray(c2);
         timer = System.nanoTime();
         System.out.println(x.challengeTwo(c2,"abcde"));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
-
         printStringArray(c2);
+
+        int[] c3 = generateIntArr(10);
+        printIntArray(c3);
+        timer = System.nanoTime();
+        System.out.println(x.challengeThree(c3));
+        timer = System.nanoTime() - timer;
+        System.out.println(timer*.000000001 + " seconds");
+*/
     }
 
     public static int[] generateIntArr(int x)
