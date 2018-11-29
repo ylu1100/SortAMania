@@ -1,12 +1,15 @@
 public class Team17SortCompetition extends SortCompetition {
-    public Team17SortCompetition(int[] arr)
+    private int[] arr = new int[];
+    public Team17SortCompetition(int numCount)
     {
+        this.arr = randIntArr(numCount);
 
     }
 
     @Override
-    public int challengeOne(int[] arr) {
+    public static int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
+        System.out.println(arr);
         return findMed(arr);
     }
 
