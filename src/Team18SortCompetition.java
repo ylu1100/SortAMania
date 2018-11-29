@@ -2,15 +2,17 @@ public class Team18SortCompetition extends SortCompetition
 {
     public int challengeOne(int[] arr)
     {
-        double median;
+        double median=0;
         insertionSort(arr);
         if(arr.length%2 == 0)
         {
-            int i = arr[(arr.length/2)+1];
+            int i = arr[(arr.length/2)-1];
+            System.out.println(i);
             int j = arr[arr.length/2];
+            System.out.println(j);
             median = (i+j)/2;
         }
-        else
+        else if (arr.length%2 !=0)
         {
             median = arr[arr.length/2];
         }
@@ -24,7 +26,7 @@ public class Team18SortCompetition extends SortCompetition
         int i=0;
         int result = 0;
         boolean check = false;
-        while(check != true)
+        while(!check)
         {
             i +=1;
             if(arr[i].compareTo(query)>=0)
@@ -32,10 +34,9 @@ public class Team18SortCompetition extends SortCompetition
                 result = i;
                 check = true;
             }
-            else if((arr[i].compareTo(query)<=0)&&(i == arr.length))
+            else
             {
                 result = -1;
-                check = true;
             }
         }
         return result;
@@ -95,7 +96,7 @@ public class Team18SortCompetition extends SortCompetition
         return null;
     }
 
-    public static void intSwap(int[] arr, int pos1, int pos2){
+    public static void swap(int[] arr, int pos1, int pos2){
         int temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
@@ -128,20 +129,27 @@ public class Team18SortCompetition extends SortCompetition
         }
     }
 
-    public static void insertionSort(int[] arr)
+    public void insertionSort(int[] list1)
     {
-        for(int i=0;i<arr.length-1;i++)
+        int swapPos;
+        int min;
+
+        for(int i = 1;i<list1.length;i++)
         {
-            if(arr[i]>arr[i+1])
+            swapPos = i;
+            min = list1[swapPos];
+
+            for(int a = i-1;a>=0;a--)
             {
-                for(int j=i ; j>0 ; j--)
+                if(list1[a]>min)
                 {
-                    if(arr[i]<arr[j])
-                    {
-                        intSwap(arr,j,i);
-                    }
-                    else
-                        { break; }
+                    swap(list1,swapPos,a);
+                    swapPos = a;
+                    min = list1[swapPos];
+                }
+                else
+                {
+                    a=-1;
                 }
             }
         }
