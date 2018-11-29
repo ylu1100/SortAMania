@@ -53,7 +53,7 @@ public class Team6SortCompetition extends SortCompetition{
 
     public String greeting()
     {
-        //return any;
+        return "Yo what's good? Back in my day I was known as the sorting champion! I'm a little old now, but I can still sort like there's no tomorrow!";
     }
 
     public int[] quickSort(int[] arr, int left, int right)
