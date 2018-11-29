@@ -25,6 +25,15 @@ public abstract class Runner extends SortCompetition {
         System.out.println(Arrays.toString(arr2));
         System.out.println("Challenge 2 Duration: " + duration + " nanoseconds \n");
 
+        int[] arr3 = x.merge();
+        System.out.println(Arrays.toString(arr2));
+        startTime = System.nanoTime();
+        System.out.println(x.challengeTwo(arr2,"bingo"));
+        endTime = System.nanoTime();
+        duration = endTime - startTime;
+        System.out.println(Arrays.toString(arr2));
+        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds");
+
         int[][] arr4 = random3DIntArr(1000,10000);
         System.out.println(Arrays.toString(arr4[0]));
         startTime = System.nanoTime();
@@ -32,8 +41,6 @@ public abstract class Runner extends SortCompetition {
         endTime = System.nanoTime();
         duration = endTime - startTime;
         System.out.println("Challenge 4 Duration: " + duration + " nanoseconds");
-
-
 
 
     }
