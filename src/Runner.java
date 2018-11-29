@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Runner
 {
     public static int[] array = new int[10000];
@@ -103,7 +105,7 @@ public class Runner
         {
             Comparable[] arr= new Comparable[10000];
             int j=0;
-            for (int i=0; i<10000; i++)
+            /**for (int i=0; i<10000; i++)
             {
                 int truei=0;
                 if (i==9996)
@@ -118,7 +120,7 @@ public class Runner
                 arr[i+2]="yo";
                 arr[i+3]='r';
 
-            }
+            }**/
             while (j<10000)
             {
                 if (j>=9996)
@@ -127,12 +129,12 @@ public class Runner
                     return arr;
                 }
 
-                arr[j]=true;
+                arr[j]= true;
                 arr[j+1]=56;
                 arr[j+2]=0.56;
-                arr[j+2]="yo";
-                arr[j+3]='r';
-                j=j+4;
+                arr[j+3]="yo";
+                arr[j+4]='r';
+                j=j+5;
             }
             return arr;
         }
