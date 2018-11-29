@@ -1,9 +1,10 @@
 public class Runner {
     public static void main(String[] args)
     {
+        System.out.println("Challenge 1");
         Team1SortCompetition x = new Team1SortCompetition();
 
-        int[] c1 = generateIntArr(6);
+        int[] c1 = generateIntArr(5);
 
         printIntArray(c1);
 
@@ -16,8 +17,7 @@ public class Runner {
 
         printIntArray(c1);
 
-
-
+        System.out.println("\nChallenge 2");
 
         String[] c2 = {"abcde","cdefe","aaaaa","bbbbb"};
         printStringArray(c2);
@@ -27,6 +27,16 @@ public class Runner {
         System.out.println(timer*.000000001 + " seconds");
 
         printStringArray(c2);
+
+        int[][] c4 =  {
+                {3,2,1},
+                {1,3,2},
+                {2,3,1},
+        };
+
+        x.challengeFour(c4);
+
+
     }
 
     public static int[] generateIntArr(int x)

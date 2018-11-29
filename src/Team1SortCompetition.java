@@ -1,11 +1,7 @@
 public class Team1SortCompetition extends SortCompetition {
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
-        if((arr.length/2)%2==0){
-            return arr[(arr.length/2)-1];
-        } else {
-            return (arr[(arr.length/2)-1] + arr[arr.length/2])/2;
-        }
+        return getMedian(arr);
     }
 
     public int challengeTwo (String[] arr, String query){
@@ -44,7 +40,15 @@ public class Team1SortCompetition extends SortCompetition {
     }
 
     public int challengeFour(int[][] arr) {
-        return -1;
+        int[] temp = new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            Runner.printIntArray((arr[i]));
+            quickSort(arr[i],0,arr[i].length-1);
+            Runner.printIntArray((arr[i]));
+            System.out.println(getMedian(arr[i]));
+        }
+        quickSort(temp,0,temp.length-1);
+        return getMedian(temp);
     }
 
     public int challengeFive(Comparable[] arr, Comparable query) {
@@ -53,6 +57,14 @@ public class Team1SortCompetition extends SortCompetition {
 
     public String greeting() {
         return "Hello.";
+    }
+
+    public int getMedian(int[] arr){
+        if((int)(arr.length/2.0)+1%2==0){
+            return (arr[(arr.length/2)-1] + arr[arr.length/2])/2;
+        } else {
+            return arr[(arr.length/2)];
+        }
     }
 
     public static void quickSort(int[] arr, int left, int right) {
