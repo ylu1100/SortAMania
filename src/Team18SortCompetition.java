@@ -205,5 +205,12 @@ public class Team18SortCompetition extends SortCompetition
         }
         System.out.println(temp);
     }
+    public static void printStringArray(String[] arr){
+        String temp = "";
+        for(int i=0;i<arr.length;i++){
+            temp+= arr[i] + ", ";
+        }
+        System.out.println(temp);
+    }
 
 }
