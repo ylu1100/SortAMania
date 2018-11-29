@@ -62,6 +62,7 @@ public class Team6SortCompetition extends SortCompetition{
 
     public int challengeFour(int[][] arr)
     {
+        
         //return median of the median array;
     }
 
