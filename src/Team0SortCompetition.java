@@ -38,13 +38,23 @@ public class Team0SortCompetition extends SortCompetition
     }
 
     @Override
-    /*
-    Data Set - a mostly sorted array of 100,000 integers (>75% of elements are in the correct order)
-    Task: Sort the list and return the median
 
-     */
     public int challengeThree(int[] arr) {
-        return 0;
+        int N = arr.length;
+        int i;
+        int j;
+        int temp;
+        for (i = 1; i< N; i++)
+        {
+            j = i;
+            temp = arr[i];
+            while (j > 0 && temp < arr[j-1])
+            {
+                arr[j] = arr[j-1];
+                j = j-1;
+            }
+            arr[j] = temp;
+        }
     }
 
     @Override

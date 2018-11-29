@@ -22,6 +22,12 @@ public class Runner
         //for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
         System.out.println("\n"+a1.challengeOne(arr));
 
+        int[] arr2= new int[10000];
+        for(int i=0;i<arr.length;i++)
+        {
+            arr[i]=(int)*100000)+0;
+        }
+
 
     }
 }
