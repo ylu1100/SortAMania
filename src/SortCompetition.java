@@ -3,11 +3,11 @@
 //e.g. Team 1 should name their class Team1SortCompetition
 public abstract class SortCompetition {
 	
-	public abstract double challengeOne(int[] arr);
+	public abstract int challengeOne(int[] arr);
 	
 	public abstract int challengeTwo(String[] arr, String query);
 	
-	public abstract double challengeThree(int[] arr);
+	public abstract int challengeThree(int[] arr);
 	
 	public abstract int challengeFour(int[][] arr);
 	

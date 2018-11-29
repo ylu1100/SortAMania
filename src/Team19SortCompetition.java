@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Team19SortCompetition extends SortCompetition{
-    public double challengeOne(int[] arr){
+    public int challengeOne(int[] arr){
         mergeSort(arr);
-        return (double)(arr[4999] + arr[5000] / 2); 
+        return (arr[4999] + arr[5000]) / 2;
     }
 
     public int challengeTwo(String[] arr, String query){
@@ -16,9 +16,9 @@ public class Team19SortCompetition extends SortCompetition{
         return -1;
     }
 
-    public double challengeThree(int[] arr){
+    public int challengeThree(int[] arr){
         insertionSort(arr);
-        return (double)((arr[49999] + arr[50000]) / 2);
+        return (arr[49999] + arr[50000]) / 2;
     }
 
     public int challengeFour(int[][] arr){
@@ -28,7 +28,7 @@ public class Team19SortCompetition extends SortCompetition{
         int[] medianArr = medianString(arr);
         mergeSort(medianArr);
 
-        return medianArr[499] + medianArr[500] / 2;
+        return (medianArr[499] + medianArr[500]) / 2;
     }
 
     public int challengeFive(Comparable[] arr, Comparable query){
@@ -130,7 +130,7 @@ public class Team19SortCompetition extends SortCompetition{
     private static int[] medianString(int[][] arr){
         int[] output = new int[100];
         for(int i = 0; i < arr.length; i++){
-            output[i] += ((arr[i][499] + arr[i][500]) / 2);
+            output[i] = (arr[i][499] + arr[i][500]) / 2;
         }
         return output;
     }
