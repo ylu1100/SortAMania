@@ -1,8 +1,8 @@
 public class Runner
 {
     public static int[] array = new int[10000];
-    public static String[] alphaArray = new String[10000];
-    public static String[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+    public static int[] array1 = new int[10000];
+    public static int[][] array2 = new int[1000][1000];
     public static void main(String[] args)
     {
         for(int i = 0; i < array.length - 1; i++)
@@ -10,7 +10,19 @@ public class Runner
             array[i] = (int)(Math.random() * 10000) + 1;
         }
 
-        alphaArray = alphaMake(10, 10000);
+        for(int i = 0; i < array1.length - 1; i++)
+        {
+            array1[i] = (int)(Math.random() * 10000) + 1;
+        }
+
+        for(int i = 0; i < array2.length - 1; i++)
+        {
+            for(int j = 0; j < array2[i].length - 1; j++)
+            {
+                array2[i][j] = (int)(Math.random() * 10000) + 1;
+            }
+        }
+
         Team5SortCompetition a = new Team5SortCompetition();
 
         double startTime = System.currentTimeMillis();
@@ -27,7 +39,6 @@ public class Runner
         System.out.println("");
         startTime = System.currentTimeMillis();
         String[] arr= stringArrs();
-        System.out.println("je");
         System.out.println(a.challengeTwo(arr, "je"));
         endTime = System.currentTimeMillis();
         System.out.println("C2 took " + (endTime - startTime) + " milliseconds.");
@@ -37,35 +48,30 @@ public class Runner
             System.out.print(arr[i] + " ");
         }
 
-
+        System.out.println("");
+        System.out.println("");
         startTime = System.currentTimeMillis();
-        System.out.println(a.challengeThree(array));
+        System.out.println(a.challengeThree(array1));
         endTime = System.currentTimeMillis();
         System.out.println("C3 took " + (endTime - startTime) + " milliseconds.");
 
-        for(int i = 0; i < array.length - 1; i++)
+        for(int i = 0; i < array1.length - 1; i++)
         {
-            System.out.print(array[i] + " ");
+            System.out.print(array1[i] + " ");
         }
-    }
 
-    public static String[] alphaMake(int num, int len)
-    {
-        String[] arr = new String[num];
-        while(num > 0)
+        System.out.println("");
+        System.out.println("");
+        startTime = System.currentTimeMillis();
+        System.out.println(a.challengeFour(array2));
+        endTime = System.currentTimeMillis();
+        System.out.println("C4 took " + (endTime - startTime) + " milliseconds.");
+
+        for(int i = 0; i < array2[0].length - 1; i++)
         {
-            int i = 0;
-            String s = "";
-            while(i < len)
-            {
-                char c = (char)((Math.random() * 26) + 97);
-                s = s + c;
-                i++;
-            }
-            num--;
-            arr[num] = s;
+            System.out.print(array2[0][i] + " ");
         }
-        return arr;
+
     }
 
     public static String[] stringArrs()

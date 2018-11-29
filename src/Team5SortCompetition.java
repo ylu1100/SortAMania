@@ -87,7 +87,64 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeFour(int[][] arr)
     {
-        return 0;
+        int a;
+        int b;
+        for(int i = 0; i < arr.length - 1; i++)
+        {
+            for(int j = 0; j <= arr[i].length - 1; j++)
+            {
+                for(int k = j; k <= arr[i].length - 1; k++)
+                {
+                    if (arr[i][j] > arr[i][k])
+                    {
+                        a = arr[i][k];
+                        b = arr[i][j];
+                        arr[i][k] = b;
+                        arr[i][j] = a;
+                    }
+                }
+            }
+        }
+
+        int[] med = new int[arr.length];
+        for(int i = 0; i < arr.length - 1; i++)
+        {
+            if (arr[i].length % 2 > 0)
+                med[i] = (arr[i][arr[i].length / 2] + arr[i][(arr[i].length / 2) + 1]) / 2;
+            else
+                med[i] = arr[i][arr[i].length / 2];
+        }
+
+        int[] c;
+        int[] d;
+        for(int i = 0; i < med.length - 1; i++)
+        {
+            for(int j = i; j <= med.length - 1; j++)
+            {
+                if (med[i] > med[j])
+                {
+                    c = arr[i];
+                    d = arr[j];
+                    arr[i] = d;
+                    arr[j] = c;
+
+                    a = med[i];
+                    b = med[j];
+                    med[i] = b;
+                    med[j] = a;
+                }
+            }
+        }
+
+        System.out.println("TEST 3");
+        for(int i = 0; i < arr[0].length - 1; i++)
+        {
+            System.out.print(arr[0][i] + " ");
+        }
+
+        if(med.length % 2 > 0)
+            return (med[med.length / 2] + med[(med.length / 2) + 1]) / 2;
+        return med[med.length / 2];
     }
 
     public int challengeFive(Comparable[] arr, Comparable query)
