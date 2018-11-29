@@ -9,12 +9,13 @@ public class runner
         printIntArray(c1);
 
         long timer = System.nanoTime();
-
         System.out.println("median is " + x.challengeOne(c1));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
-        System.out.println(x.challengeOne(c1));
-
+        for(int i = 0; i < c1.length; i++)
+        {
+            System.out.print(c1[i]+" ");
+        }
 /*
         String[] c2 = {"abcde","cdefe","aaaaa","bbbbb"};
         printStringArray(c2);

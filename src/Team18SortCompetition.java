@@ -4,10 +4,6 @@ public class Team18SortCompetition extends SortCompetition
     {
         double median;
         insertionSort(arr);
-        for(int i = 0; i < arr.length; i++)
-        {
-            arr
-        }
         if(arr.length%2 == 0)
         {
             int i = arr[(arr.length/2)+1];
