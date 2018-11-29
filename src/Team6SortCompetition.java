@@ -4,7 +4,7 @@ public class Team6SortCompetition extends SortCompetition{
     {
         int i = 0;
         int j = arr.length-1;
-        int median;
+        int median = 0;
         int[] sortedArr = quickSort(arr,0,arr.length-1);
         while(i != j)
         {
