@@ -34,6 +34,22 @@ public class Team0SortCompetition extends SortCompetition
 
      */
     public int challengeTwo(String[] arr, String query) {
+        int a = 1;
+        String y;
+        while(a != 0)
+        {
+            a = 0;
+            for(int i = 0; i < arr.length-1; i++)
+            {
+                if(arr[i].compareTo(arr[i+1]) > 0)
+                {
+                    y = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = y;
+                    a++;
+                }
+            }
+        }
         return 0;
     }
 

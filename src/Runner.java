@@ -21,7 +21,7 @@ public class Runner
         System.out.println("\n"+(double)(System.nanoTime() - time)/(100000000)+" secs");
         
         System.out.print("Sorted Array: ");
-        for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
+        // for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
         System.out.println("\n"+a1.challengeOne(arr));
 
         System.out.println();
@@ -39,7 +39,7 @@ public class Runner
             }
             arr2[i]=c;
         }
-        //for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+" ");}
+        for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+", ");}
 
 
 
