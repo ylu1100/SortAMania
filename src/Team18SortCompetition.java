@@ -70,13 +70,13 @@ public class Team18SortCompetition extends SortCompetition
         }
         if(arr.length%2!=0)
         {
-            median = arr[500][500];
+            median = arr[arr.length/2][arr.length/2];
         }
         else
         {
-            median = (arr[])
+            median = (arr[arr.length/2][arr.length/2]*arr[arr.length/2][(arr.length/2)+1])/2;
         }
-        return 0;
+        return median;
     }
 
     @Override
