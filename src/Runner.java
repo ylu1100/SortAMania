@@ -19,7 +19,7 @@ public class Runner {
 
         System.out.println("\nChallenge 2");
 
-        String[] c2 = {"abcde","cdefe","aaaaa","bbbbb"};
+        String[] c2 = randomStringArr(10000,5);
         printStringArray(c2);
         timer = System.nanoTime();
         System.out.println(x.challengeTwo(c2,"abcde"));
@@ -27,6 +27,16 @@ public class Runner {
         System.out.println(timer*.000000001 + " seconds");
 
         printStringArray(c2);
+
+
+        int[] c3 = {1,2,3,4,5,6,7,8,11,15,17,19,12,14,16,10,9,13,18};
+        printIntArray(c3);
+        timer = System.nanoTime();
+        System.out.println(x.challengeThree(c3));
+
+        timer = System.nanoTime() - timer;
+        System.out.println(timer*.000000001 + " seconds");
+        printIntArray(c3);
 
         int[][] c4 =  {
                 {3,2,1},
@@ -38,6 +48,8 @@ public class Runner {
 
 
     }
+
+
 
     public static int[] generateIntArr(int x)
     {
@@ -57,6 +69,7 @@ public class Runner {
             while (i < length) {
                 char c = (char) ((Math.random() * 26) + 97);
                 s = s + c;
+                s = s.toUpperCase();
                 i++;
             }
             num--;

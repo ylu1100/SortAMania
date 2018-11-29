@@ -36,6 +36,7 @@ public class Team1SortCompetition extends SortCompetition {
     }
 
     public int challengeThree(int[] arr) {
+        insertionSort(arr);
         return -1;
     }
 
@@ -145,6 +146,34 @@ public class Team1SortCompetition extends SortCompetition {
         for(int z=left;z<=right;z++)
         {
             arr[z] = temp[z];
+        }
+
+    }
+    public static void insertionSort(int[] list1)
+    {
+        int[] list1Copy = new int[list1.length];
+
+        for(int i=0;i<list1.length;i++) {
+            int check = 0;
+            check++;
+            list1Copy[i] = list1[i];
+            if (i != 0) {
+                int pos = i;
+                while (check > 0) {
+                    if(pos > 0) {
+                        if (list1[pos - check] > list1[pos]) {
+                            swap(list1, (pos - check), pos);
+                            pos--;
+                        } else {
+                            check = 0;
+                        }
+                    }
+                    if(pos == 0)
+                    {
+                        check =0;
+                    }
+                }
+            }
         }
 
     }
