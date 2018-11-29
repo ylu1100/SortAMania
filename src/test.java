@@ -12,10 +12,7 @@ public class test implements Comparable<test> {
     {
         this.x = a;
     }
-    public test()
-    {
 
-    }
 
     public int compareTo(test o) {
         return this.str.compareTo(o.str);

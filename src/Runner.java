@@ -49,12 +49,13 @@ public class Runner {
 
 
         System.out.println("\nChallenge 5");
-        Comparable[] c5 = new Comparable[10];
-        String[] t = randomStringArr(c5.length,1);
+        Comparable[] c5 = new Comparable[10000];
+        String[] t = randomStringArr(c5.length,2);
         for(int i=0;i<c5.length;i++)
         {
             c5[i] = new test(t[i]);
         }
+
         String s= "";
         for(int i=0;i<c5.length;i++)
         {
@@ -62,7 +63,7 @@ public class Runner {
         }
         System.out.println(s);
         timer = System.nanoTime();
-        String a = "A";
+        String a = "HA";
         test c = new test(a);
         System.out.println(x.challengeFive(c5,c));
         timer = System.nanoTime()-timer;
