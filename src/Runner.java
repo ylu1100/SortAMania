@@ -31,6 +31,7 @@ public class Runner
         String alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for(int i=0;i<arr2.length;i++)
         {
+            c="";
             for(int k=0;k<5;k++)
             {
                 a= (int)(Math.random()*25)+0;
@@ -39,7 +40,19 @@ public class Runner
             }
             arr2[i]=c;
         }
-        for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+", ");}
+
+        //for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+" ");}
+        Team0SortCompetition a2 = new Team0SortCompetition();
+
+        long time2 = System.nanoTime();
+
+        a1.challengeTwo(arr2,"AAOBX");
+
+        System.out.println("\n"+(double)(System.nanoTime() - time2)/(100000000)+" secs");
+
+        System.out.print("Sorted Array: ");
+        for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
+        System.out.println("\n"+a2.challengeTwo(arr2,"AAOBX"));
 
 
 

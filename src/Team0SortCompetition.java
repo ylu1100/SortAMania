@@ -50,7 +50,14 @@ public class Team0SortCompetition extends SortCompetition
                 }
             }
         }
-        return 0;
+        for(int l=0;l<arr.length;l++)
+        {
+            if(query.equals(arr[l]))
+            {
+                return l;
+            }
+        }
+        return -1;
     }
 
     @Override
