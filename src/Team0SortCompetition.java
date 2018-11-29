@@ -55,6 +55,9 @@ public class Team0SortCompetition extends SortCompetition
             }
             arr[j] = temp;
         }
+        int sum =arr[50000]+arr[49999];
+        int a= sum/2;
+        return a;
     }
 
     @Override
