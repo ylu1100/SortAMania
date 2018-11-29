@@ -198,6 +198,12 @@ public class Team18SortCompetition extends SortCompetition
         }
         return z;
     }
-
+    public static void printIntArray(int[] arr){
+        String temp = "";
+        for(int i=0;i<arr.length;i++){
+            temp+= arr[i] + ", ";
+        }
+        System.out.println(temp);
+    }
 
 }
