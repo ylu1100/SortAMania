@@ -3,14 +3,6 @@ import java.util.List;
 
 public class Team2SortCompetition extends SortCompetition{
 
-    private int[] challenge1;
-    private String[] challenge2;
-    private String query;
-    private int[] challenge3;
-    private int[][] challenge4;
-    private Comparable[] challenge5;
-    private Comparable cquery;
-
     /**
      * Data Set - an array of 10,000 random integers between 0-10000
      * @param challenge1 First challenge array.
