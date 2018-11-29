@@ -25,6 +25,7 @@ public class Team19SortCompetition extends SortCompetition{
         for(int i = 0; i < arr.length; i++){
             mergeSort(arr[i]);
         }
+        System.out.println(Arrays.toString(arr[0]));
         int[] medianArr = medianString(arr);
         mergeSort(medianArr);
 
@@ -128,7 +129,7 @@ public class Team19SortCompetition extends SortCompetition{
     }
     //---------------------------------------------------
     private static int[] medianString(int[][] arr){
-        int[] output = new int[100];
+        int[] output = new int[1000];
         for(int i = 0; i < arr.length; i++){
             output[i] = (arr[i][499] + arr[i][500]) / 2;
         }
@@ -153,4 +154,5 @@ public class Team19SortCompetition extends SortCompetition{
         arr[val1] = arr[val2];
         arr[val2] = x;
     }
+
 }

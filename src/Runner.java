@@ -3,8 +3,11 @@ import java.util.Arrays;
 public abstract class Runner extends SortCompetition {
 
     public static void main(String[] args){
-        int[] arr1 = randomIntArr(10000, 0, 10000);
+
         SortCompetition x = new Team19SortCompetition();
+        System.out.println(x.greeting() + "\n");
+
+        int[] arr1 = randomIntArr(10000, 0, 10000);
         System.out.println(Arrays.toString(arr1));
         long startTime = System.nanoTime();
         System.out.println(x.challengeOne(arr1));
@@ -20,7 +23,18 @@ public abstract class Runner extends SortCompetition {
         endTime = System.nanoTime();
         duration = endTime - startTime;
         System.out.println(Arrays.toString(arr2));
-        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds");
+        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds \n");
+
+        int[][] arr4 = random3DIntArr(1000,10000);
+        System.out.println(Arrays.toString(arr4[0]));
+        startTime = System.nanoTime();
+        System.out.println(x.challengeFour(arr4));
+        endTime = System.nanoTime();
+        duration = endTime - startTime;
+        System.out.println("Challenge 4 Duration: " + duration + " nanoseconds");
+
+
+
 
     }
 
@@ -44,6 +58,16 @@ public abstract class Runner extends SortCompetition {
             }
             num--;
             arr[num] = s;
+        }
+        return arr;
+    }
+
+    public static int[][] random3DIntArr(int num, int max){
+        int[][] arr = new int[num][num];
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[i].length; j++){
+                arr[i][j] = getRandomInteger(0,max);
+            }
         }
         return arr;
     }
