@@ -10,7 +10,7 @@ public class Runner
             arr[i]=(int)(Math.random()*10000)+0;
         }
         System.out.print("Unsorted Array: ");
-        //for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
+       // for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
 
         Team0SortCompetition a1 = new Team0SortCompetition();
 
@@ -21,17 +21,25 @@ public class Runner
         System.out.println("\n"+(double)(System.nanoTime() - time)/(100000000)+" secs");
         
         System.out.print("Sorted Array: ");
-        //for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
+        for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
         System.out.println("\n"+a1.challengeOne(arr));
 
         System.out.println();
 
         String[] arr2 = new String[10000];
+        int a; String h; String c="";
         String alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for(int i=0;i<arr2.length;i++)
         {
-            
+            for(int k=0;k<5;k++)
+            {
+                a= (int)(Math.random()*25)+0;
+                h=alpha.substring(a,a+1);
+                c=c+h;
+            }
+            arr2[i]=c;
         }
+        //for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+" ");}
 
 
 
