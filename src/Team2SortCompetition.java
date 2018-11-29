@@ -173,25 +173,24 @@ public class Team2SortCompetition extends SortCompetition{
         {
             for(int j=0;j<challenge4.length;j++)
             {
-                int cMin = challenge4[i][j];
-                int x = i - 1;
-                while(x>=0 && challenge4[i][j] > cMin)
+                int n = challenge4.length;
+                for (int gap = n/2; gap > 0; gap /= 2)
                 {
-                    challenge4[i][x+1] = challenge4[i][x];
-                    x--;
+                    for (int k = gap; k < n; k += 1)
+                    {
+                        int temp = challenge4[i][k];
+                        int l;
+                        for (l = k; l >= gap && challenge4[i][l - gap] > temp; l -= gap) {
+                            challenge4[j] = challenge4[l - gap];
+                        }
+                        challenge4[i][l] = temp;
+                    }
                 }
-                challenge4[i][x+1] = cMin;
-                }
-                if(challenge4.length % 2 == 0)
-                {
-                    median = ((double)challenge1[(challenge1.length/2)] + (double)challenge1[(challenge1.length/2) - 1])/2;
-                }
-                else
-                {
-                    median = (double)challenge1[challenge1.length/2];
-                }
-                return (int)median;
             }
+        }
+        for (int i=0;i<challenge4.length;i++)
+        {
+            median = ((double)challenge4[(challenge4[i].length/2)] + (double)challenge3[(challenge3.length/2) - 1])/2;
         }
     }
 
