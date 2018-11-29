@@ -7,8 +7,7 @@ public class Team17SortCompetition extends SortCompetition {
     @Override
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
-        toString(arr);
-        return 0;
+        return findMed(arr);
     }
 
     @Override
@@ -102,12 +101,10 @@ public class Team17SortCompetition extends SortCompetition {
         int mid = arr[idx];
         if(arr.length%2 == 1)
         {
-            System.out.println(mid);
             return(mid);
         }
         else
         {
-            System.out.println((mid + arr[idx-1])/2);
             return((mid + arr[idx-1])/2);
         }
     }
@@ -115,17 +112,33 @@ public class Team17SortCompetition extends SortCompetition {
     //toString
     public static void toString(int[] list) {
 
-        for (int x = 0; x < list.length; x++) {
-            System.out.println(list[x]);
+        String out = "";
+
+        for(int i =0;i<list.length;i++)
+        {
+            out += list[i];
+            if(i != list.length-1)
+            {
+                out += ", ";
+            }
         }
+        System.out.println(out);
 
     }
 
-    public static void generateIntList(int[] arr, int numCount)
+    /**
+     * Creates array of random integers
+     * @param count number of number in the array
+     * @return array with random integers
+     */
+    public static int[] randIntArr(int count)
     {
-        for (int x = 0; x < numCount; x++)
+        int[] randArr = new int[count];
+
+        for(int i=0; i<randArr.length;i++)
         {
-            arr[x] = (int) (Math.random() * numCount);
+            randArr[i] = (int)(Math.random()*10001);
         }
+        return(randArr);
     }
 }
