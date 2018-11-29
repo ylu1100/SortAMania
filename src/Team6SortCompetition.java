@@ -38,7 +38,26 @@ public class Team6SortCompetition extends SortCompetition{
 
     public int challengeThree(int[] arr)
     {
-        //return median;
+        int i = 0;
+        int j = arr.length-1;
+        int median = 0;
+        int[] sortedArr = insertionSort(arr);
+        while(i != j)
+        {
+            i++;
+            j--;
+            if((i+1) == j || (j-1) == i)
+            {
+                int total = sortedArr[i] + sortedArr[j];
+                median = (total/2);
+                break;
+            }
+            else
+            {
+                median = sortedArr[i];
+            }
+        }
+        return median;
     }
 
     public int challengeFour(int[][] arr)
@@ -85,5 +104,23 @@ public class Team6SortCompetition extends SortCompetition{
         arr[i+1]=arr[right];
         arr[right]=temp;
         return i+1;
+    }
+
+    public int[] insertionSort(int[] list1)
+    {
+        int min;
+        for(int i = 1; i < list1.length; i++)
+        {
+            min = list1[i];
+            int temp = min;
+            for(int x = i-1; x>=0; x--)
+            {
+                if(list1[x]>temp)
+                {
+                    list1[x+1] = list1[x];
+                    list1[x] = temp;
+                }
+            }
+        }
     }
 }
