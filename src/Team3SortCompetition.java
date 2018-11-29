@@ -6,9 +6,14 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public int challengeTwo(String[] arr, String query) {
-        return 0;
+        stringMergeSort(arr);
+        for(int i = 0;i<arr.length;i++){
+            if(arr[i].equalsIgnoreCase(query))
+            return i;
+        }
+        return -1;
     }
-    //test this with both insertion sort and bubbl
+
     public int challengeThree(int[] arr) {
         insertionSort(arr);
         return findMedian(arr);
@@ -93,5 +98,45 @@ public class Team3SortCompetition extends SortCompetition {
         }
         swap(arr,index+1,right);
         return index + 1;
+    }
+    public int stringMergeSort(String[] arr){
+        int length = arr.length;
+        String[] temp = new String[length];
+        stringMergeSortHelper(arr, 0,length-1, temp);
+    }
+    public void stringMergeSortHelper(String[] arr, int left, int right, String[] temp){
+        if(left<right){
+            int middle = (left + right)/2;
+            stringMergeSortHelper(arr, left, middle, temp);
+            stringMergeSortHelper(arr, middle+1, right, temp);
+            stringMerge(arr,left,middle,right,temp);
+        }
+    }
+    public void stringMerge(String[] arr, int left, int middle, int right, String[] temp){
+        int i = left; int j = middle + 1; int k = left;
+        while(i <= middle && j <= right) {
+            if(arr[i].compareTo(arr[j]) < 0) {
+                temp[k] = arr[i];
+                i++;
+            }else{
+                temp[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+        while(i <= middle){
+            temp[k] = arr[i];
+            i++;
+            k++;
+        }
+        while (j <= right) {
+            temp[k] = arr[j];
+            j++;
+            k++;
+        }
+        for(int l = left;l <= right;l++){
+            arr[l] = temp[l];
+        }
+
     }
 }
