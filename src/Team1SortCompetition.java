@@ -37,7 +37,7 @@ public class Team1SortCompetition extends SortCompetition {
 
     public int challengeThree(int[] arr) {
         insertionSort(arr);
-        return -1;
+        return getMedian(arr);
     }
 
     public int challengeFour(int[][] arr) {
