@@ -3,18 +3,23 @@ public class Runner
     public static int[] array = new int[10000];
     public static int[] array1 = new int[10000];
     public static int[][] array2 = new int[1000][1000];
-    public static void main(String[] args) {
-        for (int i = 0; i < array.length - 1; i++) {
-            array[i] = (int) (Math.random() * 10000) + 1;
+    public static void main(String[] args)
+    {
+        for(int i = 0; i < array.length - 1; i++)
+        {
+            array[i] = (int)(Math.random() * 10000) + 1;
         }
 
-        for (int i = 0; i < array1.length - 1; i++) {
-            array1[i] = (int) (Math.random() * 10000) + 1;
+        for(int i = 0; i < array1.length - 1; i++)
+        {
+            array1[i] = (int)(Math.random() * 10000) + 1;
         }
 
-        for (int i = 0; i < array2.length - 1; i++) {
-            for (int j = 0; j < array2[i].length - 1; j++) {
-                array2[i][j] = (int) (Math.random() * 10000) + 1;
+        for(int i = 0; i < array2.length - 1; i++)
+        {
+            for(int j = 0; j < array2[i].length - 1; j++)
+            {
+                array2[i][j] = (int)(Math.random() * 10000) + 1;
             }
         }
 
@@ -25,20 +30,21 @@ public class Runner
         double endTime = System.currentTimeMillis();
         System.out.println("C1 took " + (endTime - startTime) + " milliseconds.");
 
-        for (int i = 0; i < array.length - 1; i++) {
+        for(int i = 0; i < array.length - 1; i++)
+        {
             System.out.print(array[i] + " ");
         }
 
         System.out.println("");
         System.out.println("");
         startTime = System.currentTimeMillis();
-        String[] arr = stringArrs();
-        System.out.println("je");
+        String[] arr= stringArrs();
         System.out.println(a.challengeTwo(arr, "je"));
         endTime = System.currentTimeMillis();
         System.out.println("C2 took " + (endTime - startTime) + " milliseconds.");
 
-        for (int i = 0; i < arr.length - 1; i++) {
+        for(int i = 0; i < arr.length - 1; i++)
+        {
             System.out.print(arr[i] + " ");
         }
 
@@ -49,10 +55,10 @@ public class Runner
         endTime = System.currentTimeMillis();
         System.out.println("C3 took " + (endTime - startTime) + " milliseconds.");
 
-        for (int i = 0; i < array1.length - 1; i++) {
+        for(int i = 0; i < array1.length - 1; i++)
+        {
             System.out.print(array1[i] + " ");
         }
-
 
         System.out.println("");
         System.out.println("");
@@ -81,8 +87,6 @@ public class Runner
          }**/
 
     }
-
-
 
     public static String[] stringArrs()
     {

@@ -117,9 +117,9 @@ public class Team5SortCompetition extends SortCompetition
 
         int[] c;
         int[] d;
-        for(int i = 0; i < med.length - 1; i++)
+        for(int i = 0; i < med.length; i++)
         {
-            for(int j = i; j <= med.length - 1; j++)
+            for(int j = i; j < med.length; j++)
             {
                 if (med[i] > med[j])
                 {
@@ -134,12 +134,6 @@ public class Team5SortCompetition extends SortCompetition
                     med[j] = a;
                 }
             }
-        }
-
-        System.out.println("TEST 3");
-        for(int i = 0; i < arr[0].length - 1; i++)
-        {
-            System.out.print(arr[0][i] + " ");
         }
 
         if(med.length % 2 > 0)
