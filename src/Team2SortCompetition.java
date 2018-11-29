@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Integer.min;
+
 public class Team2SortCompetition extends SortCompetition{
 
     /**
@@ -202,13 +204,91 @@ public class Team2SortCompetition extends SortCompetition{
      */
     public int challengeFive(Comparable[] challenge5, Comparable cquery)
     {
-
+        timSort(challenge5,10000);
+        if(Arrays.asList(challenge5).contains(cquery))
+        {
+            List<Comparable> challenger5 = Arrays.asList(challenge5);
+            return (challenger5.indexOf(cquery));
+        }
+        else
+        {
+            return (-1);
+        }
     }
 
-    /**
-     * Basic greeting.
-     * @return Greeting.
-     */
+    public void insertionSortC(Comparable arr[], int left, int right)
+    {
+        for (int i = left + 1; i <= right; i++) {
+            Comparable temp = arr[i];
+        int j = i - 1;
+        while (arr[j].compareTo(temp) > 0 && j >= left) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+            arr[j+1] = temp;
+        }
+    }
+
+    public void mergeC(Comparable arr[], int l, int m, int r)
+    {
+        int len1 = m - l + 1, len2 = r - m;
+        Comparable[] left = new Comparable[len1];
+        Comparable[] right = new Comparable[len2];
+        for (int i = 0; i < len1; i++)
+            left[i] = arr[l + i];
+        for (int i = 0; i < len2; i++)
+            right[i] = arr[m + 1 + i];
+        int i = 0;
+        int j = 0;
+        int k = l;
+
+        while (i < len1 && j < len2)
+        {
+            if (left[i].compareTo(right[j]) <= 0)
+            {
+                arr[k] = left[i];
+                i++;
+            }
+            else {
+                arr[k] = right[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < len1)
+        {
+            arr[k] = left[i];
+            k++;
+            i++;
+        }
+        while (j < len2)
+        {
+            arr[k] = right[j];
+            k++;
+            j++;
+        }
+    }
+
+    public void timSort(Comparable arr[], int n)
+    {
+        for (int i = 0; i < n; i+=32) {
+            insertionSortC(arr, i, min((i + 31), (n - 1)));
+        }
+        for (int size = 32; size < n; size = 2*size)
+        {
+            for (int left = 0; left < n; left += 2*size)
+            {
+                int mid = left + size - 1;
+                int right = min((left + 2*size - 1), (n-1));
+                mergeC(arr, left, mid, right);
+            }
+        }
+    }
+
+/**
+ * Basic greeting.
+ * @return Greeting.
+ */
     public String greeting()
     {
         return "Welcome to Team Super Sorter's Very Cool Omega Sorting Bot";
