@@ -149,7 +149,19 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-        return 0;
+       /** for(int i = 0; i < arr.length - 1; i++)
+        {
+            for(int j = i; j <= arr.length-1; j++)
+            {
+                if (arr[i].compareTo(arr[j])>0)
+                {
+                    Comparable a=arr[i];
+                    arr[i] = arr[j];
+                    arr[j]=a;
+                }
+            }
+        }**/
+       return 0;
     }
 
     public String greeting()
