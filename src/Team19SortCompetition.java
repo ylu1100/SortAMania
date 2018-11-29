@@ -87,7 +87,7 @@ public class Team19SortCompetition extends SortCompetition{
         for(int x = from; x <= to; x++){
             elts[x] = temp[x];
         }
-        System.out.println(Arrays.toString(elts));
+        //System.out.println(Arrays.toString(elts));
     }
     //---------------------------------------------------
     private static void bubbleSort(String[] list1){
