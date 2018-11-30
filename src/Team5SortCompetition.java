@@ -65,7 +65,7 @@ public class Team5SortCompetition extends SortCompetition
     {
         int a = 0;
         int b = 0;
-        for(int i = 0; i < arr.length - 1; i++)
+        for(int i = 0; i <= arr.length - 1; i++)
         {
             for(int j = i; j <= arr.length - 1; j++)
             {
