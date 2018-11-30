@@ -25,6 +25,16 @@ public class runner
         print2dArr(c3);
         System.out.println(x.challengeFour(c3));
 
+        Comparable[] c5 = new Comparable[10];
+        String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};
+        for(int i=0; i<C5S.length; i++)
+        {
+            c5[i] =
+        }
+
+
+
+
     }
 
     public static int[] generateIntArr(int x)
