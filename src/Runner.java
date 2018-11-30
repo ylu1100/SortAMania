@@ -4,43 +4,40 @@ public abstract class Runner extends SortCompetition {
 
     public static void main(String[] args){
 
-        SortCompetition x = new Team19SortCompetition();
-        System.out.println(x.greeting() + "\n");
+        SortCompetition team19 = new Team19SortCompetition();
+        System.out.println(team19.greeting() + "\n");
 
         int[] arr1 = randomIntArr(10000, 0, 10000);
-        System.out.println(Arrays.toString(arr1));
-        long startTime = System.nanoTime();
-        System.out.println(x.challengeOne(arr1));
-        long endTime = System.nanoTime();
-        long duration = endTime - startTime;
-        System.out.println(Arrays.toString(arr1));
-        System.out.println("Challenge 1 Duration: " + duration + " nanoseconds \n");
+        System.out.println("Unsorted: " + Arrays.toString(arr1));
+        long duration = System.currentTimeMillis();
+        System.out.println("Returns: " + team19.challengeOne(arr1));
+        duration = System.currentTimeMillis() - duration;
+        System.out.println("Sorted: " + Arrays.toString(arr1));
+        System.out.println("Challenge 1 Duration: " + duration * 0.001 + " seconds \n");
 
         String[] arr2 = randomStrArr(1000,5);
-        System.out.println(Arrays.toString(arr2));
-        startTime = System.nanoTime();
-        System.out.println(x.challengeTwo(arr2,"bingo"));
-        endTime = System.nanoTime();
-        duration = endTime - startTime;
-        System.out.println(Arrays.toString(arr2));
-        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds \n");
+        System.out.println("Unsorted: " + Arrays.toString(arr2));
+        duration = System.currentTimeMillis();
+        System.out.println("Returns: " + team19.challengeTwo(arr2,"bingo"));
+        duration = System.currentTimeMillis() - duration;
+        System.out.println("Sorted: " + Arrays.toString(arr2));
+        System.out.println("Challenge 2 Duration: " + duration  * 0.001 + " seconds \n");
 
-        int[] arr3 = x.merge();
+        /*int[] arr3 = ();
         System.out.println(Arrays.toString(arr2));
-        startTime = System.nanoTime();
-        System.out.println(x.challengeTwo(arr2,"bingo"));
-        endTime = System.nanoTime();
+        startTime = System.currentTimeMillis();
+        System.out.println(team19.challengeTwo(arr2,"bingo"));
+        endTime = System.currentTimeMillis();
         duration = endTime - startTime;
         System.out.println(Arrays.toString(arr2));
-        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds");
+        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds");*/
 
         int[][] arr4 = random3DIntArr(1000,10000);
         System.out.println(Arrays.toString(arr4[0]));
-        startTime = System.nanoTime();
-        System.out.println(x.challengeFour(arr4));
-        endTime = System.nanoTime();
-        duration = endTime - startTime;
-        System.out.println("Challenge 4 Duration: " + duration + " nanoseconds");
+        duration = System.currentTimeMillis();
+        System.out.println("Returns: " + team19.challengeFour(arr4));
+        duration = System.currentTimeMillis() - duration;
+        System.out.println("Challenge 4 Duration: " + duration  * 0.001 + " seconds");
 
 
     }
