@@ -46,7 +46,7 @@ public class Runner
 
         long time2 = System.nanoTime();
 
-        a1.challengeTwo(arr2,"AAOBX");
+        a2.challengeTwo(arr2,"AAOBX");
 
         System.out.println("\n"+(double)(System.nanoTime() - time2)/(100000000)+" secs");
 
