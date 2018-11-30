@@ -45,6 +45,32 @@ public class TestRunnerDeleteLater
         printTable.print2D(array2d);
         System.out.println("Median equals: " + median);
         System.out.println("Challenge Four Time Taken: " + time * .000000001 + " Seconds");
+
+        System.out.println("Unsorted");
+        Comparable[] c5 = new Comparable[10000];
+        String[] t = randomStringArr(c5.length,2);
+        for(int i = 0; i < c5.length; i++)
+        {
+            c5[i] = new test(t[i]);
+        }
+        String s = "";
+        for(int i=0;i<c5.length;i++)
+        {
+            s+= c5[i] + " ";
+        }
+        System.out.println(s);
+        time = System.nanoTime();
+        String a = "HA";
+        test c = new test(a);
+        System.out.println(team2.challengeFive(c5,c));
+        time = System.nanoTime()-time;
+        s= "";
+        for(int i=0;i<c5.length;i++)
+        {
+            s+= c5[i] + " ";
+        }
+        System.out.println(s);
+        System.out.println(time*.000000001 + " seconds");
     }
 
     public static int[] randomIntsArr(int x)
@@ -96,6 +122,16 @@ public class TestRunnerDeleteLater
     public static void printStringArray(String[] arr){
         String temp = "";
         for(int i=0;i<arr.length;i++){
+            temp+= arr[i] + ", ";
+        }
+        System.out.println(temp);
+    }
+
+    public static void printComparableArray(Comparable[] arr)
+    {
+        String temp = "";
+        for(int i = 0; i < arr.length; i++)
+        {
             temp+= arr[i] + ", ";
         }
         System.out.println(temp);
