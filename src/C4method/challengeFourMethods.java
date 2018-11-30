@@ -20,7 +20,7 @@ public class challengeFourMethods {
         int j = mid +1;
         int k = left;
         while (i <=mid && j<=right) {
-            if (arr[index][i] <= arr[index][j]) {
+            if (arr[index][i] < arr[index][j]) {
                 temp[k] = arr[index][i];
                 i++;
             }

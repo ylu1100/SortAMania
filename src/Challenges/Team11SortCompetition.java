@@ -33,7 +33,7 @@ public class Team11SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFour(int[][] arr) {
-        
+
         int[] medianArr = new int[arr.length];
         for (int x = 0; x < arr.length; x++) {
             challengeFourMethods.merge(arr,x);
@@ -43,7 +43,7 @@ public class Team11SortCompetition extends SortCompetition {
         int[] temp = new int[10000];
         challengeFourMethods2.InsertionSort(arr,medianArr,temp);
 
-        return 0;
+        return (medianArr[medianArr.length/2]);
     }
 
     @Override
