@@ -129,10 +129,10 @@ public class Runner
                     return arr;
                 }
 
-                arr[j]= true;
-                arr[j+1]=56;
-                arr[j+2]=0.56;
-                arr[j+3]="yo";
+                arr[j]=true;
+                arr[j+1]=(int)Math.random()*1000;
+                arr[j+2]=Math.random()*1000;
+                arr[j+3]=stringArrs()[(int)Math.random()*9000];
                 arr[j+4]='r';
                 j=j+5;
             }
