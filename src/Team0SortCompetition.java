@@ -90,7 +90,12 @@ public class Team0SortCompetition extends SortCompetition
 
      */
     public int challengeFour(int[][] arr) {
-        return 0;
+        int insideM;
+        for(int i=0;i<arr.length;i++)
+        {
+            insideM=sorter1(arr[i]);
+
+        }
     }
 
     @Override
@@ -107,5 +112,25 @@ public class Team0SortCompetition extends SortCompetition
     @Override
     public String greeting() {
         return null;
+    }
+    public int sorter1(int[] arr) {
+        int N = arr.length;
+        int i;
+        int j;
+        int temp;
+        for (i = 1; i< N; i++)
+        {
+            j = i;
+            temp = arr[i];
+            while (j > 0 && temp < arr[j-1])
+            {
+                arr[j] = arr[j-1];
+                j = j-1;
+            }
+            arr[j] = temp;
+        }
+        int sum =arr[50000]+arr[49999];
+        int a= sum/2;
+        return a;
     }
 }
