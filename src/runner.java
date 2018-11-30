@@ -21,9 +21,9 @@ public class runner
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
 */
-        int[] c3 = generateIntArr(12);
-        printIntArray(c3);
-        System.out.println(x.challengeThree(c3));
+        int[][] c3 = generate2IntArr(10,10);
+        print2dArr(c3);
+        System.out.println(x.challengeFour(c3));
 
     }
 
@@ -32,9 +32,32 @@ public class runner
         int[] z = new int[x];
         for(int i=0;i<x;i++)
         {
-            z[i] = (int)(Math.random()*10000);
+                z[i] = (int)(Math.random()*10000);
         }
         return z;
+    }
+    public static int[][] generate2IntArr(int x, int y)
+    {
+        int[][] arr = new int[x][y];
+        for(int i = 0; i<x; i++)
+        {
+            for(int j = 0; j<y; j++)
+            {
+                arr[i][j] = (int) (Math.random()*10000);
+            }
+        }
+        return arr;
+    }
+    public static void print2dArr(int[][] arr)
+    {
+        String temp = "";
+        for(int i=0; i<arr.length;i++)
+        {
+            for(int j = 0; j<arr[i].length; j++)
+            {
+                temp+=arr[i][j] + ", ";
+            }
+        }
     }
     public static void printIntArray(int[] arr){
         String temp = "";
@@ -43,8 +66,6 @@ public class runner
         }
         System.out.println(temp);
     }
-
-
     public static void printStringArray(String[] arr){
         String temp = "";
         for(int i=0;i<arr.length;i++){

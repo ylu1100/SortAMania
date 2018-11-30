@@ -63,18 +63,20 @@ public class Team18SortCompetition extends SortCompetition
         {
             insertionSort(arr[i]);
         }
-        if(arr.length%2!=0)
+        if(arr.length%2==0)
         {
-            median = arr[arr.length/2][arr.length/2];
-        }
-        else
-        {
-            median = (arr[arr.length/2][arr.length/2]*arr[arr.length/2][(arr.length/2)+1])/2;
+            median = (arr[arr.length/2][arr.length/2]*arr[(arr.length/2)-1][(arr.length/2)-1])/2;
         }
         return median;
     }
 
     @Override
+    public int challengeFive(Comparable[] arr, Comparable query) {
+        return 0;
+    }
+
+    @Override
+/*
     public int challengeFive(Comparable[] arr, Comparable query) {
 
 
@@ -88,8 +90,7 @@ public class Team18SortCompetition extends SortCompetition
             }
         }
     }
-
-    @Override
+*/
     public String greeting() {
         return null;
     }
