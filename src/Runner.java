@@ -23,14 +23,13 @@ public abstract class Runner extends SortCompetition {
         System.out.println("Sorted: " + Arrays.toString(arr2));
         System.out.println("Challenge 2 Duration: " + duration  * 0.001 + " seconds \n");
 
-        /*int[] arr3 = ();
-        System.out.println(Arrays.toString(arr2));
-        startTime = System.currentTimeMillis();
-        System.out.println(team19.challengeTwo(arr2,"bingo"));
-        endTime = System.currentTimeMillis();
-        duration = endTime - startTime;
-        System.out.println(Arrays.toString(arr2));
-        System.out.println("Challenge 2 Duration: " + duration + " nanoseconds");*/
+        int[] arr3 = (partiallySorted());
+        System.out.println(Arrays.toString(arr3));
+        duration = System.currentTimeMillis();
+        System.out.println(team19.challengeThree(arr3));
+        duration = System.currentTimeMillis() - duration;
+        //System.out.println(Arrays.toString(arr3));
+        System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");
 
         int[][] arr4 = random3DIntArr(1000,10000);
         System.out.println(Arrays.toString(arr4[0]));
@@ -39,7 +38,12 @@ public abstract class Runner extends SortCompetition {
         duration = System.currentTimeMillis() - duration;
         System.out.println("Challenge 4 Duration: " + duration  * 0.001 + " seconds");
 
-
+        int[][] arr5 = random3DIntArr(1000,10000);
+        System.out.println(Arrays.toString(arr4[0]));
+        duration = System.currentTimeMillis();
+        System.out.println("Returns: " + team19.challengeFour(arr4));
+        duration = System.currentTimeMillis() - duration;
+        System.out.println("Challenge 5 Duration: " + duration  * 0.001 + " seconds");
     }
 
     public static int[] randomIntArr(int length, int min, int max){
@@ -80,4 +84,17 @@ public abstract class Runner extends SortCompetition {
         return (int)(Math.random()*(max-min));
     }
 
+    public static int[] partiallySorted()
+    {
+        int[] partial = new int[100000];
+        for (int i = 0; i <= 75000; i++)
+        {
+            partial[i] = i;
+        }
+        for (int j = 75001; j < 100000; j++)
+        {
+            partial[j] = (int)(Math.random()*10000);
+        }
+        return partial;
+    }
 }
