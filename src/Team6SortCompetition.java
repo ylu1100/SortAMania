@@ -62,8 +62,54 @@ public class Team6SortCompetition extends SortCompetition{
 
     public int challengeFour(int[][] arr)
     {
-        
-        //return median of the median array;
+        int[] arr2 = new int[arr.length];
+        int x = 0;
+        int y = 0;
+        int median = 0;
+        for(int i = 0; i<arr.length; i++)
+        {
+            int[] subarr = new int[arr[i].length];
+            for(int j = 0; j<arr[i].length; j++)
+            {
+                subarr[j] = arr[i][j];
+            }
+            int[] sortedArr = quickSort(subarr,0,arr.length-1);
+            int x2 = 0;
+            int y2 = 0;
+            int median2 = 0;
+            while(x2 != y2)
+            {
+                x2++;
+                y2--;
+                if((x2+1) == y2 || (y2-1) == x2)
+                {
+                    int total = sortedArr[x2] + sortedArr[y2];
+                    median2 = (total/2);
+                    break;
+                }
+                else
+                {
+                    median2 = sortedArr[x2];
+                }
+            }
+            arr2[i] = median2;
+        }
+        while(x != y)
+        {
+            x++;
+            y--;
+            if((x+1) == y || (y-1) == x)
+            {
+                int total = arr2[x] + arr2[y];
+                median = (total/2);
+                break;
+            }
+            else
+            {
+                median = arr2[x];
+            }
+        }
+        return median;
     }
 
     public int challengeFive(Comparable[] arr, Comparable query)
