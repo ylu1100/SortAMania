@@ -3,14 +3,22 @@ package Challenges;
 import C4method.challengeFourMethods;
 import C4method.challengeFourMethods2;
 
-public class Team11SortCompetition extends SortCompetition {
+public class Team11SortCompetition extends SortCompetition
+{
 
-
-
+    public int median(int[] arr)
+    {
+        if(arr.length % 2 != 0)
+        {
+            return arr[arr.length / 2];
+        }
+        return (arr[(arr.length / 2) - 1] + arr[arr.length / 2]) / 2;
+    }
     @Override
-    public int challengeOne(int[] arr) {
-
-        return 0;
+    public int challengeOne(int[] arr)
+    {
+        quickSort(arr,0, arr.length);
+        return median(arr);
     }
 
     @Override
@@ -27,7 +35,8 @@ public class Team11SortCompetition extends SortCompetition {
     }
 
     @Override
-    public int challengeThree(int[] arr) {
+    public int challengeThree(int[] arr)
+    {
         return 0;
     }
 
@@ -47,12 +56,14 @@ public class Team11SortCompetition extends SortCompetition {
     }
 
     @Override
-    public int challengeFive(Comparable[] arr, Comparable query) {
+    public int challengeFive(Comparable[] arr, Comparable query)
+    {
         return 0;
     }
 
     @Override
-    public String greeting() {
+    public String greeting()
+    {
         return null;
     }
 
@@ -64,17 +75,17 @@ public class Team11SortCompetition extends SortCompetition {
     }
 
 
-        public static void BubbleSort(String[] arr) {
-            Boolean swappable = true;
-            String place = "";
-            while (swappable == true) {
-                boolean swapped = false;
-                for (int i = 0; i < arr.length - 1; i++) {
-                    if (arr[i+1].compareTo(arr[i]) < 0) {
-                        swapped = true;
-                        place = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = place;
+    public static void BubbleSort(String[] arr) {
+        Boolean swappable = true;
+        String place = "";
+        while (swappable == true) {
+            boolean swapped = false;
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (arr[i+1].compareTo(arr[i]) < 0) {
+                    swapped = true;
+                    place = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = place;
                     }
                 }
                 if (!swapped) {
@@ -83,5 +94,33 @@ public class Team11SortCompetition extends SortCompetition {
             }
         }
 
+    public int partition(int[] arr, int left, int right)
+    {
+        int pivot = arr[right];
+        int i = arr[left - 1];
+        for(int j = left; j < right; j++)
+        {
+            if(arr[j] <= pivot)
+            {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[right];
+        arr[right] = temp;
 
+        return i + 1;
+    }
+    public void quickSort(int[] arr, int left, int right)
+    {
+        if (left < right) {
+            int pivot = partition(arr, left, right);
+
+            quickSort(arr, left, pivot - 1);
+            quickSort(arr, pivot + 1, right);
+        }
+    }
 }
