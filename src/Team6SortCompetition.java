@@ -26,6 +26,11 @@ public class Team6SortCompetition extends SortCompetition{
 
     public int challengeTwo(String[] arr, String query)
     {
+
+
+
+
+
         for (int i = 0; i < arr.length; i++)
         {
             if(query.equals(arr[i]))
@@ -115,6 +120,7 @@ public class Team6SortCompetition extends SortCompetition{
     public int challengeFive(Comparable[] arr, Comparable query)
     {
         //return position of the object, or -1 if not found;
+        return -1;
     }
 
     public String greeting()
@@ -130,6 +136,7 @@ public class Team6SortCompetition extends SortCompetition{
             quickSort(arr,left,pivot-1);
             quickSort(arr,pivot+1,right);
         }
+        return arr;
     }
 
     public int partition(int[] arr, int left, int right)
@@ -169,5 +176,39 @@ public class Team6SortCompetition extends SortCompetition{
                 }
             }
         }
+        return list1;
     }
+
+    public String[] quickSort(String[] arr, int left, int right)
+    {
+        if(left<right)
+        {
+            int pivot = partition(arr,left,right);
+            quickSort(arr,left,pivot-1);
+            quickSort(arr,pivot+1,right);
+        }
+        return arr;
+    }
+
+    public int partition(String[] arr, int left, int right)
+    {
+        String temp;
+        String pivot = arr[right];
+        int i = left-1;
+        for(int j = left; j<right; j++)
+        {
+            if(arr[j].compareTo(pivot) <= 0)
+            {
+                i++;
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        temp = arr[i+1];
+        arr[i+1]=arr[right];
+        arr[right]=temp;
+        return i+1;
+    }
+
 }
