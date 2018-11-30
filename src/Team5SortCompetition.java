@@ -141,6 +141,13 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
+        //Maybe these specific instances of objects that implement compareTo, aren't the ones that will be tested.
+        //It will probably be a set of related (ancestor/descendant) classes that will return an int based on their
+        //own compareTo method.
+        //Maybe just test this with ints or something, and organize them into a list.
+        
+        //This for loop is meant for allocating a static position to an element in the unsorted arr.
+       // for (int i=0; i<arr.length)
        for(int i = 0; i < arr.length - 1; i++)
         {
             for(int j = i; j <= arr.length-1; j++)

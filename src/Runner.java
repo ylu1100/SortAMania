@@ -114,6 +114,10 @@ public class Runner
 
         public static Comparable[] compArr()
         {
+            //Maybe these specific instances of objects that implement compareTo, aren't the ones that will be tested.
+            //It will probably be a set of related (ancestor/descendant) classes that will return an int based on their
+            //own compareTo method.
+            //Maybe just test this with ints or something, and organize them into a list.
             Comparable[] arr= new Comparable[10000];
             int j=0;
             while (j<10000)
@@ -123,7 +127,7 @@ public class Runner
                     arr[j]=getRandomBoolean();
                     arr[j+1]=(int)Math.random()*1000;
                     arr[j+2]=Math.random()*1000;
-                    arr[j+3]=stringArrs()[(int)Math.random()*9000];
+                    arr[j+3]=stringArrs()[(int)(Math.random()*9000)];
                     arr[j+4]=getRandomChar();
                     //arr[j+5]=getRandomBoolean();
                     return arr;
