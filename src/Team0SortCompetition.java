@@ -90,8 +90,32 @@ public class Team0SortCompetition extends SortCompetition
     }
 
     @Override
-    public int challengeFive(Comparable[] arr, Comparable query) {
-        return 0;
+    public int challengeFive(Comparable[] arr, Comparable query)
+    {
+        int a = 1;
+        Comparable y;
+        while(a != 0)
+        {
+            a = 0;
+            for(int i = 0; i < arr.length-1; i++)
+            {
+                if(arr[i].compareTo(arr[i+1]) > 0)
+                {
+                    y = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = y;
+                    a++;
+                }
+            }
+        }
+        for(int l=0;l<arr.length;l++)
+        {
+            if(query.equals(arr[l]))//change maybe
+            {
+                return l;
+            }
+        }
+        return -1;
     }
 
     @Override

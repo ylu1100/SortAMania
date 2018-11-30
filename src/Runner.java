@@ -43,17 +43,17 @@ public class Runner
         }
         System.out.print("Unsorted Array: ");
         //for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+" ");}
-        Team0SortCompetition a2 = new Team0SortCompetition();
+
 
         long time2 = System.nanoTime();
 
-        a2.challengeTwo(arr2,"AAOBX");
+        a1.challengeTwo(arr2,"AAOBX");
 
         System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time2)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
         //for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
-        System.out.println("\n"+"Median: "+a2.challengeTwo(arr2,"AAOBX"));
+        System.out.println("\n"+"Median: "+a1.challengeTwo(arr2,"AAOBX"));
 
 
         System.out.println("\n"+"Competition3");
@@ -72,17 +72,17 @@ public class Runner
         System.out.print("Unsorted Array: ");
         //for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
 
-        Team0SortCompetition a3 = new Team0SortCompetition();
+
 
         long time3 = System.nanoTime();
 
-        a3.challengeThree(arr3);
+        a1.challengeThree(arr3);
 
         System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time3)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
         //for(int i=0;i<arr3.length;i++) { System.out.print(arr3[i]+" "); }
-        System.out.println("\n"+"Median: "+a3.challengeThree(arr3));
+        System.out.println("\n"+"Median: "+a1.challengeThree(arr3));
 
         System.out.println("\n"+"Competition4");
 
@@ -93,17 +93,22 @@ public class Runner
                 arr4[i][k] = (int) (Math.random() * 10000) + 0;
             }
         }
-        Team0SortCompetition a4 = new Team0SortCompetition();
+
         System.out.print("Unsorted Array: ");
         //for(int i=0;i<arr4.length;i++){for(int k=0;k<arr4[i].length;k++) {System.out.println(arr4[i][k] + " ");}}
         long time4 = System.nanoTime();
 
-        a4.challengeFour(arr4);
+        a1.challengeFour(arr4);
 
         System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time4)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
         //for(int i=0;i<arr4.length;i++){for(int k=0;k<arr4[i].length;k++) {System.out.println(arr4[i][k] + " ");}}
-        System.out.println("\n"+"Median: "+a4.challengeFour(arr4));
+        System.out.println("\n"+"Median: "+a1.challengeFour(arr4));
+
+        System.out.println("\n"+"Competition5");
+
+        int ba=a1.challengeFive(arr2,"JH");
+        System.out.println(ba);
     }
 }
