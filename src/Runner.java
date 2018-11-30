@@ -24,9 +24,9 @@ public abstract class Runner extends SortCompetition {
         System.out.println("Challenge 2 Duration: " + duration  * 0.001 + " seconds \n");
 
         int[] arr3 = (partiallySorted());
-        System.out.println(Arrays.toString(arr3));
+        //System.out.println(Arrays.toString(arr3));
         duration = System.currentTimeMillis();
-        System.out.println(team19.challengeThree(arr3));
+        System.out.println("Returns: " + team19.challengeThree(arr3));
         duration = System.currentTimeMillis() - duration;
         //System.out.println(Arrays.toString(arr3));
         System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");
@@ -36,14 +36,16 @@ public abstract class Runner extends SortCompetition {
         duration = System.currentTimeMillis();
         System.out.println("Returns: " + team19.challengeFour(arr4));
         duration = System.currentTimeMillis() - duration;
-        System.out.println("Challenge 4 Duration: " + duration  * 0.001 + " seconds");
+        System.out.println("Challenge 4 Duration: " + duration  * 0.001 + " seconds \n");
 
-        Things[] arr5 = randomThings(10000);
-        /*System.out.println(Arrays.toString(arr4[0]));
+        Things[] arr5 = randomThingsArr(10000);
+        System.out.println("Unsorted: " + printThingsArr(arr5));
+        Things z = new Things();
         duration = System.currentTimeMillis();
-        System.out.println("Returns: " + team19.challengeFour(arr4));
+        System.out.println("Returns: " + team19.challengeFive(arr5, z));
         duration = System.currentTimeMillis() - duration;
-        System.out.println("Challenge 5 Duration: " + duration  * 0.001 + " seconds");*/
+        System.out.println("Sorted: " + printThingsArr(arr5));
+        System.out.println("Challenge 5 Duration: " + duration  * 0.001 + " seconds");
     }
 
     public static int[] randomIntArr(int length, int min, int max){
@@ -98,10 +100,22 @@ public abstract class Runner extends SortCompetition {
         return partial;
     }
 
-    public static Things[] randomThings(int num)
+    public static Things[] randomThingsArr(int num)
     {
         Things[] arr = new Things[num];
-
+        for(int i = 0; i < num; i++){
+            arr[i] = new Things();
+        }
         return arr;
     }
+
+    public static String printThingsArr(Things[] x){
+        String arr = "[";
+        for(int i = 0; i < x.length; i++){
+            arr += x[i].value + ", ";
+        }
+        arr += "]";
+        return arr;
+    }
+
 }
