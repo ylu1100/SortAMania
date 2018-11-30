@@ -24,20 +24,17 @@ public class Team18SortCompetition extends SortCompetition
     {
         bubbleSort(arr);
         int result = 0;
+
         for(int i = 0; i< arr.length; i++)
         {
-            if(arr[i].compareTo(query)==0)
+            if(arr[i].contains(query))
             {
                 result = i;
                 return result;
             }
-            else if()
-            {
-                result = -1;
-                return result;
-            }
+
         }
-        return result;
+        return -1;
     }
 
     @Override

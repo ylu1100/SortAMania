@@ -14,10 +14,10 @@ public class runner
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
 */
-        String[] c2 = {"bacon","apple","dog","cat"};
+        String[] c2 = {"bacon","apple","dog","cat","fruit","chicken", "spaghetti", "mirshahiduzzaman", "pigsblood", "loopers"};
         printStringArray(c2);
         timer = System.nanoTime();
-        System.out.println(x.challengeTwo(c2,"dog"));
+        System.out.println(x.challengeTwo(c2,"chicken"));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
