@@ -5,16 +5,14 @@ public class runner
         Team18SortCompetition x = new Team18SortCompetition();
 /*
         int[] c1 = generateIntArr(7);
-
         printIntArray(c1);
-*/
+ */
         long timer = System.nanoTime();
-/*
+ /*
         System.out.println("median is " + x.challengeOne(c1));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
-*/
-/*
+
         String[] c2 = {"bacon","apple","dog","cat","fruit","chicken", "spaghetti", "mirshahiduzzaman", "pigsblood", "loopers"};
         printStringArray(c2);
         timer = System.nanoTime();
@@ -23,12 +21,9 @@ public class runner
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
 */
-        int[] c3 = generateIntArr(10);
+        int[] c3 = generateIntArr(12);
         printIntArray(c3);
-        timer = System.nanoTime();
         System.out.println(x.challengeThree(c3));
-        timer = System.nanoTime() - timer;
-        System.out.println(timer*.000000001 + " seconds");
 
         Comparable[] c5 = new Comparable[10];
         String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};
