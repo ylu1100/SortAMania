@@ -80,7 +80,7 @@ public class Runner
         System.out.println("\n"+(double)(System.nanoTime() - time3)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
-        //for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
+        //for(int i=0;i<arr3.length;i++) { System.out.print(arr3[i]+" "); }
         System.out.println("\n"+a3.challengeThree(arr3));
 
         int[][] arr4= new int[1000][1000];
@@ -90,6 +90,16 @@ public class Runner
                 arr4[i][k] = (int) (Math.random() * 10000) + 0;
             }
         }
+        Team0SortCompetition a4 = new Team0SortCompetition();
 
+        long time4 = System.nanoTime();
+
+        a4.challengeFour(arr4);
+
+        System.out.println("\n"+(double)(System.nanoTime() - time4)/(100000000)+" secs");
+
+        System.out.print("Sorted Array: ");
+        //for(int i=0;i<arr4.length;i++){for(int k=0;k<arr4[i].length;k++) {System.out.println(arr4[i][k] + " ");}}
+        System.out.println("\n"+a4.challengeFour(arr4));
     }
 }

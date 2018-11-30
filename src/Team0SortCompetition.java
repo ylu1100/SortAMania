@@ -78,14 +78,15 @@ public class Team0SortCompetition extends SortCompetition
 
     @Override
     public int challengeFour(int[][] arr) {
-        String[] hold=new String[1000];
+        int[] hold=new int[1000];
+        int[] holdpos= new int[1000];
         int insideM;
-        for(int i=0;i<arr.length;i++)
-        {
-            insideM=sorter1(arr[i]);
-            hold[i]=insideM;
+        for(int i=0;i<arr.length;i++) {
+            insideM = sorter1(arr[i]);
+            hold[i] = insideM;
         }
-
+        int answer =sorter1(hold);
+        return answer;
     }
 
     @Override
@@ -113,7 +114,7 @@ public class Team0SortCompetition extends SortCompetition
             }
             arr[j] = temp;
         }
-        int sum =arr[50000]+arr[49999];
+        int sum =arr[500]+arr[499];
         int a= sum/2;
         return a;
     }
