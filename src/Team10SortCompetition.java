@@ -24,23 +24,32 @@ public int challengeTwo(String[] arr, String query)
 {
     String temp = "";
     int x = 0;
+    int wordPos = -1;
     boolean sorting = false;
-    {
-        while (sorting = false)
-        {
+        while (sorting = false) {
             for (int i = 0; i < arr.length; i++)
             {
                 x = arr[i].compareTo(arr[i + 1]);
+                if ((arr[i].compareTo(query) == 0))
+                {
+                    wordPos = i;
+                }
                 if (x < 0)
                 {
                     temp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = temp;
                 }
-
+            }
+            for (int a = 0; a < arr.length; a++)
+            {
+                if (x )
+            }
+            {
+                sorting = true;
             }
         }
-    }
+    return wordPos;
 }
 public int challengeThree(int[] arr)
 {
