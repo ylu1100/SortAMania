@@ -103,8 +103,7 @@ public class Runner
         System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time4)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
-        //for(int i=0;i<arr4.length;i++){for(int k=0;k<arr4[i].length;k++) {System.out.println(arr4[i][k] + " ");}}
-        System.out.println("\n"+"Median: "+a1.challengeFour(arr4));
+        //for(int i=0;i<arr4.length;i++) { for(int k=0;k<arr4[i].length;k++)  {    System.out.print(arr4[i][k] + " ");    }   System.out.println(); }System.out.println("\n"+"Median: "+a1.challengeFour(arr4));
 
         System.out.println("\n"+"Competition5");
 

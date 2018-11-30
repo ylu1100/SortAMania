@@ -79,7 +79,7 @@ public class Team0SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr) {
         int[] hold=new int[1000];
-        int[] holdpos= new int[1000];
+
         int insideM;
         for(int i=0;i<arr.length;i++) {
             insideM = sorter1(arr[i]);
