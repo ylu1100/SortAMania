@@ -126,14 +126,4 @@ public class TestRunnerDeleteLater
         }
         System.out.println(temp);
     }
-
-    public static void printComparableArray(Comparable[] arr)
-    {
-        String temp = "";
-        for(int i = 0; i < arr.length; i++)
-        {
-            temp+= arr[i] + ", ";
-        }
-        System.out.println(temp);
-    }
 }
