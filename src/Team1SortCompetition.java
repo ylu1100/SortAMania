@@ -43,15 +43,15 @@ public class Team1SortCompetition extends SortCompetition {
     public int challengeFour(int[][] arr) {
         int[] temp = new int[arr.length];
         for(int i=0;i<arr.length;i++){
-
+            Runner.printIntArray(arr[i]);
             quickSort(arr[i],0,arr[i].length-1);
-
+            Runner.printIntArray(arr[i]);
             temp[i] = getMedian(arr[i]);
-
+            System.out.println(getMedian(arr[i]));
         }
 
         quickSort(temp,0,temp.length-1);
-
+        Runner.printIntArray(temp);
         return getMedian(temp);
     }
 

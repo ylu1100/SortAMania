@@ -42,7 +42,7 @@ public class Runner {
         printIntArray(c3);
         System.out.println("Unsorted");
         timer = System.nanoTime();
-        System.out.println(x.challengeThree(c3));
+        System.out.println(x.challengeThree(c3) + " Median");
 
         timer = System.nanoTime() - timer;
         System.out.println("Sorted");
