@@ -43,11 +43,11 @@ public class challengeFourMethods {
         for (int m = left; m <right; m++) {
             arr[index][m] = temp[m];
         }
-        System.out.println("This is the new Arr:");
+        /*/System.out.println("This is the new Arr:");
         for (int n = 0; n <arr.length; n++) {
 
             System.out.println(arr[n]);
-        }
+        }/*/
 
 
     }
