@@ -1,4 +1,4 @@
-public abstract class Team10SortCompetition extends SortCompetition {
+public class Team10SortCompetition{
     public int challengeOne(int[] arr)
     {
         int temp1;
@@ -26,13 +26,10 @@ public int challengeTwo(String[] arr, String query)
     int x = 0;
     boolean sorting = false;
     {
-        while (sorting = false)
-        {
-            for (int i = 0; i < arr.length; i++)
-            {
+        while (sorting = false) {
+            for (int i = 0; i < arr.length; i++) {
                 x = arr[i].compareTo(arr[i + 1]);
-                if (x < 0)
-                {
+                if (x < 0) {
                     temp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = temp;
@@ -64,5 +61,13 @@ public int challengeThree(int[] arr)
     median = ((arr[50000]+arr[50001])/2);
     return median;
 }
+public int[] randomIntsArr(int amount)
+{
+    int tempArr[] = new int[amount];
+    for(int i = 0;i<amount;i++)
+    {
 
+    }
+    return tempArr;
+}
 }
