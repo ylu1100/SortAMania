@@ -23,7 +23,6 @@ public class Team18SortCompetition extends SortCompetition
     public int challengeTwo(String[] arr, String query)
     {
         bubbleSort(arr);
-
         int result = 0;
         for(int i = 0; i< arr.length; i++)
         {
@@ -32,7 +31,8 @@ public class Team18SortCompetition extends SortCompetition
                 result = i;
                 return result;
             }
-            else {
+            else if()
+            {
                 result = -1;
                 return result;
             }

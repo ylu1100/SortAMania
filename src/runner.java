@@ -3,11 +3,11 @@ public class runner
     public static void main(String[] args)
     {
         Team18SortCompetition x = new Team18SortCompetition();
-
+/*
         int[] c1 = generateIntArr(7);
 
         printIntArray(c1);
-
+*/
         long timer = System.nanoTime();
 /*
         System.out.println("median is " + x.challengeOne(c1));
