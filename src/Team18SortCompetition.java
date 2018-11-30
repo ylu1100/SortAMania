@@ -78,11 +78,15 @@ public class Team18SortCompetition extends SortCompetition
     public int challengeFive(Comparable[] arr, Comparable query) {
 
 
+        bubbleSort(arr);
 
-
-
-
-        return 0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i].compareTo(query) == 0)
+            {
+                return i;
+            }
+        }
     }
 
     @Override
