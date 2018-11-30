@@ -50,6 +50,7 @@ public class Team3SortCompetition extends SortCompetition {
     /*
     ----------------------------------SORTING-METHODS--------------------------------
      */
+
     public void bubblesort(int []arr){
         int endOfArray = arr.length;
         int swapcount = 0;
@@ -68,6 +69,7 @@ public class Team3SortCompetition extends SortCompetition {
             }
         }
     }
+
     public void insertionSort(int[] arr){
         for (int i = 1; i < arr.length; i++) {
             int currSwap = arr[i];
@@ -79,6 +81,7 @@ public class Team3SortCompetition extends SortCompetition {
             arr[currPos] = currSwap;
         }
     }
+
     public void quickSort(int[] arr, int left, int right){
         if(left<right){
             int pivot = partition(arr,left,right);
@@ -87,8 +90,11 @@ public class Team3SortCompetition extends SortCompetition {
             quickSort(arr,pivot+1, right);
         }
     }
+
     public int partition(int[] arr, int left, int right){
-        int pivot = (int)(Math.random() * arr.length);
+        int pivotpos = (int)(Math.random()*arr.length); //has to be a random number between left and right
+        int pivot = arr[pivotpos];
+        swap(arr,right,pivotpos);
         int index = left-1;
         for(int i=left;i<right;i++) {
             if (arr[i] <= pivot) {
@@ -98,12 +104,15 @@ public class Team3SortCompetition extends SortCompetition {
         }
         swap(arr,index+1,right);
         return index + 1;
+
     }
-    public int stringMergeSort(String[] arr){
+
+    public void stringMergeSort(String[] arr){
         int length = arr.length;
         String[] temp = new String[length];
         stringMergeSortHelper(arr, 0,length-1, temp);
     }
+
     public void stringMergeSortHelper(String[] arr, int left, int right, String[] temp){
         if(left<right){
             int middle = (left + right)/2;
@@ -112,6 +121,7 @@ public class Team3SortCompetition extends SortCompetition {
             stringMerge(arr,left,middle,right,temp);
         }
     }
+
     public void stringMerge(String[] arr, int left, int middle, int right, String[] temp){
         int i = left; int j = middle + 1; int k = left;
         while(i <= middle && j <= right) {
