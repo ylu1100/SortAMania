@@ -27,7 +27,8 @@ public int challengeTwo(String[] arr, String query)
     int x = 0;
     int wordPos = -1;
     boolean sorting = false;
-        while (sorting = false) {
+        while (sorting = false)
+        {
             for (int i = 0; i < arr.length; i++)
             {
                 x = arr[i].compareTo(arr[i + 1]);
@@ -44,10 +45,10 @@ public int challengeTwo(String[] arr, String query)
             }
             for (int a = 0; a < arr.length; a++)
             {
-                if (x )
-            }
-            {
-                sorting = true;
+                if (arr[a].compareTo(arr[a + 1]) > 0)
+                {
+                    sorting = true;
+                }
             }
         }
     return wordPos;
