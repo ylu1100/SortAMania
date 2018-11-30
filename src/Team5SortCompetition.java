@@ -31,15 +31,13 @@ public class Team5SortCompetition extends SortCompetition
          * @param query
          * @return -1 if query is not an element in arr.
          */
-        //int a = 0;
-        //int b = 0;
         for(int i = 0; i < arr.length - 1; i++)
         {
             for(int j = i; j <= arr.length-1; j++)
             {
                 if (arr[i].compareTo(arr[j])>0)
                 {
-                    String a=arr[i];
+                    String a = arr[i];
                     arr[i] = arr[j];
                     arr[j]=a;
                 }
@@ -54,7 +52,7 @@ public class Team5SortCompetition extends SortCompetition
         //This part needs to come after the sort, since the sort is just a system out statement.
         for (int i=0; i<arr.length; i++)
         {
-            if (arr[i].equals(query))
+            if (arr[i].contains(query))
             {
                 return i;
             }
