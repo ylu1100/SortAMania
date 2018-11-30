@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class TestRunnerDeleteLater
 {
     public static void main(String[] args)
@@ -32,16 +34,17 @@ public class TestRunnerDeleteLater
         printStringArray(randStringArr);
 
         System.out.println("Unsorted");
-        printStringArray(generate2DIntArr);
+        int[][]array2d = random2dIntsArr(1000);
+        printTable.print2D(array2d);
 
         time = System.nanoTime();
-        median = team2.challengeFour(generate2DIntArr());
+        median = team2.challengeFour(array2d);
         time = System.nanoTime() - time;
-        System.out.println("Challenge Two Time Taken: " + time * .000000001 + " Seconds");
-        System.out.println("First Instance: " + median);
 
         System.out.println("Sorted");
-        printStringArray(randStringArr);
+        printTable.print2D(array2d);
+        System.out.println("Median equals: " + median);
+        System.out.println("Challenge Four Time Taken: " + time * .000000001 + " Seconds");
     }
 
     public static int[] randomIntsArr(int x)
@@ -54,14 +57,15 @@ public class TestRunnerDeleteLater
         return z;
     }
 
-    public static int[][] generate2DIntArr(int x){
-        int[][] z = new int[x][x];
-        for(int i=0;i<z.length;i++){
-            for(int j=0;j<z[i].length;j++){
-                z[i][j] = (int)(Math.random()*10001);
+    public static int[][] random2dIntsArr(int n) {
+        int[][] challengeFour = new int[n][n];
+        Random random = new Random();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                challengeFour[i][j] = random.nextInt(10000);
             }
         }
-        return z;
+        return challengeFour;
     }
 
     public static String[] randomStringArr(int num, int length) {
@@ -82,6 +86,14 @@ public class TestRunnerDeleteLater
     }
 
     public static void printArr(int[] arr){
+        String temp = "";
+        for(int i=0;i<arr.length;i++){
+            temp+= arr[i] + ", ";
+        }
+        System.out.println(temp);
+    }
+
+    public static void print2dArr(int[][] arr){
         String temp = "";
         for(int i=0;i<arr.length;i++){
             temp+= arr[i] + ", ";
