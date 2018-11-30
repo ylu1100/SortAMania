@@ -30,6 +30,16 @@ public class runner
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
 
+        Comparable[] c5 = new Comparable[10];
+        String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};
+        for(int i=0; i<C5S.length; i++)
+        {
+            c5[i] =
+        }
+
+
+
+
     }
 
     public static int[] generateIntArr(int x)
