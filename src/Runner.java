@@ -4,6 +4,7 @@ public class Runner
 {
     public static void main(String[] args)
     {
+        System.out.println("Competition1");
         int[] arr= new int[10000];
         for(int i=0;i<arr.length;i++)
         {
@@ -24,7 +25,7 @@ public class Runner
         // for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
         System.out.println("\n"+"Median: "+a1.challengeOne(arr));
 
-        System.out.println();
+        System.out.println("\n"+"Competition2");
 
         String[] arr2 = new String[10000];
         int a; String h; String c="";
@@ -55,7 +56,7 @@ public class Runner
         System.out.println("\n"+"Median: "+a2.challengeTwo(arr2,"AAOBX"));
 
 
-        System.out.println();
+        System.out.println("\n"+"Competition3");
 
 
         int[] arr3= new int[100000];
@@ -83,7 +84,7 @@ public class Runner
         //for(int i=0;i<arr3.length;i++) { System.out.print(arr3[i]+" "); }
         System.out.println("\n"+"Median: "+a3.challengeThree(arr3));
 
-        System.out.println();
+        System.out.println("\n"+"Competition4");
 
         int[][] arr4= new int[1000][1000];
         for(int i=0;i<1000;i++)
