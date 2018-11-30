@@ -28,6 +28,14 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr)
     {
+        int[] mids = new int[arr.length];
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            quickSort(arr[i],0,arr.length-1);
+            toString(arr[i]);
+        }
+
         return 0;
     }
 

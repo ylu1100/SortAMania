@@ -38,6 +38,21 @@ public class Runner {
         System.out.println("Time Taken: " + diff + "\n");
 
         //CHALLENGE 4
+        Team17SortCompetition c4 = new Team17SortCompetition();
+        int[][] challengeFourList = new int[10][1];
+
+        for(int i = 0;i<challengeFourList.length;i++)
+        {
+            challengeFourList[i] = Team17SortCompetition.randIntArr(1);//Team17SortCompetition.randStringArr(10,5);
+
+            Team17SortCompetition.toString(challengeFourList[i]);
+        }
+
+        start = System.currentTimeMillis();
+        System.out.println(c4.challengeFour(challengeFourList));
+        diff = System.currentTimeMillis() - start;
+
+        System.out.println("Time Taken: " + diff + "\n");
 
         //CHALLENGE 5
     }
