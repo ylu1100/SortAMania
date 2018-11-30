@@ -42,6 +42,7 @@ public class Team1SortCompetition extends SortCompetition {
 
     public int challengeFour(int[][] arr) {
         for(int i=0;i<arr.length;i++){
+
             quickSort(arr[i],0,arr[i].length-1);
         }
 
