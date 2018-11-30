@@ -64,7 +64,7 @@ public class Team6SortCompetition extends SortCompetition{
     {
         int[] arr2 = new int[arr.length];
         int x = 0;
-        int y = 0;
+        int y = arr2.length-1;
         int median = 0;
         for(int i = 0; i<arr.length; i++)
         {
@@ -73,9 +73,9 @@ public class Team6SortCompetition extends SortCompetition{
             {
                 subarr[j] = arr[i][j];
             }
-            int[] sortedArr = quickSort(subarr,0,arr.length-1);
+            int[] sortedArr = quickSort(subarr,0,subarr.length-1);
             int x2 = 0;
-            int y2 = 0;
+            int y2 = subarr.length-1;
             int median2 = 0;
             while(x2 != y2)
             {
