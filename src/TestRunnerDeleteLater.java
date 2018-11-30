@@ -12,10 +12,10 @@ public class TestRunnerDeleteLater
         System.out.println("Unsorted");
         printArr(randIntArr);
 
-        long time = System.nanoTime();
+        long time1 = System.nanoTime();
         int median = team2.challengeOne(randIntArr);
-        time = System.nanoTime() - time;
-        System.out.println("Challenge One Time Taken: " + time * .000000001 + " Seconds");
+        time1 = System.nanoTime() - time1;
+        System.out.println("Challenge One Time Taken: " + time1 * .000000001 + " Seconds");
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
@@ -24,27 +24,45 @@ public class TestRunnerDeleteLater
         System.out.println("Unsorted");
         printStringArray(randStringArr);
 
-        time = System.nanoTime();
+        long time2 = System.nanoTime();
         median = team2.challengeTwo(randStringArr,"ABCDE");
-        time = System.nanoTime() - time;
-        System.out.println("Challenge Two Time Taken: " + time * .000000001 + " Seconds");
+        time2 = System.nanoTime() - time2;
+        System.out.println("Challenge Two Time Taken: " + time2 * .000000001 + " Seconds");
         System.out.println("First Instance: " + median);
 
         System.out.println("Sorted");
         printStringArray(randStringArr);
 
+        System.out.println("\nChallenge 3");
+
+        int[] c3 = new int[10];
+
+        c3[0] = (int)(Math.random () * 10) + 1;
+        for (int a = 1; a < c3.length; a++) {
+            c3[a] = c3[a-1] + (int)(Math.random() * 12) - 2;
+        }
+        printArr(c3);
+        System.out.println("Unsorted");
+        long time3 = System.nanoTime();
+        System.out.println(team2.challengeThree(c3) + " Median");
+
+        time3 = System.nanoTime() - time3;
+        System.out.println("Sorted");
+        System.out.println(time2*.000000001 + " seconds");
+        printArr(c3);
+
         System.out.println("Unsorted");
         int[][]array2d = random2dIntsArr(1000);
         printTable.print2D(array2d);
 
-        time = System.nanoTime();
+        long time4 = System.nanoTime();
         median = team2.challengeFour(array2d);
-        time = System.nanoTime() - time;
+        time4 = System.nanoTime() - time4;
 
         System.out.println("Sorted");
         printTable.print2D(array2d);
         System.out.println("Median equals: " + median);
-        System.out.println("Challenge Four Time Taken: " + time * .000000001 + " Seconds");
+        System.out.println("Challenge Four Time Taken: " + time4 * .000000001 + " Seconds");
 
         System.out.println("Unsorted");
         Comparable[] c5 = new Comparable[10000];
@@ -59,18 +77,24 @@ public class TestRunnerDeleteLater
             s+= c5[i] + " ";
         }
         System.out.println(s);
-        time = System.nanoTime();
         String a = "HA";
         test c = new test(a);
+        long time5 = System.nanoTime();
         System.out.println(team2.challengeFive(c5,c));
-        time = System.nanoTime()-time;
+        time5 = System.nanoTime()-time5;
         s= "";
         for(int i=0;i<c5.length;i++)
         {
             s+= c5[i] + " ";
         }
         System.out.println(s);
-        System.out.println(time*.000000001 + " seconds");
+        System.out.println(time5*.000000001 + " seconds");
+        System.out.println();
+        System.out.println("Challenge One Time Taken: " + time1 * .000000001 + " Seconds");
+        System.out.println("Challenge Two Time Taken: " + time2 * .000000001 + " Seconds");
+        System.out.println("Challenge Three Time Taken: " + time3 * .000000001 + " Seconds");
+        System.out.println("Challenge Four Time Taken: " + time4 * .000000001 + " Seconds");
+        System.out.println("Challenge Five Time Taken: " + time5 * .000000001 + " Seconds");
     }
 
     public static int[] randomIntsArr(int x)
