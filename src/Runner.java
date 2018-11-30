@@ -4,7 +4,7 @@ public class Runner {
         System.out.println("Challenge 1");
         Team1SortCompetition x = new Team1SortCompetition();
 
-        int[] c1 = generateIntArr(5);
+        int[] c1 = generateIntArr(10000);
 
         printIntArray(c1);
         System.out.println("Unsorted");
