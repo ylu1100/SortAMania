@@ -33,7 +33,7 @@ public class Runner {
 
         System.out.println("\nChallenge 3");
 
-        int[] c3 = new int[100000];
+        int[] c3 = new int[10];
 
         c3[0] = (int)(Math.random () * 10) + 1;
         for (int a = 1; a < c3.length; a++) {
@@ -50,14 +50,13 @@ public class Runner {
         printIntArray(c3);
 
         System.out.println("\nChallenge 4");
-        int[][] c4 =  generate2DIntArr(1000);
+        int[][] c4 =  generate2DIntArr(10000);
 
         timer = System.nanoTime();
 
         System.out.println(x.challengeFour(c4));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
-
 
         System.out.println("\nChallenge 5");
         Comparable[] c5 = new Comparable[100];

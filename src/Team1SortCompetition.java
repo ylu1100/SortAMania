@@ -41,18 +41,12 @@ public class Team1SortCompetition extends SortCompetition {
     }
 
     public int challengeFour(int[][] arr) {
-        int[] temp = new int[arr.length];
         for(int i=0;i<arr.length;i++){
-            Runner.printIntArray(arr[i]);
             quickSort(arr[i],0,arr[i].length-1);
-            Runner.printIntArray(arr[i]);
-            temp[i] = getMedian(arr[i]);
-            System.out.println(getMedian(arr[i]));
         }
 
-        quickSort(temp,0,temp.length-1);
-        Runner.printIntArray(temp);
-        return getMedian(temp);
+        quickMSort(arr,0,arr.length-1);
+        return getMedian(arr);
     }
 
     public int challengeFive(Comparable[] arr, Comparable query) {
@@ -71,7 +65,15 @@ public class Team1SortCompetition extends SortCompetition {
         return "Hello.";
     }
 
-    public int getMedian(int[] arr){
+    public static int getMedian(int[][] arr){
+        if((int)(arr.length/2.0)+1%2==0){
+            return (getMedian(arr[(arr.length/2)-1]) + getMedian(arr[arr.length/2])/2);
+        } else {
+            return getMedian(arr[(arr.length/2)]);
+        }
+    }
+
+    public static int getMedian(int[] arr){
         if((int)(arr.length/2.0)+1%2==0){
             return (arr[(arr.length/2)-1] + arr[arr.length/2])/2;
         } else {
@@ -79,7 +81,32 @@ public class Team1SortCompetition extends SortCompetition {
         }
     }
 
-    public static void quickSort(int[] arr, int left, int right) {
+    public void quickMSort(int[][] arr, int left, int right) {
+        if (left < right) {
+            int pivot = mPartition(arr, left, right);
+
+            quickMSort(arr, left, pivot - 1);
+            quickMSort(arr, pivot + 1, right);
+        }
+
+    }
+
+    public int mPartition(int[][] arr, int left, int right) {
+        int pivot = getMedian(arr[right]);
+        int i = left - 1;
+        for (int j = left; j < right; j++) {
+            if (getMedian(arr[j]) <= pivot) {
+                i++;
+                swap(arr, i, j);
+            }
+        }
+
+        swap(arr, i + 1, right);
+        return i + 1;
+    }
+
+
+    public void quickSort(int[] arr, int left, int right) {
         if (left < right) {
             int pivot = partition(arr, left, right);
 
@@ -89,7 +116,7 @@ public class Team1SortCompetition extends SortCompetition {
 
     }
 
-    public static int partition(int[] arr, int left, int right) {
+    public int partition(int[] arr, int left, int right) {
         int pivot = arr[right];
         int i = left - 1;
         for (int j = left; j < right; j++) {
@@ -103,8 +130,14 @@ public class Team1SortCompetition extends SortCompetition {
         return i + 1;
     }
 
-    public static void swap(int[] arr, int a, int b) {
+    public void swap(int[] arr, int a, int b) {
         int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    public void swap(int[][] arr, int a, int b) {
+        int[] temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;
     }
@@ -160,7 +193,7 @@ public class Team1SortCompetition extends SortCompetition {
         }
 
     }
-    public static void insertionSort(int[] list1)
+    public void insertionSort(int[] list1)
     {
         int[] list1Copy = new int[list1.length];
 
@@ -188,13 +221,13 @@ public class Team1SortCompetition extends SortCompetition {
         }
 
     }
-    public static void mergeSort(Comparable[] arr)
+    public void mergeSort(Comparable[] arr)
     {
         int n= arr.length;
         Comparable[] temp = new Comparable[n];
         mergeSortHelper(arr,0,n-1,temp);
     }
-    public static void mergeSortHelper(Comparable[] arr,int left,int right, Comparable[] temp)
+    public void mergeSortHelper(Comparable[] arr,int left,int right, Comparable[] temp)
     {
         if(left<right)
         {
@@ -204,7 +237,7 @@ public class Team1SortCompetition extends SortCompetition {
             merge(arr,left,mid,right,temp);
         }
     }
-    public static void merge(Comparable[] arr,int left,int mid,int right,Comparable[] temp)
+    public void merge(Comparable[] arr,int left,int mid,int right,Comparable[] temp)
     {
         int i=left;
         int j=mid+1;
