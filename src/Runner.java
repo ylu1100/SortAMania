@@ -18,11 +18,11 @@ public class Runner
 
         a1.challengeOne(arr);
 
-        System.out.println("\n"+(double)(System.nanoTime() - time)/(100000000)+" secs");
+        System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time)/(100000000)+" secs");
         
         System.out.print("Sorted Array: ");
         // for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
-        System.out.println("\n"+a1.challengeOne(arr));
+        System.out.println("\n"+"Median: "+a1.challengeOne(arr));
 
         System.out.println();
 
@@ -40,7 +40,7 @@ public class Runner
             }
             arr2[i]=c;
         }
-
+        System.out.print("Unsorted Array: ");
         //for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+" ");}
         Team0SortCompetition a2 = new Team0SortCompetition();
 
@@ -48,11 +48,11 @@ public class Runner
 
         a2.challengeTwo(arr2,"AAOBX");
 
-        System.out.println("\n"+(double)(System.nanoTime() - time2)/(100000000)+" secs");
+        System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time2)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
         //for(int i=0;i<arr2.length;i++) { System.out.print(arr2[i]+" "); }
-        System.out.println("\n"+a2.challengeTwo(arr2,"AAOBX"));
+        System.out.println("\n"+"Median: "+a2.challengeTwo(arr2,"AAOBX"));
 
 
         System.out.println();
@@ -77,11 +77,13 @@ public class Runner
 
         a3.challengeThree(arr3);
 
-        System.out.println("\n"+(double)(System.nanoTime() - time3)/(100000000)+" secs");
+        System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time3)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
         //for(int i=0;i<arr3.length;i++) { System.out.print(arr3[i]+" "); }
-        System.out.println("\n"+a3.challengeThree(arr3));
+        System.out.println("\n"+"Median: "+a3.challengeThree(arr3));
+
+        System.out.println();
 
         int[][] arr4= new int[1000][1000];
         for(int i=0;i<1000;i++)
@@ -91,15 +93,16 @@ public class Runner
             }
         }
         Team0SortCompetition a4 = new Team0SortCompetition();
-
+        System.out.print("Unsorted Array: ");
+        //for(int i=0;i<arr4.length;i++){for(int k=0;k<arr4[i].length;k++) {System.out.println(arr4[i][k] + " ");}}
         long time4 = System.nanoTime();
 
         a4.challengeFour(arr4);
 
-        System.out.println("\n"+(double)(System.nanoTime() - time4)/(100000000)+" secs");
+        System.out.println("\n"+"Time: "+(double)(System.nanoTime() - time4)/(100000000)+" secs");
 
         System.out.print("Sorted Array: ");
         //for(int i=0;i<arr4.length;i++){for(int k=0;k<arr4[i].length;k++) {System.out.println(arr4[i][k] + " ");}}
-        System.out.println("\n"+a4.challengeFour(arr4));
+        System.out.println("\n"+"Median: "+a4.challengeFour(arr4));
     }
 }
