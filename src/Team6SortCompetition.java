@@ -115,7 +115,14 @@ public class Team6SortCompetition extends SortCompetition{
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-        //return position of the object, or -1 if not found;
+        Comparable[] sortedArr = insertionSort(arr);
+        for (int i = 0; i < sortedArr.length; i++)
+        {
+            if(query.equals(sortedArr[i]))
+            {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -207,4 +214,22 @@ public class Team6SortCompetition extends SortCompetition{
         return i+1;
     }
 
+    public Comparable[] insertionSort(Comparable[] list1)
+    {
+        Comparable min;
+        for(int i = 1; i < list1.length; i++)
+        {
+            min = list1[i];
+            Comparable temp = min;
+            for(int x = i-1; x>=0; x--)
+            {
+                if(list1[x].compareTo(temp) > 0)
+                {
+                    list1[x+1] = list1[x];
+                    list1[x] = temp;
+                }
+            }
+        }
+        return list1;
+    }
 }
