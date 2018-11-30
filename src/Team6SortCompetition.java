@@ -6,21 +6,7 @@ public class Team6SortCompetition extends SortCompetition{
         int j = arr.length-1;
         int median = 0;
         int[] sortedArr = quickSort(arr,0,arr.length-1);
-        while(i != j)
-        {
-            i++;
-            j--;
-            if((i+1) == j || (j-1) == i)
-            {
-                int total = sortedArr[i] + sortedArr[j];
-                median = (total/2);
-                break;
-            }
-            else
-            {
-                median = sortedArr[i];
-            }
-        }
+        median(i,j,sortedArr,0);
         return median;
     }
 
@@ -43,21 +29,7 @@ public class Team6SortCompetition extends SortCompetition{
         int j = arr.length-1;
         int median = 0;
         int[] sortedArr = insertionSort(arr);
-        while(i != j)
-        {
-            i++;
-            j--;
-            if((i+1) == j || (j-1) == i)
-            {
-                int total = sortedArr[i] + sortedArr[j];
-                median = (total/2);
-                break;
-            }
-            else
-            {
-                median = sortedArr[i];
-            }
-        }
+        median(i,j,sortedArr,0);
         return median;
     }
 
@@ -231,5 +203,24 @@ public class Team6SortCompetition extends SortCompetition{
             }
         }
         return list1;
+    }
+    public int median(int i, int j, int[] sortedArr, int median)
+    {
+        while(i != j)
+        {
+            i++;
+            j--;
+            if((i+1) == j || (j-1) == i)
+            {
+                int total = sortedArr[i] + sortedArr[j];
+                median = (total/2);
+                break;
+            }
+            else
+            {
+                median = sortedArr[i];
+            }
+        }
+        return median;
     }
 }
