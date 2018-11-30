@@ -239,51 +239,82 @@ public class Team2SortCompetition extends SortCompetition{
     public int challengeFour(int[][] challenge4)
     {
         double median;
-        int[]rowMediums = new int[9999];
-        int[][]temp2d = new int[1000][1000];
+        int[]rowMediums = new int[challenge4.length];
         for(int i=0;i<challenge4.length;i++)
         {
-            for(int j=0;j<challenge4.length;j++)
-            {
-                int n = challenge4.length;
-                for (int gap = n/2; gap > 0; gap /= 2)
-                {
-                    for (int k = gap; k < n; k += 1)
-                    {
-                        int temp = challenge4[i][k];
-                        int l;
-                        for (l = k; l >= gap && challenge4[i][l - gap] > temp; l -= gap) {
-                            challenge4[j] = challenge4[l - gap];
-                        }
-                        challenge4[i][l] = temp;
-                    }
-                }
-            }
+            quicksort(challenge4[i],0,challenge4.length-1);
+            rowMediums[i] = (challenge4[i][(challenge4.length/2)-1] + challenge4[i][challenge4.length/2])/2;
         }
-        for (int i=0;i<challenge4.length;i++)
-        {
-            median = ((double)challenge4[i][4999] + (double)challenge4[i][5000])/2;
-            median = Math.floor(median);
-            rowMediums[i] = (int)median;
-        }
-        for(int i=0;i<challenge4.length;i++)
-        {
-            int cMin = rowMediums[i];
-            int x = i - 1;
-            while(x>=0 && rowMediums[x] > cMin)
-            {
-                rowMediums[x+1] = rowMediums[x];
-                for(int j=0;j<1000;j++)
-                {
-                    challenge4[i][x+1] = challenge4[i][x];
-                }
-
-                x--;
-            }
-            rowMediums[x+1] = cMin;
-        }
-        median = (double)rowMediums[rowMediums[4999]/2];
+        quicksort2(rowMediums,challenge4,0,rowMediums.length-1);
+        median = (rowMediums[(rowMediums.length/2)-1] + rowMediums[rowMediums.length/2])/2;
+        System.out.println((int)median);
         return (int)median;
+    }
+
+    public static void quicksort(int[] arr,int l, int r)
+    {
+        if(l<r)
+        {
+            int pivot = partition(arr, l, r);
+            quicksort(arr, l,pivot-1);
+            quicksort(arr,pivot+1, r);
+        }
+    }
+
+    public static int partition(int[] arr, int l, int r)
+    {
+        int pivot = arr[r];
+        int i = l-1;
+        for(int j=l;j<r;j++)
+        {
+            if(arr[j]<=pivot)
+            {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i+1];
+        arr[i+1] = arr[r];
+        arr[r] = temp;
+        return i+1;
+    }
+
+    public static void quicksort2(int[] arr,int[][] arr2,int l, int r)
+    {
+        if(l<r)
+        {
+            int pivot = partition2(arr,arr2, l, r);
+            quicksort2(arr, arr2,l,pivot-1);
+            quicksort2(arr,arr2,pivot+1, r);
+        }
+    }
+
+    public static int partition2(int[] arr,int[][] arr2,int l, int r)
+    {
+        int pivot = arr[r];
+        int i = l-1;
+        for(int j=l;j<r;j++)
+        {
+            if(arr[j]<=pivot)
+            {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                int[] temp2 = arr2[i];
+                arr2[i] = arr2[j];
+                arr2[j] = temp2;
+            }
+        }
+        int temp = arr[i+1];
+        arr[i+1] = arr[r];
+        arr[r] = temp;
+        int[] temp2 = arr2[i+1];
+        arr2[i+1] = arr2[r];
+        arr2[r] = temp2;
+        return i+1;
     }
 
     /**
