@@ -38,12 +38,12 @@ public abstract class Runner extends SortCompetition {
         duration = System.currentTimeMillis() - duration;
         System.out.println("Challenge 4 Duration: " + duration  * 0.001 + " seconds");
 
-        int[][] arr5 = random3DIntArr(1000,10000);
-        System.out.println(Arrays.toString(arr4[0]));
+        Things[] arr5 = randomThings(10000);
+        /*System.out.println(Arrays.toString(arr4[0]));
         duration = System.currentTimeMillis();
         System.out.println("Returns: " + team19.challengeFour(arr4));
         duration = System.currentTimeMillis() - duration;
-        System.out.println("Challenge 5 Duration: " + duration  * 0.001 + " seconds");
+        System.out.println("Challenge 5 Duration: " + duration  * 0.001 + " seconds");*/
     }
 
     public static int[] randomIntArr(int length, int min, int max){
@@ -96,5 +96,12 @@ public abstract class Runner extends SortCompetition {
             partial[j] = (int)(Math.random()*10000);
         }
         return partial;
+    }
+
+    public static Things[] randomThings(int num)
+    {
+        Things[] arr = new Things[num];
+
+        return arr;
     }
 }
