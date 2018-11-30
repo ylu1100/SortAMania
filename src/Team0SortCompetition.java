@@ -27,12 +27,6 @@ public class Team0SortCompetition extends SortCompetition
 
 
     @Override
-    /*
-    challengeTwo: String sorting and searching
-    Data Set - an array of 10,000 random strings (strings will be of length 5)
-    Task: Sort the list and determine if it contains a given string, return the index of the first instance of that string, or -1 if not found
-
-     */
     public int challengeTwo(String[] arr, String query) {
         int a = 1;
         String y;
@@ -61,7 +55,6 @@ public class Team0SortCompetition extends SortCompetition
     }
 
     @Override
-
     public int challengeThree(int[] arr) {
         int N = arr.length;
         int i;
@@ -84,27 +77,18 @@ public class Team0SortCompetition extends SortCompetition
     }
 
     @Override
-    /*
-    Data Set - a mostly sorted array of 100,000 integers (>75% of elements are in the correct order)
-    Task: Sort the list and return the median
-
-     */
     public int challengeFour(int[][] arr) {
+        String[] hold=new String[1000];
         int insideM;
         for(int i=0;i<arr.length;i++)
         {
             insideM=sorter1(arr[i]);
-
+            hold[i]=insideM;
         }
+
     }
 
     @Override
-    /*
-    Data Set - an array of 10,000 objects that implement the comparable interface
-    Task: Sort the array by the compareTo method, and determine if it contains the element given. Return the position of the object, or -1 if not found.
-    Hint: You must use a stable sort for this challenge, equivalent objects should stay in the same order
-
-     */
     public int challengeFive(Comparable[] arr, Comparable query) {
         return 0;
     }
