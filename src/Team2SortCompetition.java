@@ -57,73 +57,73 @@ public class Team2SortCompetition extends SortCompetition{
 
     /**
      * Merge Sort for Strings
-     * @param string1 Array to be sorted.
+     * @param challenge5 Array to be sorted.
      */
-    public static void mergeSortStrings(String[] string1)
+    public static void mergeSortStrings(String[] challenge5)
     {
-        int n = string1.length;
-        String[] tempstring = new String[n];
-        mergeSortStringHelper(string1, 0,n-1,tempstring);
+        int n = challenge5.length;
+        String[] tempc = new String[n];
+        mergeSortStringHelper(challenge5, 0,n-1,tempc);
     }
 
     /**
      * Creates merges calls for recursion.
-     * @param string1 Array to be sorted.
-     * @param strleft Left.
-     * @param strright Right.
-     * @param tempstring Temporary array to move elements to.
+     * @param challenge5 Array to be sorted.
+     * @param leftc Left.
+     * @param rightc Right.
+     * @param tempc Temporary array to move elements to.
      */
-    public static void mergeSortStringHelper(String[] string1, int strleft, int strright, String[] tempstring)
+    public static void mergeSortStringHelper(String[] challenge5, int leftc, int rightc, String[] tempc)
     {
-        if(strleft < strright)
+        if(leftc < rightc)
         {
-            int strmiddle = (strleft + strright) / 2;
-            mergeSortStringHelper(string1, strleft, strmiddle, tempstring);
-            mergeSortStringHelper(string1, strmiddle + 1, strright, tempstring);
-            mergeStrings(string1, strleft, strmiddle, strright, tempstring);
+            int middlec = (leftc + rightc) / 2;
+            mergeSortStringHelper(challenge5, leftc, middlec, tempc);
+            mergeSortStringHelper(challenge5, middlec + 1, rightc, tempc);
+            mergeStrings(challenge5, leftc, middlec, rightc, tempc);
         }
     }
 
     /**
      * Merges the String arrays back together.
-     * @param string1 Array to be sorted.
-     * @param strleft Left.
-     * @param strmiddle Middle.
-     * @param strright Right.
-     * @param tempstring Temp array to move elements to.
+     * @param challenge5 Array to be sorted.
+     * @param leftc Left.
+     * @param middlec Middle.
+     * @param rightc Right.
+     * @param tempc Temp array to move elements to.
      */
-    public static void mergeStrings(String[] string1, int strleft, int strmiddle, int strright, String[] tempstring)
+    public static void mergeStrings(String[] challenge5, int leftc, int middlec, int rightc, String[] tempc)
     {
-        for(int i = strleft; i <= strright; i++)
+        for(int i = leftc; i <= rightc; i++)
         {
-            tempstring[i] = string1[i];
+            tempc[i] = challenge5[i];
         }
-        int i = strleft;
-        int j = strmiddle + 1;
-        int k = strleft;
-        while(i <= strmiddle && j <= strright)
+        int i = leftc;
+        int j = middlec + 1;
+        int k = leftc;
+        while(i <= middlec && j <= rightc)
         {
-            if(tempstring[i].compareTo(tempstring[j]) < 0)
+            if(tempc[i].compareTo(tempc[j]) < 0)
             {
-                string1[k] = tempstring[i];
+                challenge5[k] = tempc[i];
                 i++;
             }
             else
             {
-                string1[k] = tempstring[j];
+                challenge5[k] = tempc[j];
                 j++;
             }
             k++;
         }
-        while(i <= strmiddle)
+        while(i <= middlec)
         {
-            string1[k] = tempstring[i];
+            challenge5[k] = tempc[i];
             k++;
             i++;
         }
-        while(j <= strright)
+        while(j <= rightc)
         {
-            string1[k] = tempstring[j];
+            challenge5[k] = tempc[j];
             k++;
             j++;
         }
@@ -257,6 +257,7 @@ public class Team2SortCompetition extends SortCompetition{
      */
     public int challengeFive(Comparable[] challenge5, Comparable cquery)
     {
+        mergeSortC(challenge5);
         if(Arrays.asList(challenge5).contains(cquery))
         {
             List<Comparable> challenger5 = Arrays.asList(challenge5);
@@ -265,6 +266,80 @@ public class Team2SortCompetition extends SortCompetition{
         else
         {
             return (-1);
+        }
+    }
+
+    /**
+     * Merge sort for comparable.
+     * @param challenge5 Array to be inputted.
+     */
+    public static void mergeSortC(Comparable[] challenge5)
+    {
+        int n = challenge5.length;
+        Comparable[] tempc = new Comparable[n];
+        mergeSortC(challenge5, 0,n-1,tempc);
+    }
+
+    /**
+     * Recursion step.
+     * @param challenge5 Array to be inputted.
+     * @param leftc left value
+     * @param rightc right value
+     * @param tempc temp array
+     */
+    public static void mergeSortC(Comparable[] challenge5, int leftc, int rightc, Comparable[] tempc)
+    {
+        if(leftc < rightc)
+        {
+            int middlec = (leftc + rightc) / 2;
+            mergeSortC(challenge5, leftc, middlec, tempc);
+            mergeSortC(challenge5, middlec + 1, rightc, tempc);
+            mergeStringsC(challenge5, leftc, middlec, rightc, tempc);
+        }
+    }
+
+    /**
+     * Merges the arrays.
+     * @param challenge5 Array to be inputted.
+     * @param leftc left value
+     * @param middlec middle value
+     * @param rightc right value
+     * @param tempc temp array
+     */
+    public static void mergeStringsC(Comparable[] challenge5, int leftc, int middlec, int rightc, Comparable[] tempc)
+    {
+        for(int i = leftc; i <= rightc; i++)
+        {
+            tempc[i] = challenge5[i];
+        }
+        int i = leftc;
+        int j = middlec + 1;
+        int k = leftc;
+        while(i <= middlec && j <= rightc)
+        {
+            if(tempc[i].compareTo(tempc[j]) < 0)
+            {
+                challenge5[k] = tempc[i];
+                i++;
+            }
+            else
+            {
+                challenge5[k] = tempc[j];
+                j++;
+            }
+            k++;
+        }
+        while(i <= middlec)
+        {
+            challenge5[k] = tempc[i];
+            k++;
+            i++;
+        }
+        while(j <= rightc)
+        {
+            challenge5[k] = tempc[j];
+            k++;
+            j++;
         }
     }
 

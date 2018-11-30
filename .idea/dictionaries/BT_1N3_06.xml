@@ -2,10 +2,14 @@
   <dictionary name="BT_1N3_06">
     <words>
       <w>cquery</w>
+      <w>leftc</w>
+      <w>middlec</w>
       <w>quicksort</w>
+      <w>rightc</w>
       <w>strleft</w>
       <w>strmiddle</w>
       <w>strright</w>
+      <w>tempc</w>
       <w>tempstring</w>
     </words>
   </dictionary>
