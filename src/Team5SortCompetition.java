@@ -57,7 +57,7 @@ public class Team5SortCompetition extends SortCompetition
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
 
@@ -141,7 +141,7 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-       /** for(int i = 0; i < arr.length - 1; i++)
+       for(int i = 0; i < arr.length - 1; i++)
         {
             for(int j = i; j <= arr.length-1; j++)
             {
@@ -152,7 +152,15 @@ public class Team5SortCompetition extends SortCompetition
                     arr[j]=a;
                 }
             }
-        }**/
+        }
+
+        for (int i=0; i<arr.length-1; i++)
+        {
+            if (arr[i].equals(query))
+            {
+                return i;
+            }
+        }
        return 0;
     }
 

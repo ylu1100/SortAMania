@@ -41,7 +41,7 @@ public class Runner
         System.out.println("");
         startTime = System.currentTimeMillis();
         String[] arr= stringArrs();
-        System.out.println(a.challengeTwo(arr, "je"));
+        System.out.println(a.challengeTwo(arr, "ABCDEFGHIJKLMNOPQRST"));
         endTime = System.currentTimeMillis();
         System.out.println("C2 took " + (endTime - startTime) + " milliseconds.");
 
@@ -74,20 +74,20 @@ public class Runner
 
         System.out.println("");
         System.out.println("");
-        startTime = System.currentTimeMillis();
         Comparable[] arrC = compArr();
-        System.out.println("C5");
-        for (int i = 0; i < arrC.length - 1; i++) {
+        //Unsorted comparison.
+        for(int i = 0; i < arrC.length - 1; i++)
+        {
             System.out.print(arrC[i] + " ");
         }
-        /**System.out.println(a.challengeFive(arrC, "generic"));
-         endTime = System.currentTimeMillis();
-         System.out.println("C5 took " + (endTime - startTime) + " milliseconds.");
-         for(int i = 0; i < array.length - 1; i++)
-         {
-         System.out.print(array[i] + " ");
-         }**/
-
+        startTime = System.currentTimeMillis();
+        System.out.println(a.challengeFive(arrC, "generic"));
+        endTime = System.currentTimeMillis();
+        System.out.println("C5 took " + (endTime - startTime) + " milliseconds.");
+        for(int i = 0; i < arrC.length - 1; i++)
+        {
+            System.out.print(arrC[i] + " ");
+        }
     }
 
     public static String[] stringArrs()
@@ -101,39 +101,39 @@ public class Runner
         }
         return arr;
     }
+    public static boolean getRandomBoolean()
+    {
+        return Math.random() < 0.5;
+    }
+    public static char getRandomChar()
+    {
+        Random r = new Random();
+        char c = (char)(r.nextInt(26) + 'a');
+        return c;
+    }
+
         public static Comparable[] compArr()
         {
             Comparable[] arr= new Comparable[10000];
             int j=0;
-            /**for (int i=0; i<10000; i++)
-            {
-                int truei=0;
-                if (i==9996)
-                {
-                    arr[i]=true;
-                    return arr;
-                }
-
-                arr[i]=true;
-                arr[i+1]=56;
-                arr[i+2]=0.56;
-                arr[i+2]="yo";
-                arr[i+3]='r';
-
-            }**/
             while (j<10000)
             {
-                if (j>=9996)
+                if (j==9995)
                 {
-                    arr[j]=true;
+                    arr[j]=getRandomBoolean();
+                    arr[j+1]=(int)Math.random()*1000;
+                    arr[j+2]=Math.random()*1000;
+                    arr[j+3]=stringArrs()[(int)Math.random()*9000];
+                    arr[j+4]=getRandomChar();
+                    //arr[j+5]=getRandomBoolean();
                     return arr;
                 }
 
-                arr[j]=true;
-                arr[j+1]=(int)Math.random()*1000;
+                arr[j]=getRandomBoolean();
+                arr[j+1]=(int)(Math.random()*1000);
                 arr[j+2]=Math.random()*1000;
                 arr[j+3]=stringArrs()[(int)Math.random()*9000];
-                arr[j+4]='r';
+                arr[j+4]=getRandomChar();
                 j=j+5;
             }
             return arr;
