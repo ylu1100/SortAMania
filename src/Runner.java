@@ -7,12 +7,13 @@ public class Runner {
         int[] c1 = generateIntArr(5);
 
         printIntArray(c1);
-
+        System.out.println("Unsorted");
         long timer = System.nanoTime();
 
         System.out.println("median is " + x.challengeOne(c1));
 
         timer = System.nanoTime() - timer;
+        System.out.println("Sorted");
         System.out.println(timer*.000000001 + " seconds");
 
         printIntArray(c1);
@@ -22,8 +23,10 @@ public class Runner {
         String[] c2 = randomStringArr(10000,5);
         printStringArray(c2);
         timer = System.nanoTime();
+        System.out.println("Unsorted");
         System.out.println(x.challengeTwo(c2,"abcde"));
         timer = System.nanoTime() - timer;
+        System.out.println("Sorted");
         System.out.println(timer*.000000001 + " seconds");
 
         printStringArray(c2);
@@ -32,24 +35,27 @@ public class Runner {
 
         int[] c3 = {1,2,3,4,5,6,7,8,11,15,17,19,12,14,16,10,9,13,18};
         printIntArray(c3);
+        System.out.println("Unsorted");
         timer = System.nanoTime();
         System.out.println(x.challengeThree(c3));
 
         timer = System.nanoTime() - timer;
+        System.out.println("Sorted");
         System.out.println(timer*.000000001 + " seconds");
         printIntArray(c3);
 
         System.out.println("\nChallenge 4");
-        int[][] c4 =  generate2DIntArr(1000);
+        int[][] c4 =  generate2DIntArr(10);
 
         timer = System.nanoTime();
+
         System.out.println(x.challengeFour(c4));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
 
 
         System.out.println("\nChallenge 5");
-        Comparable[] c5 = new Comparable[10000];
+        Comparable[] c5 = new Comparable[100];
         String[] t = randomStringArr(c5.length,2);
         for(int i=0;i<c5.length;i++)
         {
