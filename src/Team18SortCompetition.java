@@ -27,28 +27,27 @@ public class Team18SortCompetition extends SortCompetition
 
         for(int i = 0; i< arr.length; i++)
         {
-            if(arr[i].contains(query))
+            if(arr[i].equals(query))
             {
                 result = i;
                 return result;
             }
-
         }
         return -1;
     }
 
     @Override
-    public int challengeThree(int[] arr) {
-
-        double median;
+    public int challengeThree(int[] arr)
+    {
+        double median=0;
         insertionSort(arr);
         if(arr.length%2 == 0)
         {
-            int i = arr[(arr.length/2)+1];
+            int i = arr[(arr.length/2)-1];
             int j = arr[arr.length/2];
             median = (i+j)/2;
         }
-        else
+        else if (arr.length%2 !=0)
         {
             median = arr[arr.length/2];
         }
