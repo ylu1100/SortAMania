@@ -44,10 +44,7 @@ public class Team5SortCompetition extends SortCompetition
             }
         }
 
-        /**for (int i=0; i<arr.length; i++)
-        {
-            System.out.print(arr[i]+"");
-        }**/
+
 
         //This part needs to come after the sort, since the sort is just a system out statement.
         for (int i=0; i<arr.length; i++)
@@ -145,9 +142,27 @@ public class Team5SortCompetition extends SortCompetition
         //It will probably be a set of related (ancestor/descendant) classes that will return an int based on their
         //own compareTo method.
         //Maybe just test this with ints or something, and organize them into a list.
-        
+
         //This for loop is meant for allocating a static position to an element in the unsorted arr.
        // for (int i=0; i<arr.length)
+        Comparable[][] array= new Comparable[10000][];
+        Comparable[] sample= new Comparable[10000];
+        for (int i=0; i< sample.length-1; i++)
+        {
+            sample[i]=i;
+        }
+        int staticidx=0;
+        for (int i=0; i<arr.length-1; i++)
+        {
+            for (int j=0; j<sample.length-1; j++)
+            {
+                if (arr[i]==sample[j])
+                {
+                    array[i][staticidx]
+                }
+            }
+
+        }
        for(int i = 0; i < arr.length - 1; i++)
         {
             for(int j = i; j <= arr.length-1; j++)

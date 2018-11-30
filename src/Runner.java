@@ -122,7 +122,13 @@ public class Runner
             int j=0;
             while (j<10000)
             {
-                if (j==9995)
+                arr[j]=(int)(Math.random()*1000);
+                arr[j+1]=(int)(Math.random()*1000);
+                arr[j+2]=(int)(Math.random()*1000);
+                arr[j+3]=(int)(Math.random()*1000);
+                arr[j+4]=(int)(Math.random()*1000);
+                j=j+5;
+               /** if (j==9995)
                 {
                     arr[j]=getRandomBoolean();
                     arr[j+1]=(int)Math.random()*1000;
@@ -138,7 +144,7 @@ public class Runner
                 arr[j+2]=Math.random()*1000;
                 arr[j+3]=stringArrs()[(int)Math.random()*9000];
                 arr[j+4]=getRandomChar();
-                j=j+5;
+                j=j+5;**/
             }
             return arr;
         }
