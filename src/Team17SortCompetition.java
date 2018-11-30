@@ -14,10 +14,9 @@ public class Team17SortCompetition extends SortCompetition
     }
 
     @Override
-    public int challengeThree(int[] arr) {
-
-
-        selectionSort(arr);
+    public int challengeThree(int[] arr)
+    {
+        insertionSort(arr);
         toString(arr);
 
         return findMed(arr);
@@ -54,6 +53,36 @@ public class Team17SortCompetition extends SortCompetition
 
             quickSort(arr,left,pivot-1);
             quickSort(arr,pivot+1,right);
+        }
+    }
+
+    /**
+     * Sorts an array of integers using insertion sort
+     * @param list1 array to sort
+     */
+    public static void insertionSort(int[] list1)
+    {
+        int swapPos;
+        int min;
+
+        for(int i = 1;i<list1.length;i++)
+        {
+            swapPos = i;
+            min = list1[swapPos];
+
+            for(int a = i-1;a>=0;a--)
+            {
+                if(list1[a]>min)
+                {
+                    swap(list1,swapPos,a);
+                    swapPos = a;
+                    min = list1[swapPos];
+                }
+                else
+                {
+                    a=-1;
+                }
+            }
         }
     }
 
@@ -126,28 +155,6 @@ public class Team17SortCompetition extends SortCompetition
         }
         System.out.println(out);
 
-    }
-    public static void selectionSort(int[] list1)
-    {
-        int swapPos;
-        double min;
-
-        for(int i = 0;i<list1.length;i++)
-        {
-            swapPos = i;
-            min = list1[swapPos];
-
-            for(int a = i;a<list1.length;a++)
-            {
-                if(list1[a]<min)
-                {
-                    swapPos = a;
-                    min = list1[a];
-
-                    swap(list1,swapPos,i);
-                }
-            }
-        }
     }
 
     //toString String array

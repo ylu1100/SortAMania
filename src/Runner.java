@@ -3,10 +3,8 @@ public class Runner {
     {
         //CHALLENGE 1
         Team17SortCompetition c1 = new Team17SortCompetition();
-        int numCount = 6;
-        int[] challengeOneList;
+        int[] challengeOneList = Team17SortCompetition.randIntArr(6);
 
-        challengeOneList = Team17SortCompetition.randIntArr(numCount);
         Team17SortCompetition.toString(challengeOneList);
 
         long start = System.currentTimeMillis();
@@ -16,10 +14,28 @@ public class Runner {
 
         //CHALLENGE 2
         Team17SortCompetition c2 = new Team17SortCompetition();
-        int numCount2 = 10;
-        String[] challengeTwoList;
+        String[] challengeTwoList = Team17SortCompetition.randStringArr(10,5);
 
-        challengeTwoList = Team17SortCompetition.randStringArr(numCount2,5);
         Team17SortCompetition.toString(challengeTwoList);
+
+        /*start = System.currentTimeMillis();
+        System.out.println("Median: " + c2.challengeTwo(challengeTwoList));
+        diff = System.currentTimeMillis() - start;
+        System.out.println(diff + "\n");*/
+
+        //CHALLENGE 3
+        Team17SortCompetition c3 = new Team17SortCompetition();
+        int[] challengeThreeList = Team17SortCompetition.randIntArr(6);
+
+        Team17SortCompetition.toString(challengeThreeList);
+
+        start = System.currentTimeMillis();
+        System.out.println("Median: " + c3.challengeThree(challengeThreeList));
+        diff = System.currentTimeMillis() - start;
+        System.out.println(diff + "\n");
+
+        //CHALLENGE 4
+
+        //CHALLENGE 5
     }
 }
