@@ -33,7 +33,12 @@ public class Runner {
 
         System.out.println("\nChallenge 3");
 
-        int[] c3 = {1,2,3,4,5,6,7,8,11,15,17,19,12,14,16,10,9,13,18};
+        int[] c3 = new int[100000];
+
+        c3[0] = (int)(Math.random () * 10) + 1;
+        for (int a = 1; a < c3.length; a++) {
+            c3[a] = c3[a-1] + (int)(Math.random() * 12) - 2;
+        }
         printIntArray(c3);
         System.out.println("Unsorted");
         timer = System.nanoTime();
@@ -45,7 +50,7 @@ public class Runner {
         printIntArray(c3);
 
         System.out.println("\nChallenge 4");
-        int[][] c4 =  generate2DIntArr(10);
+        int[][] c4 =  generate2DIntArr(1000);
 
         timer = System.nanoTime();
 
