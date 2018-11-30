@@ -4,13 +4,16 @@ public class Team17SortCompetition extends SortCompetition
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
         toString(arr);
+
         return (findMed(arr));
     }
 
     @Override
     public int challengeTwo(String[] arr, String query)
     {
-        return 0;
+        bubbleSort(arr);
+        toString(arr);
+        return binarySearch(arr,query);
     }
 
     @Override
@@ -23,17 +26,20 @@ public class Team17SortCompetition extends SortCompetition
     }
 
     @Override
-    public int challengeFour(int[][] arr) {
+    public int challengeFour(int[][] arr)
+    {
         return 0;
     }
 
     @Override
-    public int challengeFive(Comparable[] arr, Comparable query) {
+    public int challengeFive(Comparable[] arr, Comparable query)
+    {
         return 0;
     }
 
     @Override
-    public String greeting() {
+    public String greeting()
+    {
         return null;
     }
 
@@ -54,6 +60,30 @@ public class Team17SortCompetition extends SortCompetition
             quickSort(arr,left,pivot-1);
             quickSort(arr,pivot+1,right);
         }
+    }
+
+    /**
+     * Creates a partition to sort two sides separately
+     * @param arr array to create a partition in
+     * @param left left element position
+     * @param right right element position
+     * @return int representing the partition position in arr
+     */
+    public static int partition(int[] arr, int left, int right)
+    {
+        int pivot = arr[right];
+        int i = left-1;
+
+        for(int j = left;j<right;j++)
+        {
+            if(arr[j]<=pivot)
+            {
+                i++;
+                swap(arr,i,j);
+            }
+        }
+        swap(arr,i+1,right);
+        return(i+1);
     }
 
     /**
@@ -87,28 +117,53 @@ public class Team17SortCompetition extends SortCompetition
     }
 
     /**
-     * Creates a partition to sort two sides separately
-     * @param arr array to create a partition in
-     * @param left left element position
-     * @param right right element position
-     * @return int representing the partition position in arr
+     * Sorts an array of Strings into alphabetical order using bubble sort
+     * @param list1 array to sort
      */
-    public static int partition(int[] arr, int left, int right)
+    public static void bubbleSort(String[] list1)
     {
-        int pivot = arr[right];
-        int i = left-1;
-
-        for(int j = left;j<right;j++)
+        int swapNum = 1;
+        while(swapNum!=0)
         {
-            if(arr[j]<=pivot)
+            swapNum = 0;
+            for(int i = 0;i<list1.length-1;i++)
             {
-                i++;
-                swap(arr,i,j);
+                if(list1[i].compareTo(list1[i+1])>0)
+                {
+                    swap(list1,i,i+1);
+                    swapNum++;
+                }
             }
         }
-        swap(arr,i+1,right);
-        return(i+1);
     }
+
+    public static int binarySearch(String[] arr, String query)
+    {
+        int left = 0;
+        int right = arr.length-1;
+
+        while(left <= right)
+        {
+            int mid = (left + right)/2;
+            if(query.compareTo(arr[mid]) < 0)
+            {
+                right = mid-1;
+            }
+            else
+            {
+                if(query.compareTo(arr[mid]) > 0)
+                {
+                    left = mid+1;
+                }
+                else
+                {
+                    return(mid);
+                }
+            }
+        }
+        return -1;
+    }
+
 
     /**
      * swaps two items in an integer array
@@ -123,7 +178,18 @@ public class Team17SortCompetition extends SortCompetition
         arr[pos2] = temp;
     }
 
-
+    /**
+     * swaps two items in a String array
+     * @param arr array that we will swap items for
+     * @param pos1 selected position value to swap
+     * @param pos2 other selected position value to swap
+     */
+    public static void swap(String[] arr,int pos1,int pos2)
+    {
+        String temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
 
 
     public static int findMed(int[] arr)

@@ -10,18 +10,20 @@ public class Runner {
         long start = System.currentTimeMillis();
         System.out.println("Median: " + c1.challengeOne(challengeOneList));
         long diff = System.currentTimeMillis() - start;
-        System.out.println(diff + "\n");
+
+        System.out.println("Time Taken: " + diff + "\n");
 
         //CHALLENGE 2
         Team17SortCompetition c2 = new Team17SortCompetition();
-        String[] challengeTwoList = Team17SortCompetition.randStringArr(10,5);
+        String[] challengeTwoList = {"yoyoy","omgma","justi","cando","youyo","alst","catss","juan","classic","silly"};//Team17SortCompetition.randStringArr(10,5);
 
         Team17SortCompetition.toString(challengeTwoList);
 
-        /*start = System.currentTimeMillis();
-        System.out.println("Median: " + c2.challengeTwo(challengeTwoList));
+        start = System.currentTimeMillis();
+        System.out.println("Found Idx: " + c2.challengeTwo(challengeTwoList,"classic"));
         diff = System.currentTimeMillis() - start;
-        System.out.println(diff + "\n");*/
+
+        System.out.println("Time Taken: " + diff + "\n");
 
         //CHALLENGE 3
         Team17SortCompetition c3 = new Team17SortCompetition();
@@ -32,7 +34,8 @@ public class Runner {
         start = System.currentTimeMillis();
         System.out.println("Median: " + c3.challengeThree(challengeThreeList));
         diff = System.currentTimeMillis() - start;
-        System.out.println(diff + "\n");
+
+        System.out.println("Time Taken: " + diff + "\n");
 
         //CHALLENGE 4
 
