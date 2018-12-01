@@ -39,7 +39,7 @@ public class Runner {
     public static void printArr4(int[][] arr4) {
         System.out.println("This is the new Arr:");
         for (int n = 0; n < arr4.length; n++) {
-            for (int m = 0; m < arr4[m].length; m++) {
+            for (int m = 0; m < arr4[n].length; m++) {
                 System.out.println(arr4[n][m]);
             }
             System.out.println("this is next nine  ");
@@ -53,9 +53,9 @@ public class Runner {
         //System.out.println(Team11.challengeTwo(array2,array2[3]));
         //printArr2(array2);
         int[][] array4 = setUp4(10,10);
-        printArr4(array4);
-        System.out.println(Team11.challengeFour(array4));
         //printArr4(array4);
+        System.out.println(Team11.challengeFour(array4));
+        printArr4(array4);
 
     }
 }
