@@ -4,6 +4,7 @@ public class Runner {
     public static int[] setUp1(int num)
     {
         int[] arr = new int[num];
+        return arr;
     }
     public static String[] setUp2(int num){
         String[] array2 = new String[num];
