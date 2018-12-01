@@ -40,7 +40,7 @@ public class challengeFourMethods {
             j++;
             k++;
         }
-        for (int m = left; m <right; m++) {
+        for (int m = left; m <=right; m++) {
             arr[index][m] = temp[m];
         }
         /*/System.out.println("This is the new Arr:");

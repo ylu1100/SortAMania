@@ -52,8 +52,8 @@ public class Runner {
         //printArr2(array2);
         //System.out.println(Team11.challengeTwo(array2,array2[3]));
         //printArr2(array2);
-        int[][] array4 = setUp4(10,10);
-        //printArr4(array4);
+        int[][] array4 = setUp4(10000,10000);
+        printArr4(array4);
         System.out.println(Team11.challengeFour(array4));
         printArr4(array4);
 
