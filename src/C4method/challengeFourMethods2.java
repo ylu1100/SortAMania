@@ -18,7 +18,7 @@ public class challengeFourMethods2 {
                         for(int k = 0;k < arr[j-1].length;k++) {
                             arr[j-1][k] = arr[j][k];
                         }
-                        for(int n = 0;n < temp.length;n++) {
+                        for(int n = 0;n < arr[j].length;n++) {
                             arr[j][n] = temp[n];
                         }
                     }
