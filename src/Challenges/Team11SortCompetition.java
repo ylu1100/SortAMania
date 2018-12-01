@@ -37,7 +37,9 @@ public class Team11SortCompetition extends SortCompetition
     @Override
     public int challengeThree(int[] arr)
     {
-        return 0;
+        InsertionSort(arr);
+        return arr[arr.length/2];
+
     }
 
     @Override
@@ -124,6 +126,24 @@ public class Team11SortCompetition extends SortCompetition
 
             quickSort(arr, left, pivot - 1);
             quickSort(arr, pivot + 1, right);
+        }
+    }
+    public static void InsertionSort(int[] arr ) {
+
+        for (int i = 1; i < arr.length;i++) {
+            if (arr[i-1] > arr[i]) {
+                //int min = arr[i];
+                for (int j = i; j > 0;j--) {
+
+                    if ( arr[j-1] > arr[j]) {
+                        int place = arr[j-1];
+                        arr[j-1] = arr[j];
+                        arr[j] = place;
+                    }
+                }
+            }
+
+
         }
     }
 }

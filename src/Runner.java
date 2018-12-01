@@ -20,6 +20,22 @@ public class Runner {
         }
         return array2;
     }
+    public static int[] setUp3(int num){
+        int[] array3 = new int[num];
+        for (int j = 0; j < num; j++) {
+
+            array3[j] = (int) (Math.random() * 1000) + 1;;
+
+        }
+        return array3;
+    }
+    public static void printArr3(int[] arr3) {
+        System.out.println("This is the new Arr:");
+        for (int n = 0; n < arr3.length; n++) {
+
+            System.out.println(arr3[n]);
+        }
+    }
     public static int[][] setUp4(int num1,int num2) {
         int [][] arr = new int[num1][num2];
         for (int i = 0; i < num1;i++) {
@@ -48,14 +64,21 @@ public class Runner {
     }
     public static void main(String[] args) {
         Team11SortCompetition Team11 = new Team11SortCompetition();
+
         String[] array2 = setUp2(10000);
         //printArr2(array2);
         //System.out.println(Team11.challengeTwo(array2,array2[3]));
         //printArr2(array2);
+
+        int[] array3 = setUp3(10000);
+        //printArr3(array3);
+        System.out.println(Team11.challengeThree(array3));
+        printArr3(array3);
+
         int[][] array4 = setUp4(10000,10000);
-        printArr4(array4);
-        System.out.println(Team11.challengeFour(array4));
-        printArr4(array4);
+        // printArr4(array4);
+        //System.out.println(Team11.challengeFour(array4));
+        //printArr4(array4);
 
     }
 }
