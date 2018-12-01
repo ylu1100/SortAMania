@@ -1,27 +1,81 @@
 // Afaq Anwar
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.TreeMap;
+
 public class Team8SortCompetition extends SortCompetition {
+    /**
+     * Sorts a random 1D Integer Array implementing Quick Sort.
+     * @param arr Any 1D Integer Array.
+     * @return Median of the Integer Array. (rounded down)
+     */
     @Override
     public int challengeOne(int[] arr) {
         quickSortInt(arr, 0, arr.length - 1);
         return median(arr);
     }
 
+    /**
+     * Sorts a random String Array with Strings of length 5 implementing LSD String Sort.
+     * @param arr Any 1D String Array with Strings of length 5.
+     * @param query String that is searched for within the String Array (arr).
+     * @return Position of query within the String Array (arr).
+     */
     @Override
     public int challengeTwo(String[] arr, String query) {
         lsdRadixSortStr(arr, 5);
         return binarySearchStr(arr, query);
     }
 
+    /**
+     * Sorts a 75% sorted 1D Integer Array implementing Insertion Sort.
+     * @param arr Any 1D Integer Array that is >= 75% sorted.
+     * @return Median of the Integer Array. (rounded down)
+     */
     @Override
     public int challengeThree(int[] arr) {
         insertionSort(arr);
         return median(arr);
     }
 
+    /**
+     * Sorts a 2D Integer Array implementing Quick Sort.
+     * @param arr Any 2D Integer Array.
+     * @return Median of the Median Array.
+     */
     @Override
     public int challengeFour(int[][] arr) {
-        return 0;
+        // HashMap stores the Median (Integer) & the Array.
+        // {3, {1,2,3,4,5}}
+        HashMap<Integer, int[]> medianMap = new HashMap<>();
+
+        // ArrayList of Integers that will store the medians in parallel with future Sorted Tree Map.
+        // Used to call the medians of each Array due to the added complexity of obtaining a key with a value from a TreeMap / or HashMap.
+        ArrayList<Integer> medians = new ArrayList<>();
+
+        // Sorts each Array inside of the 2D Array.
+        for (int[] subArr : arr) {
+            quickSortInt(subArr, 0, subArr.length - 1);
+            // Updates the HashMap.
+            medianMap.put(median(subArr), subArr);
+        }
+
+        // Generation of a TreeMap automatically sorts our HashMap using the Keys as the comparator.
+        // Since every Array will be randomly generated this relies on each Array having a different Median.
+        TreeMap<Integer, int[]> sortedMedianMap = new TreeMap<>(medianMap);
+
+        // Position Storage.
+        int i = 0;
+        // Loops through the sorted TreeMap & copies the sorted Arrays into the 2D Array.
+        for (int median : sortedMedianMap.keySet()) {
+            arr[i] = sortedMedianMap.get(median);
+            // Medians are stored in the ArrayList in Parallel in order to find the median of the median Array.
+            medians.add(median);
+            i++;
+        }
+
+        return mapMedian(medians);
     }
 
     @Override
@@ -133,6 +187,20 @@ public class Team8SortCompetition extends SortCompetition {
             return (arr[i] + arr[i + 1]) / 2;
         } else {
             return arr[i];
+        }
+    }
+
+    /**
+     * Calculates the median within an ArrayList of Integers.
+     * @param medians Any 1D ArrayList of Integers.
+     * @return Integer representing the median. (Rounded Down)
+     */
+    private static int mapMedian(ArrayList<Integer> medians) {
+        int i = ((medians.size() + 1)/2) - 1;
+        if (medians.size() % 2 == 0) {
+            return (medians.get(i) + medians.get(i + 1)) / 2;
+        } else {
+            return medians.get(i);
         }
     }
 
