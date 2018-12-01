@@ -45,7 +45,10 @@ public class Team11SortCompetition extends SortCompetition
 
         int[] medianArr = new int[arr.length];
         for (int x = 0; x < arr.length; x++) {
-            challengeFourMethods.merge(arr,x);
+            int[] temp = new int[arr[x].length];
+            challengeFourMethods testNo = new challengeFourMethods(arr,x);
+            testNo.mergeSortHelper(arr,0,arr[x].length-1,temp,x);
+
             medianArr[x] = arr[x][(arr[x].length)/2];
 
         }

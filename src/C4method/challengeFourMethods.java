@@ -1,7 +1,7 @@
 package C4method;
 
 public class challengeFourMethods {
-    public static void merge(int[][] arr,int index) {
+    public  challengeFourMethods(int[][] arr,int index) {
         int n = arr.length;
         int[] temp = new int[n];
         mergeSortHelper(arr,0,n-1,temp, index);
