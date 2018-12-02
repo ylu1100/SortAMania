@@ -11,7 +11,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeTwo(String[] arr, String query)
     {
-        bubbleSort(arr);
+        quickSort(arr,0,arr.length-1);
         toString(arr);
         return binarySearch(arr,query);
     }
@@ -50,7 +50,21 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-        return 0;
+//        insertionSort(arr);
+//        toString(arr);
+//
+//        return -1;
+        for(int x = 0; x<arr.length;x++)
+        {
+            if(arr[x] != query)
+            {
+                System.out.println(query + "found at " + x);
+                return x;
+            }
+        }
+        return -1;
+
+
     }
 
     @Override
@@ -77,6 +91,33 @@ public class Team17SortCompetition extends SortCompetition
             quickSort(arr,pivot+1,right);
         }
     }
+    public static void quickSort(String[] arr, int left, int right)
+    {
+        if(left<right)
+        {
+            int pivot = partition(arr,left,right);
+
+            quickSort(arr,left,pivot-1);
+            quickSort(arr,pivot+1,right);
+        }
+    }
+    public static int partition(String[] arr, int left, int right)
+    {
+        String pivot = arr[right];
+        int i = left-1;
+
+        for(int j = left;j<right;j++)
+        {
+            if(arr[j].compareTo(pivot)< 1)
+            {
+                i++;
+                swap(arr,i,j);
+            }
+        }
+        swap(arr,i+1,right);
+        return(i+1);
+    }
+
 
     /**
      * Creates a partition to sort two sides separately
@@ -176,6 +217,18 @@ public class Team17SortCompetition extends SortCompetition
                     a=-1;
                 }
             }
+        }
+    }
+    public static void insertionSort(Comparable[] arr) {
+        int n = arr.length;
+        for (int i = 1; i < n; i++) {
+            Comparable key = arr[i];
+            int x = i - 1;
+            while ((x > -1) && (arr[x].compareTo(key) >= 0)) {
+                arr[x + 1] = arr[x];
+                x--;
+            }
+            arr[x + 1] = key;
         }
     }
 
@@ -334,6 +387,20 @@ public class Team17SortCompetition extends SortCompetition
             out += "\n";
         }
         System.out.println(out);
+    }
+    public static void toString(Comparable[] list)
+    {
+        String out = "";
+
+        for(int i =0;i<list.length;i++)
+        {
+            out += list[i];
+            if(i != list.length-1)
+            {
+                out += ", ";
+            }
+        }
+        System.out.println(out);
 
     }
 
@@ -377,4 +444,5 @@ public class Team17SortCompetition extends SortCompetition
         }
         return(arr);
     }
+
 }

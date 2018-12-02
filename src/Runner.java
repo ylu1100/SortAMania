@@ -15,14 +15,14 @@ public class Runner {
 
         //CHALLENGE 2
         Team17SortCompetition c2 = new Team17SortCompetition();
-        String[] challengeTwoList = Team17SortCompetition.randStringArr(10,5);
+        String[] challengeTwoList = Team17SortCompetition.randStringArr(10000,5);
                 //{"yoyoy","omgma","justi","cando","youyo","alst","catss","juan","classic",
                 // "silly"};
 
         Team17SortCompetition.toString(challengeTwoList);
 
         start = System.currentTimeMillis();
-        System.out.println("Found Idx: " + c2.challengeTwo(challengeTwoList,"classic"));
+        System.out.println("Found Idx: " + c2.challengeTwo(challengeTwoList,challengeTwoList[0]));
         diff = System.currentTimeMillis() - start;
 
         System.out.println("Time Taken: " + diff + "\n");
@@ -56,7 +56,15 @@ public class Runner {
         diff = System.currentTimeMillis() - start;
 
         System.out.println("Time Taken: " + diff + "\n");
-
         //CHALLENGE 5
+        Team17SortCompetition c5 = new Team17SortCompetition();
+        count = 5;
+        int[] challengeFiveList = new int[count];
+
+        for(int i = 0;i<challengeFiveList.length;i++)
+        {
+            challengeFiveList = Team17SortCompetition.randIntArr(count);
+        }
+
     }
 }
