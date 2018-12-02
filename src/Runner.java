@@ -1,5 +1,7 @@
 import Challenges.Team11SortCompetition;
 
+import java.util.Scanner;
+
 public class Runner {
     public static int[] setUp1(int num)
     {
@@ -75,28 +77,55 @@ public class Runner {
 
         }
     }
-    public static void main(String[] args) {
+    public static void runChallenge1() {
         Team11SortCompetition Team11 = new Team11SortCompetition();
-
         int[] array1 = setUp3(10000);
         //printArr3(array3);
         System.out.println(Team11.challengeOne(array1));
         printArr3(array1);
-
+    }
+    public static void runChallenge2() {
+        Team11SortCompetition Team11 = new Team11SortCompetition();
         String[] array2 = setUp2(10000);
         //printArr2(array2);
-        //System.out.println(Team11.challengeTwo(array2,array2[3]));
-        //printArr2(array2);
-
-        int[] array3 = setUp3(10000);
+        System.out.println(Team11.challengeTwo(array2,array2[3]));
+        printArr2(array2);
+    }
+    public static void runChallenge3() {
+        Team11SortCompetition Team11 = new Team11SortCompetition();
+        int[] array1 = setUp3(10000);
         //printArr3(array3);
-        System.out.println(Team11.challengeThree(array3));
-        printArr3(array3);
-
+        System.out.println(Team11.challengeOne(array1));
+        printArr3(array1);
+    }
+    public static void runChallenge4() {
+        Team11SortCompetition Team11 = new Team11SortCompetition();
         int[][] array4 = setUp4(10000,10000);
         // printArr4(array4);
-        //System.out.println(Team11.challengeFour(array4));
-        //printArr4(array4);
+        System.out.println(Team11.challengeFour(array4));
+        printArr4(array4);
+    }
+
+    public static void main(String[] args) {
+
+        Scanner Greeting = new Scanner (System.in);
+        System.out.println("Good morning Brooklyn Tech, WHat challenge should I present?");
+        System.out.println("(Type the number of the challenge, ex: type 1 for challenge 1)");
+        String response = Greeting.nextLine();
+        if (response.equals("1")) {
+            runChallenge1();
+        }
+        else if (response.equals("2")) {
+            runChallenge2();
+        }
+        else if (response.equals("3")) {
+            runChallenge3();
+        }
+        else if (response.equals("4")) {
+            runChallenge4();
+        }
+
+
 
     }
 }
