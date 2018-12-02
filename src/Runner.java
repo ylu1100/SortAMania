@@ -15,7 +15,9 @@ public class Runner {
 
         //CHALLENGE 2
         Team17SortCompetition c2 = new Team17SortCompetition();
-        String[] challengeTwoList = {"yoyoy","omgma","justi","cando","youyo","alst","catss","juan","classic","silly"};//Team17SortCompetition.randStringArr(10,5);
+        String[] challengeTwoList = Team17SortCompetition.randStringArr(10,5);
+                //{"yoyoy","omgma","justi","cando","youyo","alst","catss","juan","classic",
+                // "silly"};
 
         Team17SortCompetition.toString(challengeTwoList);
 
@@ -39,17 +41,18 @@ public class Runner {
 
         //CHALLENGE 4
         Team17SortCompetition c4 = new Team17SortCompetition();
-        int[][] challengeFourList = new int[10][1];
+        int count = 3;
+        int[][] challengeFourList = new int[count][count];
 
         for(int i = 0;i<challengeFourList.length;i++)
         {
-            challengeFourList[i] = Team17SortCompetition.randIntArr(1);//Team17SortCompetition.randStringArr(10,5);
-
-            Team17SortCompetition.toString(challengeFourList[i]);
+            challengeFourList[i] = Team17SortCompetition.randIntArr(count);
         }
 
+        Team17SortCompetition.toString(challengeFourList);
+
         start = System.currentTimeMillis();
-        System.out.println(c4.challengeFour(challengeFourList));
+        System.out.println("Median: " + c4.challengeFour(challengeFourList));
         diff = System.currentTimeMillis() - start;
 
         System.out.println("Time Taken: " + diff + "\n");

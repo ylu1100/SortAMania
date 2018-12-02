@@ -33,10 +33,18 @@ public class Team17SortCompetition extends SortCompetition
         for(int i = 0;i<arr.length;i++)
         {
             quickSort(arr[i],0,arr.length-1);
-            toString(arr[i]);
-        }
 
-        return 0;
+            mids[i] = findMed(arr[i]);
+        }
+        toString(mids);
+
+        quickSort(mids,arr,0,mids.length-1);
+        System.out.println("SORTED ARR");
+        toString(arr);
+        System.out.println("SORTED MIDS");
+        toString(mids);
+
+        return findMed(mids);
     }
 
     @Override
@@ -93,6 +101,53 @@ public class Team17SortCompetition extends SortCompetition
         swap(arr,i+1,right);
         return(i+1);
     }
+
+
+    /**
+     * Sorts an array of integers using quickSort
+     * @param mids median array to sort
+     * @param norm 2D array to sort
+     * @param left left element position
+     * @param right right element position
+     */
+    public static void quickSort(int[] mids, int[][] norm, int left, int right)
+    {
+        if(left<right)
+        {
+            int pivot = partition(mids,norm,left,right);
+
+            quickSort(mids,norm,left,pivot-1);
+            quickSort(mids,norm,pivot+1,right);
+        }
+    }
+
+    /**
+     * Creates a partition to sort two sides separately
+     * @param mids median array to create a partition in
+     * @param norm normal array to sort
+     * @param left left element position
+     * @param right right element position
+     * @return int representing the partition position in arr
+     */
+    public static int partition(int[] mids, int[][] norm, int left, int right)
+    {
+        int pivot = mids[right];
+        int i = left-1;
+
+        for(int j = left;j<right;j++)
+        {
+            if(mids[j]<=pivot)
+            {
+                i++;
+                swap(mids,i,j);
+                swap(norm,i,j);
+            }
+        }
+        swap(mids,i+1,right);
+        swap(norm,i+1,right);
+        return(i+1);
+    }
+
 
     /**
      * Sorts an array of integers using insertion sort
@@ -199,6 +254,19 @@ public class Team17SortCompetition extends SortCompetition
         arr[pos2] = temp;
     }
 
+    /**
+     * swaps two items in a Double int array
+     * @param arr double array whose contents we will swap
+     * @param pos1 selected array position to swap
+     * @param pos2 other selected array position to swap
+     */
+    public static void swap(int[][] arr,int pos1,int pos2)
+    {
+        int[] temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
+
 
     public static int findMed(int[] arr)
     {
@@ -243,6 +311,27 @@ public class Team17SortCompetition extends SortCompetition
             {
                 out += ", ";
             }
+        }
+        System.out.println(out);
+
+    }
+
+    //toString Double String array
+    public static void toString(int[][] list)
+    {
+        String out = "";
+
+        for(int i =0;i<list.length;i++)
+        {
+            for(int a = 0;a<list[i].length;a++)
+            {
+                out += list[i][a];
+                if(a != list[i].length-1)
+                {
+                    out += ", ";
+                }
+            }
+            out += "\n";
         }
         System.out.println(out);
 
