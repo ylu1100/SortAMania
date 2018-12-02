@@ -25,7 +25,7 @@ public class Team8SortCompetition extends SortCompetition {
     @Override
     public int challengeTwo(String[] arr, String query) {
         lsdRadixSortStr(arr, 5);
-        return binarySearchStr(arr, query);
+        return binarySearch(arr, query);
     }
 
     /**
@@ -80,7 +80,8 @@ public class Team8SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
-        return 0;
+        insertionSortComparable(arr);
+        return binarySearch(arr, query);
     }
 
     @Override
@@ -161,7 +162,7 @@ public class Team8SortCompetition extends SortCompetition {
     }
 
     /**
-     * Optimized Insertion Sort.
+     * Optimized Insertion Sort for Integers.
      * @param arr Any 1D Integer Array.
      */
     private static void insertionSort (int[] arr) {
@@ -169,6 +170,22 @@ public class Team8SortCompetition extends SortCompetition {
             int currHold = arr[i];
             int currPos = i;
             while (currPos > 0 && arr[currPos -1] > currHold) {
+                arr[currPos] = arr[currPos - 1];
+                currPos--;
+            }
+            arr[currPos] = currHold;
+        }
+    }
+
+    /**
+     * Optimized Insertion Sort for Comparable Objects.
+     * @param arr Any 1D Comparable Array.
+     */
+    private static void insertionSortComparable (Comparable[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            Comparable currHold = arr[i];
+            int currPos = i;
+            while (currPos > 0 && arr[currPos -1].compareTo(currHold) > 0) {
                 arr[currPos] = arr[currPos - 1];
                 currPos--;
             }
@@ -205,22 +222,26 @@ public class Team8SortCompetition extends SortCompetition {
     }
 
     /**
-     * Binary Search for a String in an Array of Strings.
-     * @param arr Any 1D String Array.
-     * @param key String to be searched for.
-     * @return Integer representing the position of the String in the Array. (-1 if not found)
+     * Binary Search for Objects that implement the Comparable Interface. E.G - String
+     * @param arr Any 1D Array of Comparable Objects.
+     * @param obj Comparable Object to be searched for.
+     * @return Integer representing the position of the Object in the Array. (-1 if not found)
      */
-    public static int binarySearchStr(String[] arr, String key) {
+    public static int binarySearch(Comparable[] arr, Comparable obj) {
         int left = 0;
         int right = arr.length - 1;
         while (left <= right) {
             int middle = (left + right) / 2;
-            if (key.compareTo(arr[middle]) < 0) {
+            if (obj.compareTo(arr[middle]) < 0) {
                 right = middle - 1;
-            } else if (key.compareTo(arr[middle]) > 0) {
+            } else if (obj.compareTo(arr[middle]) > 0) {
                 left = middle + 1;
-            } else {
-                return middle;
+            } else if (obj.compareTo(arr[middle]) == 0) { // Handles two objects that are duplicates.
+                if (obj == arr[middle]) { // If the memory address of arr[middle] is the same it will return position middle.
+                    return middle;
+                } else { // If the memory address is not the same then return the position of the obj.
+                    return middle - 1;
+                }
             }
         }
         return -1;
