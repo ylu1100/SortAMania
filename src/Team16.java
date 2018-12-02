@@ -7,6 +7,10 @@ public class Team16 extends SortCompetition {
     {
         quickInt(arr, (0), (arr.length - 1));
 
+        return getMedian(arr);
+    }
+    private int getMedian(int[] arr)
+    {
         if(arr.length % 2 == 0)
         {
             return (arr[arr.length / 2] + arr[(arr.length / 2) - 1]) / 2;
@@ -16,7 +20,7 @@ public class Team16 extends SortCompetition {
             return arr[arr.length / 2];
         }
     }
-    public static void quickInt (int[] list, int left, int right)
+    private static void quickInt (int[] list, int left, int right)
     {
         if (left < right)
         {
@@ -26,7 +30,7 @@ public class Team16 extends SortCompetition {
             quickInt(list, (pivot + 1), right);
         }
     }
-    public static int partitionInt(int[] list, int left, int right)
+    private static int partitionInt(int[] list, int left, int right)
     {
         int pivot = list[right];
         int i = left - 1;
@@ -50,9 +54,23 @@ public class Team16 extends SortCompetition {
     {
         mergeString(arr);
 
-        return binarySearch(arr, (0), arr.length - 1, query);
+        int index = binarySearch(arr, (0), arr.length - 1, query);
+
+        if (index < 0)
+            return -1;
+        if (index == 0)
+            return 0;
+
+        while(arr[index].equals(arr[index - 1]))
+        {
+            index--;
+            if (index == 0)
+                return 0;
+        }
+
+        return index;
     }
-    int binarySearch(String arr[], int min, int max, String query)
+    private int binarySearch(String arr[], int min, int max, String query)
     {
         if (max >= min)
         {
@@ -61,7 +79,7 @@ public class Team16 extends SortCompetition {
             if (arr[mid].equals(query))
                 return mid;
 
-            if (arr[mid].compareTo(query) < 0)
+            if (arr[mid].compareTo(query) > 0)
                 return binarySearch(arr, min, (mid - 1), query);
 
             return binarySearch(arr, (mid + 1), max, query);
@@ -69,13 +87,13 @@ public class Team16 extends SortCompetition {
 
         return -1;
     }
-    public static void mergeString (String[] list)
+    private static void mergeString (String[] list)
     {
         int n = list.length;
         String[] temp = new String[n];
         mergeStringHelper(list, (0), (n - 1), temp);
     }
-    public static void mergeStringHelper (String[] list, int left, int right, String[] temp)
+    private static void mergeStringHelper (String[] list, int left, int right, String[] temp)
     {
         if (left < right)
         {
@@ -85,7 +103,7 @@ public class Team16 extends SortCompetition {
             mergeArrString(list, left, mid, right, temp);
         }
     }
-    public static void mergeArrString (String[] list, int left, int mid, int right, String[] temp)
+    private static void mergeArrString (String[] list, int left, int mid, int right, String[] temp)
     {
         int i = left, j = mid + 1, k = left;
 
@@ -135,7 +153,18 @@ public class Team16 extends SortCompetition {
 
     public int challengeFour(int[][] arr)
     {
-        return 0;
+        int[] medians = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            quickInt(arr[i], (0), (arr[i].length - 1));
+
+            medians[i] = getMedian(arr[i]);
+        }
+
+        quickInt(medians, (0), (medians.length - 1));
+
+        return getMedian(medians);
     }
 
 
