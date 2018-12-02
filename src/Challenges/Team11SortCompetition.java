@@ -17,8 +17,8 @@ public class Team11SortCompetition extends SortCompetition
     @Override
     public int challengeOne(int[] arr)
     {
-        quickSort(arr,0, arr.length);
-        return median(arr);
+        InsertionSort(arr);
+        return arr[arr.length/2];
     }
 
     @Override

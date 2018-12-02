@@ -3,8 +3,20 @@ import Challenges.Team11SortCompetition;
 public class Runner {
     public static int[] setUp1(int num)
     {
-        int[] arr = new int[num];
-        return arr;
+        int[] array3 = new int[num];
+        for (int j = 0; j < num; j++) {
+
+            array3[j] = (int) (Math.random() * 10000) + 1;;
+
+        }
+        return array3;
+    }
+    public static void printArr1(int[] arr3) {
+        System.out.println("This is the new Arr:");
+        for (int n = 0; n < arr3.length; n++) {
+
+            System.out.println(arr3[n]);
+        }
     }
     public static String[] setUp2(int num){
         String[] array2 = new String[num];
@@ -24,11 +36,12 @@ public class Runner {
         int[] array3 = new int[num];
         for (int j = 0; j < num; j++) {
 
-            array3[j] = (int) (Math.random() * 1000) + 1;;
+            array3[j] = (int) (Math.random() * 100000) + 1;;
 
         }
         return array3;
     }
+
     public static void printArr3(int[] arr3) {
         System.out.println("This is the new Arr:");
         for (int n = 0; n < arr3.length; n++) {
@@ -64,6 +77,11 @@ public class Runner {
     }
     public static void main(String[] args) {
         Team11SortCompetition Team11 = new Team11SortCompetition();
+
+        int[] array1 = setUp3(10000);
+        //printArr3(array3);
+        System.out.println(Team11.challengeOne(array1));
+        printArr3(array1);
 
         String[] array2 = setUp2(10000);
         //printArr2(array2);
