@@ -158,7 +158,7 @@ public class Team5SortCompetition extends SortCompetition
             {
                 if (arr[i]==sample[j])
                 {
-                    array[i][staticidx]
+                   // array[i][staticidx]
                 }
             }
 
