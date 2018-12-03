@@ -81,28 +81,28 @@ public class Runner {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         int[] array1 = setUp3(10000);
         //printArr3(array3);
-        System.out.println(Team11.challengeOne(array1));
+        System.out.println("the median is" + Team11.challengeOne(array1));
         printArr3(array1);
     }
     public static void runChallenge2() {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         String[] array2 = setUp2(10000);
         //printArr2(array2);
-        System.out.println(Team11.challengeTwo(array2,array2[3]));
+        System.out.println("the median is" + Team11.challengeTwo(array2,array2[3]));
         printArr2(array2);
     }
     public static void runChallenge3() {
         Team11SortCompetition Team11 = new Team11SortCompetition();
-        int[] array1 = setUp3(10000);
+        int[] array1 = setUp3(100000);
         //printArr3(array3);
-        System.out.println(Team11.challengeOne(array1));
+        System.out.println("the median is" + Team11.challengeOne(array1));
         printArr3(array1);
     }
     public static void runChallenge4() {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         int[][] array4 = setUp4(10000,10000);
         // printArr4(array4);
-        System.out.println(Team11.challengeFour(array4));
+        System.out.println("the median is" + Team11.challengeFour(array4));
         printArr4(array4);
     }
 
