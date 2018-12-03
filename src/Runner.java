@@ -54,7 +54,7 @@ public class Runner {
         printIntArray(c3);
 
         System.out.println("\nChallenge 4");
-        int[][] c4 =  generate2DIntArr(10000);
+        int[][] c4 =  generate2DIntArr(1000);
 
         timer = System.nanoTime();
 
