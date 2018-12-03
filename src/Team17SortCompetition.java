@@ -216,6 +216,7 @@ public class Team17SortCompetition extends SortCompetition
             }
         }
     }
+
     public static void insertionSort(Comparable[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -250,6 +251,12 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
+    /**
+     * finds query in String array using binary search
+     * @param arr array to go through
+     * @param query String to find
+     * @return idx of location of query or -1 if not found
+     */
     public static int binarySearch(String[] arr, String query)
     {
         int left = 0;
@@ -276,6 +283,40 @@ public class Team17SortCompetition extends SortCompetition
         }
         return -1;
     }
+
+    /**
+     * Finds query in Comparable array using binary search
+     * @param arr array to go through
+     * @param query Comparable to find
+     * @return idx of the location of query in Comparable or -1 if not found
+     */
+    public static int binarySearch(Comparable[] arr, Comparable query)
+    {
+        int left = 0;
+        int right = arr.length-1;
+
+        while(left <= right)
+        {
+            int mid = (left + right)/2;
+            if(query.compareTo(arr[mid]) < 0)
+            {
+                right = mid-1;
+            }
+            else
+            {
+                if(query.compareTo(arr[mid]) > 0)
+                {
+                    left = mid+1;
+                }
+                else
+                {
+                    return(mid);
+                }
+            }
+        }
+        return -1;
+    }
+
 
 
     /**
