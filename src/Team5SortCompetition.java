@@ -84,7 +84,7 @@ public class Team5SortCompetition extends SortCompetition
     {
         int a;
         int b;
-        for(int i = 0; i < arr.length - 1; i++)
+        for(int i = 0; i < arr.length; i++)
         {
             for(int j = 0; j <= arr[i].length - 1; j++)
             {
@@ -138,6 +138,7 @@ public class Team5SortCompetition extends SortCompetition
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
+        /*
         //Maybe these specific instances of objects that implement compareTo, aren't the ones that will be tested.
         //It will probably be a set of related (ancestor/descendant) classes that will return an int based on their
         //own compareTo method.
@@ -145,6 +146,7 @@ public class Team5SortCompetition extends SortCompetition
 
         //This for loop is meant for allocating a static position to an element in the unsorted arr.
        // for (int i=0; i<arr.length)
+
         Comparable[][] array= new Comparable[10000][];
         Comparable[] sample= new Comparable[10000];
         for (int i=0; i< sample.length-1; i++)
@@ -183,6 +185,7 @@ public class Team5SortCompetition extends SortCompetition
                 return i;
             }
         }
+       */
        return 0;
     }
 

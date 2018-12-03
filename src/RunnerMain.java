@@ -3,23 +3,25 @@ public class RunnerMain
     public static void main(String[] args)
     {
         SortCompetition team1 = new Team5SortCompetition();
-        int[] randIntArr = randomIntsArr(10000);
+        int[] randIntArrA = randomIntsArr(10000);
+        int[] randIntArrB = randomIntsArr(10000);
         String[] randStringArr = randomStringArr(10000, 5);
         int[][] rand2dArr = random2dArr(1000, 1000);
 
         System.out.println("CHALLENGE 1");
 
         System.out.println("Unsorted");
-        printArr(randIntArr, null, null, null);
+        printArr(randIntArrA, null, null, null);
 
         long time = System.currentTimeMillis();
-        int median = team1.challengeOne(randIntArr);
+        int median = team1.challengeOne(randIntArrA);
         time = System.currentTimeMillis() - time;
+        System.out.println();
         System.out.println("Challenge One Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        printArr(randIntArr, null, null, null);
+        printArr(randIntArrA, null, null, null);
 
 
 
@@ -30,8 +32,9 @@ public class RunnerMain
         printArr(null, randStringArr, null, null);
 
         time = System.currentTimeMillis();
-        int found = team1.challengeTwo(randStringArr, "FUG");
+        int found = team1.challengeTwo(randStringArr, "FUCK");
         time = System.currentTimeMillis() - time;
+        System.out.println();
         System.out.println("Challenge Two Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("Position of query: " + found);
 
@@ -44,16 +47,17 @@ public class RunnerMain
         System.out.println("CHALLENGE 3");
 
         System.out.println("Unsorted");
-        printArr(randIntArr, null, null, null);
+        printArr(randIntArrB, null, null, null);
 
         time = System.currentTimeMillis();
-        median = team1.challengeThree(randIntArr);
+        median = team1.challengeThree(randIntArrB);
         time = System.currentTimeMillis() - time;
+        System.out.println();
         System.out.println("Challenge Three Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("Median: " + median);
 
         System.out.println("Sorted");
-        printArr(randIntArr, null, null, null);
+        printArr(randIntArrB, null, null, null);
 
 
 
@@ -66,6 +70,7 @@ public class RunnerMain
         time = System.currentTimeMillis();
         median = team1.challengeFour(rand2dArr);
         time = System.currentTimeMillis() - time;
+        System.out.println();
         System.out.println("Challenge Four Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("Median: " + median);
 
@@ -124,7 +129,7 @@ public class RunnerMain
     public static int[][] random2dArr(int totlen, int len)
     {
         int[][] arr = new int[totlen][len];
-        for(int i = 0; i < totlen - 1; i++)
+        for(int i = 0; i < totlen; i++)
         {
             for(int j = 0; j < len - 1; j++)
             {
