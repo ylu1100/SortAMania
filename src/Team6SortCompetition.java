@@ -43,6 +43,10 @@ public class Team6SortCompetition extends SortCompetition{
                 subarr[j] = arr[i][j];
             }
             int[] sortedArr = quickSort(subarr,0,subarr.length-1);
+            for(int j = 0; j<arr[i].length; j++)
+            {
+                arr[i][j] = subarr[j];
+            }
             int x2 = 0;
             int y2 = subarr.length-1;
             int median2 = 0;
@@ -63,19 +67,49 @@ public class Team6SortCompetition extends SortCompetition{
             }
             arr2[i] = median2;
         }
+
+        int[] sortedArr2 = quickSort(arr2,0,arr2.length-1);
+
+        int min;
+        for(int i = 1; i < arr2.length; i++)
+        {
+            min = arr2[i];
+            int temp = min;
+            for(int z = i-1; z>=0; z--)
+            {
+                if(arr2[z]>temp)
+                {
+                    arr2[z+1] = arr2[z];
+                    arr2[z] = temp;
+
+                    int[] temparr = new int[arr[z].length];
+                    for(int t = 0; t < arr[z].length; t++)
+                    {
+                        temparr[t] = arr[z][t];
+                    }
+                    for(int t = 0; t < arr[z].length; t++)
+                    {
+                        arr[z+1][t] = arr[z][t];
+                        arr[z][t] = temparr[t];
+                    }
+                }
+            }
+        }
+
+
         while(x != y)
         {
             x++;
             y--;
             if((x+1) == y || (y-1) == x)
             {
-                int total = arr2[x] + arr2[y];
+                int total = sortedArr2[x] + sortedArr2[y];
                 median = (total/2);
                 break;
             }
             else
             {
-                median = arr2[x];
+                median = sortedArr2[x];
             }
         }
         return median;

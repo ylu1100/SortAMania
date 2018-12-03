@@ -96,7 +96,7 @@ public class sortAManiaTestRunner
         Random random = new Random();
         for(int i = 0; i < num; i++)
         {
-            char[] word = new char[random.nextInt(length)];
+            char[] word = new char[length];
             for(int j = 0; j < word.length; j++)
             {
                 word[j] = (char)('a' + random.nextInt(26));
