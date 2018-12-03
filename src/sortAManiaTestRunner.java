@@ -22,7 +22,7 @@ public class sortAManiaTestRunner
         //printArr(randIntArr);
 
         System.out.println("Unsorted");
-        //printArr(randStringArr);
+        printArr(randStringArr);
 
         median = team6.challengeTwo(randStringArr, "words");
         time = System.currentTimeMillis() - time;
@@ -111,6 +111,7 @@ public class sortAManiaTestRunner
         {
             System.out.print(arr[i] + ",");
         }
+        System.out.println();
     }
     public static void printArr(String[] arr)
     {
@@ -118,6 +119,7 @@ public class sortAManiaTestRunner
         {
             System.out.print(arr[i] + ",");
         }
+        System.out.println();
     }
     public static void printArr(int[][] arr)
     {
