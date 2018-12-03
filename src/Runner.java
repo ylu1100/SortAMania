@@ -6,6 +6,52 @@
  */
 public class Runner {
     public static void main(String[] args) {
+        Team8SortCompetition team8 = new Team8SortCompetition();
+        int[] randomIntArr = randomIntArray(10000);
+        String[] randomStrArr = randomStringArray(10000, 5);
+        int[] almostSortedArr = mostlySortedIntArr(100000);
+        int[][] randomMultiArr = multiDimensionalIntArr(1000, 1000);
+        Comparable[] randomComparableArr = randomComparableArr(10000);
+
+        long start = System.currentTimeMillis();
+        int median = team8.challengeOne(randomIntArr);
+        long end = System.currentTimeMillis();
+        long time = end - start;
+        System.out.println("CHALLENGE ONE TIME: " + time * 0.001 + " Seconds");
+        System.out.println("MEDIAN: " + median + "\n");
+
+        start = System.currentTimeMillis();
+        int strPos = team8.challengeTwo(randomStrArr, "hello");
+        end = System.currentTimeMillis();
+        time = end - start;
+
+        System.out.println("CHALLENGE TWO TIME: " + time * 0.001 + " Seconds");
+        System.out.println("String Query Position: " + strPos + "\n");
+
+        start = System.currentTimeMillis();
+        median = team8.challengeThree(almostSortedArr);
+        end = System.currentTimeMillis();
+        time = end - start;
+
+        System.out.println("CHALLENGE THREE TIME: " + time * 0.001 + " Seconds");
+        System.out.println("MEDIAN: " + median + "\n");
+
+        start = System.currentTimeMillis();
+        median = team8.challengeFour(randomMultiArr);
+        end = System.currentTimeMillis();
+        time = end - start;
+
+        System.out.println("CHALLENGE FOUR TIME: " + time * 0.001 + " Seconds");
+        System.out.println("MEDIAN: " + median + "\n");
+
+        Comparable item = randomComparableArr[2];
+        start = System.currentTimeMillis();
+        int objPos = team8.challengeFive(randomComparableArr, item);
+        end = System.currentTimeMillis();
+        time = end - start;
+
+        System.out.println("CHALLENGE FIVE TIME: " + time * 0.001 + " Seconds");
+        System.out.println("OBJECT QUERY POSITION: " + objPos);
     }
 
     /**
@@ -29,7 +75,7 @@ public class Runner {
     public static double[] randomDoubleArray(int count) {
         double[] arr = new double[count];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (Math.random() * 100);
+            arr[i] = (Math.random() * 10000);
         }
         return arr;
     }
@@ -57,6 +103,35 @@ public class Runner {
                 word+= ch;
             }
             arr[i] = word;
+        }
+        return arr;
+    }
+
+    public static int[] mostlySortedIntArr(int count) {
+        int[] arr = new int[count];
+        int sortedUntil = (int)(arr.length * 0.75);
+        for (int i = 0; i < sortedUntil; i++) {
+            arr[i] = i;
+        }
+        for (int j = sortedUntil; j < arr.length; j++) {
+            arr[j] = (int)(Math.random() * 10000);
+        }
+        return arr;
+    }
+
+    public static int[][] multiDimensionalIntArr(int row, int column) {
+        int[][] arr = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            arr[i] = randomIntArray(column);
+        }
+        return arr;
+    }
+
+    public static Comparable[] randomComparableArr(int count) {
+        Comparable[] arr = new Comparable[count];
+        for (int i = 0; i < count; i++) {
+            Thing thing = new Thing();
+            arr[i] = thing;
         }
         return arr;
     }

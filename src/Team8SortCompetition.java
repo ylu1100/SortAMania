@@ -67,6 +67,7 @@ public class Team8SortCompetition extends SortCompetition {
 
         // Position Storage.
         int i = 0;
+
         // Loops through the sorted TreeMap & copies the sorted Arrays into the 2D Array.
         for (int median : sortedMedianMap.keySet()) {
             arr[i] = sortedMedianMap.get(median);
@@ -239,7 +240,7 @@ public class Team8SortCompetition extends SortCompetition {
             } else if (obj.compareTo(arr[middle]) == 0) { // Handles two objects that are duplicates.
                 if (obj == arr[middle]) { // If the memory address of arr[middle] is the same it will return position middle.
                     return middle;
-                } else { // If the memory address is not the same then return the position of the obj.
+                } else if (obj == arr[middle-1]) { // If the memory address is not the same then return the position of the obj.
                     return middle - 1;
                 }
             }
