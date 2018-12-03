@@ -30,10 +30,18 @@ public class Runner {
     {
         String tempArr1[] = new String[amount1];
         String Letters[] = new String[25];
-        Letters = [A,B.C.]
+        String Alphabet = "abcdefghijklmnopqrstuvwxyz";
+        for(int z =0;z<Letters.length;z++)
+        {
+            Letters[z] = Alphabet.substring(z,z+1);
+        }
         for (int i = 0; i < amount1; i++)
         {
-            tempArr1[i] = ;
+            for(int x = 0;x<length;x++)
+            {
+                int
+            }
+
         }
         return tempArr1;
     }
