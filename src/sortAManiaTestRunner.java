@@ -5,7 +5,7 @@ public class sortAManiaTestRunner
     public static void main(String[] args)
     {
         SortCompetition team6 = new Team6SortCompetition();
-        int[] randIntArr = randomIntsArr(10);
+        int[] randIntArr = randomIntsArr(30);
         int[][] randIntMultiArr = randomIntsMultiArr(10,10);
         String[] randStringArr = randomStringArr(10, 5);
 
@@ -26,7 +26,7 @@ public class sortAManiaTestRunner
 
         median = team6.challengeTwo(randStringArr, "words");
         time = System.currentTimeMillis() - time;
-        System.out.println("ChallengTwo Time Taken: " + time * 0.001 + " Seconds");
+        System.out.println("ChallengeTwo Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("String found at: " + median);
 
         System.out.println("Sorted");
