@@ -17,7 +17,7 @@ public class Team19SortCompetition extends SortCompetition{
     }
 
     public int challengeThree(int[] arr){
-        insertionSort(arr);
+        mergeSort(arr);
         return (arr[49999] + arr[50000]) / 2;
     }
 
@@ -154,5 +154,4 @@ public class Team19SortCompetition extends SortCompetition{
         arr[val1] = arr[val2];
         arr[val2] = x;
     }
-
 }
