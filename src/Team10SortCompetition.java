@@ -77,14 +77,4 @@ public abstract class Team10SortCompetition extends SortCompetition
         median = ((arr[50000] + arr[50001]) / 2);
         return median;
     }
-
-    public int[] randomIntsArr(int amount)
-    {
-        int tempArr[] = new int[amount];
-        for (int i = 0; i < amount; i++)
-        {
-            tempArr[i] = (int) (Math.random() * 10000);
-        }
-        return tempArr;
-    }
 }
