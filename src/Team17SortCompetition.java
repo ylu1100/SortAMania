@@ -50,19 +50,16 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-//        insertionSort(arr);
-//        toString(arr);
-//
+        for(int x =0)
+//        for(int x = 0; x<arr.length;x++)
+//        {
+//            if(arr[x] != query)
+//            {
+//                System.out.println(query + "found at " + x);
+//                return x;
+//            }
+//        }
 //        return -1;
-        for(int x = 0; x<arr.length;x++)
-        {
-            if(arr[x] != query)
-            {
-                System.out.println(query + "found at " + x);
-                return x;
-            }
-        }
-        return -1;
 
 
     }
