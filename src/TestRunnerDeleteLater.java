@@ -4,7 +4,6 @@ public class TestRunnerDeleteLater
 {
     public static void main(String[] args)
     {
-
         SortCompetition team2 = new Team2SortCompetition();
         int[] randIntArr = randomIntsArr(10000);
         System.out.println("Unsorted");
@@ -87,10 +86,14 @@ public class TestRunnerDeleteLater
         System.out.println();
 
         System.out.println("Challenge One Time Taken: " + time1net/1000000 + " Milli-Seconds");
+        System.out.println("Median equals: " + median1);
         System.out.println("Challenge Two Time Taken: " + time2net/1000000 + " Milli-Seconds");
+        System.out.println("First Instance: " + median2);
         System.out.println("Challenge Three Time Taken: " + time3net/1000000 + " Milli-Seconds");
+        System.out.println(team2.challengeThree(c3) + " Median");
         System.out.println("Challenge Four Time Taken: " + time4net/1000000 + " Milli-Seconds");
         System.out.println("Challenge Five Time Taken: " + time5net/1000000 + " Milli-Seconds");
+        System.out.println(team2.challengeFive(c5,c));
     }
 
     public static int[] randomIntsArr(int x)

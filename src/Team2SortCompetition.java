@@ -177,7 +177,7 @@ public class Team2SortCompetition extends SortCompetition{
             rowMediums[i] = (challenge4[i][(challenge4.length/2)-1] + challenge4[i][challenge4.length/2])/2;
         }
         quicksort2(rowMediums,challenge4,0,rowMediums.length-1);
-        median = (rowMediums[(rowMediums.length/2)-1] + rowMediums[rowMediums.length/2])/2;
+        median = ((double)rowMediums[(rowMediums.length/2)-1] + (double)rowMediums[rowMediums.length/2])/2;
         System.out.println((int)median);
         return (int)median;
     }
