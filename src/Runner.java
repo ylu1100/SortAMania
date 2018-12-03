@@ -1,6 +1,8 @@
 //Alexander Cox
 //Wednesday, November 28, 2018
 
+import java.util.concurrent.ConcurrentMap;
+
 public class Runner {
 
     public static void main (String[] args)
@@ -9,6 +11,7 @@ public class Runner {
         int[] c1Arr = randIntArr(10000);
         String[] c2Arr = randomStringArr(10000, 5);
         int[][] c4Arr = rand2DIntArr(1000, 1000);
+        Comparable[] c5Arr = randomObjArr(10000);
 
         //Challenge 1
         System.out.println("Challenge 1");
@@ -16,7 +19,9 @@ public class Runner {
         System.out.println("Median: " + runner.challengeOne(c1Arr));
         double endTime = (System.nanoTime() - startTime);
         System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
-        printIntArray(c1Arr);
+        //printIntArray(c1Arr);
+
+        System.out.print("\n");
 
         //Challenge 2
         System.out.println("Challenge 2");
@@ -24,9 +29,13 @@ public class Runner {
         System.out.println("Index of String: " + runner.challengeTwo(c2Arr, "words"));
         endTime = (System.nanoTime() - startTime);
         System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
-        printStringArray(c2Arr);
+        //printStringArray(c2Arr);
+
+        System.out.print("\n");
 
         //Challenge 3
+
+        System.out.print("\n");
 
         //Challenge 4
         System.out.println("Challenge 4");
@@ -34,8 +43,18 @@ public class Runner {
         System.out.println("Median: " + runner.challengeFour(c4Arr));
         endTime = (System.nanoTime() - startTime);
         System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
+        //print2dArray(c4Arr);
+
+        System.out.print("\n");
 
         //Challenge 5
+        System.out.println("Challenge 5");
+        Thing obj = new Thing(3);
+        startTime = System.nanoTime();
+        System.out.println("Index of Query: " + runner.challengeFive(c5Arr, 5));
+        endTime = (System.nanoTime() - startTime);
+        System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
+        printObjArray(c5Arr);
     }
 
     public static int[] randIntArr(int count)
@@ -79,6 +98,18 @@ public class Runner {
         return arr;
     }
 
+    public static Comparable[] randomObjArr(int count)
+    {
+        Comparable[] arr = new Comparable[count];
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] = new Thing((int)(Math.random() * 10000));
+        }
+
+        return arr;
+    }
+
     public static void printIntArray(int[] list)
     {
         System.out.print("[");
@@ -108,6 +139,16 @@ public class Runner {
         for (int i = 0; i < list.length; i++)
         {
             System.out.print(list[i] + ", ");
+        }
+        System.out.println("]\n");
+    }
+
+    public static void printObjArray(Comparable[] list)
+    {
+        System.out.print("[");
+        for (int i = 0; i < list.length; i++)
+        {
+            System.out.print(list[i].toString() + ", ");
         }
         System.out.println("]\n");
     }

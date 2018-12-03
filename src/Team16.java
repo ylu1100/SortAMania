@@ -171,7 +171,94 @@ public class Team16 extends SortCompetition {
 
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-        return 0;
+        mergeObj(arr);
+
+        int index = binarySearchObj(arr, (0), arr.length - 1, query);
+
+        if (index < 0)
+            return -1;
+        if (index == 0)
+            return 0;
+
+        while(arr[index].equals(arr[index - 1]))
+        {
+            index--;
+            if (index == 0)
+                return 0;
+        }
+
+        return index;
+    }
+    private int binarySearchObj(Comparable arr[], int min, int max, Comparable query)
+    {
+        if (max >= min)
+        {
+            int mid = min + (max - min) / 2;
+
+            if (arr[mid].compareTo(query) == 0)
+                return mid;
+
+            if (arr[mid].compareTo(query) > 0)
+                return binarySearchObj(arr, min, (mid - 1), query);
+
+            return binarySearchObj(arr, (mid + 1), max, query);
+        }
+
+        return -1;
+    }
+    private static void mergeObj (Comparable[] list)
+    {
+        int n = list.length;
+        Comparable[] temp = new Comparable[n];
+        mergeObjHelper(list, (0), (n - 1), temp);
+    }
+    private static void mergeObjHelper (Comparable[] list, int left, int right, Comparable[] temp)
+    {
+        if (left < right)
+        {
+            int mid = (left + right) / 2;
+            mergeObjHelper(list, left, mid, temp);
+            mergeObjHelper(list, (mid + 1), right, temp);
+            mergeArrObj(list, left, mid, right, temp);
+        }
+    }
+    private static void mergeArrObj (Comparable[] list, int left, int mid, int right, Comparable[] temp)
+    {
+        int i = left, j = mid + 1, k = left;
+
+        while (i <= mid && j <= right)
+        {
+            if (list[i].compareTo(list[j]) < 0)
+            {
+                temp[k] = list[i];
+                i++;
+            }
+            else
+            {
+                temp[k] = list[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i <= mid)
+        {
+            temp[k] = list[i];
+            i++;
+            k++;
+        }
+
+        while (j <= right)
+        {
+            temp[k] = list[j];
+            j++;
+            k++;
+        }
+
+        for (int x = left; x <= right; x++)
+        {
+            list[x] = temp[x];
+        }
     }
 
 
