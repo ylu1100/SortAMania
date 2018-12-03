@@ -58,15 +58,15 @@ public class Team18SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr)
     {
+        int[] medianArr = new int[arr.length];
         int median = 0;
         for(int i = 0;i<arr.length; i++)
         {
             insertionSort(arr[i]);
+            medianArr[i] = arr[i][i];
         }
-        if(arr.length%2==0)
-        {
-            median = (arr[arr.length/2][arr.length/2]*arr[(arr.length/2)-1][(arr.length/2)-1])/2;
-        }
+        insertionSort(medianArr);
+        median = (medianArr[medianArr.length/2]+ medianArr[(medianArr.length/2)-1])/2;
         return median;
     }
 
@@ -177,6 +177,4 @@ public class Team18SortCompetition extends SortCompetition
         }
         return z;
     }
-
-
 }

@@ -6,9 +6,9 @@ public class runner
 /*
         int[] c1 = generateIntArr(7);
         printIntArray(c1);
- */
+*/
         long timer = System.nanoTime();
- /*
+/*
         System.out.println("median is " + x.challengeOne(c1));
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
@@ -21,17 +21,17 @@ public class runner
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
 */
-        int[][] c3 = generate2IntArr(10,10);
+        int[][] c3 = generate2IntArr(4,4);
         print2dArr(c3);
         System.out.println(x.challengeFour(c3));
-
+/*
         Comparable[] c5 = new Comparable[10];
         String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};
         for(int i=0; i<C5S.length; i++)
         {
             c5[i] =
         }
-
+*/
 
 
 
@@ -53,7 +53,7 @@ public class runner
         {
             for(int j = 0; j<y; j++)
             {
-                arr[i][j] = (int) (Math.random()*10000);
+                arr[i][j] = (int) (Math.random()*10);
             }
         }
         return arr;
@@ -67,7 +67,9 @@ public class runner
             {
                 temp+=arr[i][j] + ", ";
             }
+            temp+= '\n';
         }
+        System.out.println(temp);
     }
     public static void printIntArray(int[] arr){
         String temp = "";
