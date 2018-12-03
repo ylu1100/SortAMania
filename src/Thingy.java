@@ -12,7 +12,7 @@ public class Thingy {
         this.value = (int) (Math.random() * 10000);
     }
 
-    @Override
+
     public int compareTo(Thingy other)
     {
         return this.value - other.value;

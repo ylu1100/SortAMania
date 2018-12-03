@@ -107,7 +107,7 @@ public class Runner
 
         System.out.println("\n"+"Competition5");
 
-        int ba=a1.challengeFive(arr2,"JH");
-        System.out.println(ba);
+        //int ba=a1.challengeFive(arr2,"JH");
+        //System.out.println(ba);
     }
 }
