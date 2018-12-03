@@ -7,6 +7,7 @@ public class RunnerMain
         int[] randIntArrB = randomIntsArr(10000);
         String[] randStringArr = randomStringArr(10000, 5);
         int[][] rand2dArr = random2dArr(1000, 1000);
+        Comparable[] randCompArr=randomCompArr(10000,10);
 
         System.out.println("CHALLENGE 1");
 
@@ -81,15 +82,17 @@ public class RunnerMain
         System.out.println("CHALLENGE 5");
 
         System.out.println("Unsorted");
-        printArr(null, null, null, null);
+        printArr(null, null, null, randCompArr);
+        System.out.println("\n");
 
         time = System.currentTimeMillis();
-        //median = team1.challengeFive(rand2dArr);
+        //not actually a median, just a predefined var.
+        median = team1.challengeFive(randCompArr, "hello");
         time = System.currentTimeMillis() - time;
         System.out.println("Challenge Five Time Taken: " + time * 0.001 + " Seconds");
 
         System.out.println("Sorted");
-        printArr(null, null, rand2dArr, null);
+        printArr(null, null,null, randCompArr);
     }
 
     private static int[] randomIntsArr(int num)
@@ -163,7 +166,12 @@ public class RunnerMain
         }
         if (arr3!= null)
         {
-            for(int i = 0; i < arr3.length - 1; i++)
+           /* for(int i = 0; i < arr1.length - 1; i++)
+                System.out.print(arr1[i] + " "); */
+            int fluidLen=arr3.length-1;
+            for(int i = 0; i < fluidLen/2; i++)
+                System.out.print(arr3[i] + " ");
+            for (int i=fluidLen/2; i<fluidLen; i++)
                 System.out.print(arr3[i] + " ");
         }
     }
