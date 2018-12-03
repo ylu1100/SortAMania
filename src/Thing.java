@@ -1,11 +1,11 @@
-public class Object implements Comparable{
+public class Thing implements Comparable{
     private int value;
-    public Object(int value)
+    public Thing(int value)
     {
         this.value = value;
     }
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Thing o) {
         return value - o.getValue();
     }
     public int getValue()

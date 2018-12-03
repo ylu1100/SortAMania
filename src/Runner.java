@@ -24,7 +24,7 @@ public class Runner {
         System.out.println((p-l)*0.001);
         //System.out.println(c[t.challengeFive(c,c[10])]);
 
-        
+
     }
     public static int[] getRndIntArr(int min, int max, int length)
     {
@@ -35,12 +35,12 @@ public class Runner {
         }
         return arr;
     }
-    public static Comparable[] getRndComparableArr(int min, int max, int length)
+    public static Thing[] getRndComparableArr(int min, int max, int length)
     {
-        Comparable[] arr = new Comparable[length];
+        Thing[] arr = new Thing[length];
         for(int i = 0; i < length; i++)
         {
-            arr[i] = new Object((int) Math.floor(Math.random() * (max - min + 1)) + min);
+            arr[i] = new Thing((int) Math.floor(Math.random() * (max - min + 1)) + min);
         }
         return arr;
     }
