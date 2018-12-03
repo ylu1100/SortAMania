@@ -4,10 +4,8 @@ public class Team6SortCompetition extends SortCompetition{
     {
         int i = 0;
         int j = arr.length-1;
-        int median = 0;
         int[] sortedArr = quickSort(arr,0,arr.length-1);
-        median(i,j,sortedArr,0);
-        return median;
+        return median(i,j,sortedArr,0);
     }
 
     public int challengeTwo(String[] arr, String query)
@@ -27,10 +25,8 @@ public class Team6SortCompetition extends SortCompetition{
     {
         int i = 0;
         int j = arr.length-1;
-        int median = 0;
         int[] sortedArr = insertionSort(arr);
-        median(i,j,sortedArr,0);
-        return median;
+        return median(i,j,sortedArr,0);
     }
 
     public int challengeFour(int[][] arr)

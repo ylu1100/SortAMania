@@ -10,7 +10,7 @@ public class sortAManiaTestRunner
         String[] randStringArr = randomStringArr(10000, 5);
 
         System.out.println("Unsorted");
-        //printArr(randIntArr);
+        printArr(randIntArr);
 
         long time = System.currentTimeMillis();
         int median = team6.challengeOne(randIntArr);
@@ -19,7 +19,7 @@ public class sortAManiaTestRunner
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        //printArr(randIntArr);
+        printArr(randIntArr);
 
         System.out.println("Unsorted");
         printArr(randStringArr);
