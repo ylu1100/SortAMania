@@ -23,13 +23,15 @@ public abstract class Runner extends SortCompetition {
         System.out.println("Sorted: " + Arrays.toString(arr2));
         System.out.println("Challenge 2 Duration: " + duration  * 0.001 + " seconds \n");
 
-        int[] arr3 = (partiallySorted());
-        //System.out.println(Arrays.toString(arr3));
+        /*int[] arr3 = (partiallySorted(75000));
+        System.out.println("Unsorted: ");
+        printPartialArr(arr3);
         duration = System.currentTimeMillis();
         System.out.println("Returns: " + team19.challengeThree(arr3));
         duration = System.currentTimeMillis() - duration;
-        //System.out.println(Arrays.toString(arr3));
-        System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");
+        System.out.println("Sorted: ");
+        printPartialArr(arr3);
+        System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");*/
 
         int[][] arr4 = random3DIntArr(1000,10000);
         System.out.println(Arrays.toString(arr4[0]));
@@ -117,5 +119,30 @@ public abstract class Runner extends SortCompetition {
         arr += x[x.length-1].value + "]";
         return arr;
     }
+
+    public static void printPartialArr(int[] arr){
+        String result = "[";
+        for(int i = 10000; i < 19999; i++){
+            result += arr[i] + ", ";
+        }
+        result += arr[19999] + "]";
+        System.out.println(result);
+    }
+
+    /*public static int[] mostlySortedArr(int num) {
+        int[] arr = new int[100000];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = -1;
+        }
+        int sorted = 0;
+        int x;
+        while(sorted < num){
+            x = getRandomInteger(0, 99999);
+            if(arr[x] < 0){
+                arr[x] = getRandomInteger(0, 10000);
+                sorted++;
+            }
+        }
+    }*/
 
 }
