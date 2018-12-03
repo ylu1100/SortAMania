@@ -32,6 +32,7 @@ public class Team9SortingCompetition extends SortCompetition {
         {
             mergeSortInt(arr[i]);
         }
+        mergeArrSort(arr);
         return getMedian(arr[arr.length/2]);
     }
 
@@ -40,10 +41,10 @@ public class Team9SortingCompetition extends SortCompetition {
         comparableBubbleSort(arr);
         for(int i = 0; i < arr.length; i++)
         {
-            if(arr[i].compareTo(query) == 0)
-            {
-                return i;
-            }
+            //if(arr[i].equalsTo(query))
+            //{
+            //    return i;
+            //}
         }
         return -1;
     }
@@ -266,12 +267,12 @@ public class Team9SortingCompetition extends SortCompetition {
         while(swapped)
         {
             for(int i = 0; i < arr.length - 1; i++) {
-                if (arr[i].compareTo(arr[i + 1]) > 0) {
-                    Comparable temp = arr[i];
-                    arr[i] = arr[i+1];
-                    arr[i+1] = temp;
-                    swaps++;
-                }
+                //if (arr[i].compareTo(arr[i + 1]) > 0) {
+                    //Comparable temp = arr[i];
+                    //arr[i] = arr[i+1];
+                    //arr[i+1] = temp;
+                    //swaps++;
+                //}
             }
             if(swaps > 0)
             {

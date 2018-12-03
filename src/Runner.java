@@ -5,7 +5,7 @@ public class Runner {
         int[] e = getRndIntArr(0,10000,10000);
         String[] s = getRndStringArr(1000,5);
         int[][] doubleArr = new int[1000][1000];
-        Comparable[] c = getRndComparableArr(10000);
+        Comparable[] c = getRndComparableArr(1,1000,10000);
         int[] mostlySorted = getRndIntArr(0,10, 100000);
         for(int i = 0; i < 1000; i++)
         {
@@ -14,9 +14,17 @@ public class Runner {
         System.out.println(c[10] + " " + c[20]);
         System.out.println(t.challengeOne(e));
         System.out.println(t.challengeTwo(s,"apple"));
-        //System.out.println(t.challengeThree(mostlySorted));
+        long l = System.currentTimeMillis();
+        System.out.println(t.challengeThree(mostlySorted));
+        long p = System.currentTimeMillis();
+        System.out.println((p-l)*0.001 + " seconds");
+        l = System.currentTimeMillis();
         System.out.println(t.challengeFour(doubleArr));
-        System.out.println(c[t.challengeFive(c,c[10])]);
+        p = System.currentTimeMillis();
+        System.out.println((p-l)*0.001);
+        //System.out.println(c[t.challengeFive(c,c[10])]);
+
+        
     }
     public static int[] getRndIntArr(int min, int max, int length)
     {
@@ -27,12 +35,12 @@ public class Runner {
         }
         return arr;
     }
-    public static Comparable[] getRndComparableArr(int length)
+    public static Comparable[] getRndComparableArr(int min, int max, int length)
     {
         Comparable[] arr = new Comparable[length];
         for(int i = 0; i < length; i++)
         {
-            arr[i] = new Objects();
+            arr[i] = new Object((int) Math.floor(Math.random() * (max - min + 1)) + min);
         }
         return arr;
     }
