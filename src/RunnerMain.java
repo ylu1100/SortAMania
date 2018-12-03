@@ -3,6 +3,9 @@ public class RunnerMain
     public static void main(String[] args)
     {
         SortCompetition team1 = new Team5SortCompetition();
+        System.out.println(team1.greeting());
+        System.out.println("\n");
+
         int[] randIntArrA = randomIntsArr(10000);
         int[] randIntArrB = randomIntsArr(10000);
         String[] randStringArr = randomStringArr(10000, 5);
@@ -65,7 +68,7 @@ public class RunnerMain
         System.out.println("\n");
         System.out.println("CHALLENGE 4");
 
-        System.out.println("Unsorted");
+        System.out.println("Unsorted (first 5)");
         printArr(null, null, rand2dArr, null);
 
         time = System.currentTimeMillis();
@@ -75,15 +78,16 @@ public class RunnerMain
         System.out.println("Challenge Four Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("Median: " + median);
 
-        System.out.println("Sorted");
+        System.out.println("Sorted (first 5)");
         printArr(null, null, rand2dArr, null);
+
+
 
         System.out.println("\n");
         System.out.println("CHALLENGE 5");
 
         System.out.println("Unsorted");
         printArr(null, null, null, randCompArr);
-        System.out.println("\n");
 
         time = System.currentTimeMillis();
         //not actually a median, just a predefined var.
@@ -117,6 +121,7 @@ public class RunnerMain
         }
         return arr;
     }
+
     public static Comparable[] randomCompArr(int num, int len)
     {
         String[] alphabet = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
@@ -129,6 +134,7 @@ public class RunnerMain
         }
         return arr;
     }
+
     public static int[][] random2dArr(int totlen, int len)
     {
         int[][] arr = new int[totlen][len];
@@ -158,13 +164,15 @@ public class RunnerMain
 
         if(arr2 != null)
         {
-            for(int i = 0; i < 1; i++)
+            for(int i = 0; i < 5; i++)
             {
-                for(int j = 0; j < arr2.length - 1; j++)
+                for(int j = 0; j < arr2[i].length - 1; j++)
                     System.out.print(arr2[i][j] + " ");
+                System.out.println();
             }
         }
-        if (arr3!= null)
+
+        if (arr3 != null)
         {
            /* for(int i = 0; i < arr1.length - 1; i++)
                 System.out.print(arr1[i] + " "); */

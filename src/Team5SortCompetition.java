@@ -191,6 +191,13 @@ public class Team5SortCompetition extends SortCompetition
 
     public String greeting()
     {
-        return "e";
+        System.out.println("Welcome! Our sorting program (courtesy of Johan Avila and Matthew Moore) will now complete all 5 challenges " +
+                "using [INSERTION] sort! Hope you have a nice flight!");
+        System.out.println("Sort will begin in 5...");
+        System.out.println("4...");
+        System.out.println("3...");
+        System.out.println("2...");
+        System.out.println("1!");
+        return "Begin!";
     }
 }
