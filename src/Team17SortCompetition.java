@@ -443,6 +443,7 @@ public class Team17SortCompetition extends SortCompetition
 
     }
 
+
     //toString Double String array
     public static void toString(int[][] list)
     {
@@ -468,7 +469,7 @@ public class Team17SortCompetition extends SortCompetition
 
         for(int i =0;i<list.length;i++)
         {
-            out += list[i];
+            out += list[i].value;
             if(i != list.length-1)
             {
                 out += ", ";

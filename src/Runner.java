@@ -59,12 +59,31 @@ public class Runner {
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
         count = 5;
-        int[] challengeFiveList = new int[count];
+        Comparable[] challengeFiveList = new Comparable[count];
 
         for(int i = 0;i<challengeFiveList.length;i++)
         {
-            challengeFiveList = Team17SortCompetition.randIntArr(count);
+            challengeFiveList[i] = new Thing();
         }
+
+        Team17SortCompetition.toString(challengeFiveList);
+
+        start = System.currentTimeMillis();
+        System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[1]));
+        diff = System.currentTimeMillis() - start;
+        String out = "";
+
+        for(int i =0;i<challengeFiveList.length;i++)
+        {
+            out += challengeFiveList[i].getValue();
+            if(i != challengeFiveList.length-1)
+            {
+                out += ", ";
+            }
+        }
+        System.out.println(out);
+        System.out.println("Time Taken: " + diff + "\n");
+
 
     }
 }
