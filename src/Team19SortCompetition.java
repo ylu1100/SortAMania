@@ -32,7 +32,7 @@ public class Team19SortCompetition extends SortCompetition{
         return (medianArr[499] + medianArr[500]) / 2;
     }
 
-    public int challengeFive(Things[] arr, Things query){
+    public int challengeFive(Comparable[] arr, Comparable query){
         bubbleSort(arr);
         for(int i = 0; i < arr.length; i++){
             if(arr[i].compareTo(query) == 0){

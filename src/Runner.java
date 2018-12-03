@@ -23,7 +23,7 @@ public abstract class Runner extends SortCompetition {
         System.out.println("Sorted: " + Arrays.toString(arr2));
         System.out.println("Challenge 2 Duration: " + duration  * 0.001 + " seconds \n");
 
-        /*int[] arr3 = (partiallySorted(75000));
+        int[] arr3 = (partiallySorted());
         System.out.println("Unsorted: ");
         printPartialArr(arr3);
         duration = System.currentTimeMillis();
@@ -31,7 +31,7 @@ public abstract class Runner extends SortCompetition {
         duration = System.currentTimeMillis() - duration;
         System.out.println("Sorted: ");
         printPartialArr(arr3);
-        System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");*/
+        System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");
 
         int[][] arr4 = random3DIntArr(1000,10000);
         System.out.println(Arrays.toString(arr4[0]));
