@@ -12,7 +12,7 @@ public class Runner
         }
         System.out.print("Unsorted Array: ");
        // for(int i=0;i<arr.length;i++) { System.out.print(arr[i]+" "); }
-        //nothing
+        
         Team0SortCompetition a1 = new Team0SortCompetition();
 
         long time = System.nanoTime();

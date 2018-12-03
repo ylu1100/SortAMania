@@ -1,8 +1,8 @@
 public class Team0SortCompetition extends SortCompetition
 {
+    @Override
     public int challengeOne(int[] arr)
     {
-
         boolean done=false;
         while(!done)
         {
@@ -24,7 +24,6 @@ public class Team0SortCompetition extends SortCompetition
         int a= sum/2;
         return a;
     }
-
 
     @Override
     public int challengeTwo(String[] arr, String query) {
