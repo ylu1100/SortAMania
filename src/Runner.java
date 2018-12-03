@@ -111,10 +111,10 @@ public abstract class Runner extends SortCompetition {
 
     public static String printThingsArr(Things[] x){
         String arr = "[";
-        for(int i = 0; i < x.length; i++){
+        for(int i = 0; i < x.length-1; i++){
             arr += x[i].value + ", ";
         }
-        arr += "]";
+        arr += x[x.length-1].value + "]";
         return arr;
     }
 
