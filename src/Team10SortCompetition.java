@@ -1,15 +1,16 @@
 /*TRAFVIS*/
-public abstract class Team10SortCompetition extends SortCompetition {
+public abstract class Team10SortCompetition extends SortCompetition
+{
     public int challengeOne(int[] arr)
     {
         int temp1;
         int temp2 = 0;
-        for (int i = 0;i<arr.length;i++)
+        for (int i = 0; i < arr.length; i++)
         {
             temp1 = i;
-            for(int x = i;x<arr.length;x++)
+            for (int x = i; x < arr.length; x++)
             {
-                if (arr[i]<temp2)
+                if (arr[i] < temp2)
                 {
                     temp1 = x;
                     temp2 = arr[x];
@@ -18,15 +19,16 @@ public abstract class Team10SortCompetition extends SortCompetition {
             arr[temp1] = arr[i];
             arr[i] = temp2;
         }
-        int median = ((arr[5000]+arr[5001])/2);
+        int median = ((arr[5000] + arr[5001]) / 2);
         return median;
     }
-public int challengeTwo(String[] arr, String query)
-{
-    String temp = "";
-    int x = 0;
-    int wordPos = -1;
-    boolean sorting = false;
+
+    public int challengeTwo(String[] arr, String query)
+    {
+        String temp = "";
+        int x = 0;
+        int wordPos = -1;
+        boolean sorting = false;
         while (sorting = false)
         {
             for (int i = 0; i < arr.length; i++)
@@ -36,8 +38,7 @@ public int challengeTwo(String[] arr, String query)
                 {
                     wordPos = i;
                 }
-                if (x < 0)
-                {
+                if (x < 0) {
                     temp = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = temp;
@@ -51,36 +52,39 @@ public int challengeTwo(String[] arr, String query)
                 }
             }
         }
-    return wordPos;
-}
-public int challengeThree(int[] arr)
-{
-    int temp1 = 0;
-    int temp2 = 0;
-    int median = 0;
-    for (int i = 0;i<arr.length;i++)
+        return wordPos;
+    }
+
+    public int challengeThree(int[] arr)
     {
-        temp1 = i;
-        for(int x = i;x<arr.length;x++)
+        int temp1 = 0;
+        int temp2 = 0;
+        int median = 0;
+        for (int i = 0; i < arr.length; i++)
         {
-            if (arr[i]<temp2)
+            temp1 = i;
+            for (int x = i; x < arr.length; x++)
             {
-                temp1 = x;
-                temp2 = arr[x];
+                if (arr[i] < temp2)
+                {
+                    temp1 = x;
+                    temp2 = arr[x];
+                }
             }
+            arr[temp1] = arr[i];
+            arr[i] = temp2;
         }
-        arr[temp1] = arr[i];
-        arr[i] = temp2;
+        median = ((arr[50000] + arr[50001]) / 2);
+        return median;
     }
-    median = ((arr[50000]+arr[50001])/2);
-    return median;
-}
-public int[] randomIntsArr(int amount) {
-    int tempArr[] = new int[amount];
-    for (int i = 0; i < amount; i++) {
 
+    public int[] randomIntsArr(int amount)
+    {
+        int tempArr[] = new int[amount];
+        for (int i = 0; i < amount; i++)
+        {
+            tempArr[i] = (int) (Math.random() * 10000);
+        }
+        return tempArr;
     }
-    return tempArr;
-
-}
 }

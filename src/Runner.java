@@ -17,4 +17,24 @@ public class Runner {
         System.out.println("sorted");
         printArr(randIntArr);
     }
+    public static int[] randomIntsArr(int amount)
+    {
+        int tempArr[] = new int[amount];
+        for (int i = 0; i < amount; i++)
+        {
+            tempArr[i] = (int) (Math.random() * 10000);
+        }
+        return tempArr;
+    }
+    public static String[] randomStringArr(int amount1, int length)
+    {
+        String tempArr1[] = new String[amount1];
+        String Letters[] = new String[25];
+        Letters = [A,B.C.]
+        for (int i = 0; i < amount1; i++)
+        {
+            tempArr1[i] = ;
+        }
+        return tempArr1;
+    }
 }
