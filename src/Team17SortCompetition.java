@@ -50,16 +50,17 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-        for(int x =0)
-//        for(int x = 0; x<arr.length;x++)
-//        {
-//            if(arr[x] != query)
-//            {
-//                System.out.println(query + "found at " + x);
-//                return x;
-//            }
-//        }
-//        return -1;
+        quickSort(arr,0,arr.length-1);
+        toString(arr);
+        for(int x = 0; x<arr.length;x++)
+        {
+            if(arr[x] == query)
+            {
+                System.out.println(query + "found at " + x);
+                return x;
+            }
+        }
+     return(binarySearch(arr,query));
 
 
     }
@@ -88,7 +89,28 @@ public class Team17SortCompetition extends SortCompetition
             quickSort(arr,pivot+1,right);
         }
     }
+    public static void quickSort(int[] mids, int[][] norm, int left, int right)
+    {
+        if(left<right)
+        {
+            int pivot = partition(mids,norm,left,right);
+
+            quickSort(mids,norm,left,pivot-1);
+            quickSort(mids,norm,pivot+1,right);
+        }
+    }
+
     public static void quickSort(String[] arr, int left, int right)
+    {
+        if(left<right)
+        {
+            int pivot = partition(arr,left,right);
+
+            quickSort(arr,left,pivot-1);
+            quickSort(arr,pivot+1,right);
+        }
+    }
+    public static void quickSort(Comparable[] arr, int left, int right)
     {
         if(left<right)
         {
@@ -101,6 +123,24 @@ public class Team17SortCompetition extends SortCompetition
     public static int partition(String[] arr, int left, int right)
     {
         String pivot = arr[right];
+        int i = left-1;
+
+        for(int j = left;j<right;j++)
+        {
+            if(arr[j].compareTo(pivot)< 1)
+            {
+                i++;
+                swap(arr,i,j);
+            }
+        }
+        swap(arr,i+1,right);
+        return(i+1);
+    }
+
+
+    public static int partition(Comparable[] arr, int left, int right)
+    {
+        Comparable pivot = arr[right];
         int i = left-1;
 
         for(int j = left;j<right;j++)
@@ -148,16 +188,6 @@ public class Team17SortCompetition extends SortCompetition
      * @param left left element position
      * @param right right element position
      */
-    public static void quickSort(int[] mids, int[][] norm, int left, int right)
-    {
-        if(left<right)
-        {
-            int pivot = partition(mids,norm,left,right);
-
-            quickSort(mids,norm,left,pivot-1);
-            quickSort(mids,norm,pivot+1,right);
-        }
-    }
 
     /**
      * Creates a partition to sort two sides separately
@@ -328,6 +358,12 @@ public class Team17SortCompetition extends SortCompetition
     public static void swap(int[] arr,int pos1,int pos2)
     {
         int temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
+    public static void swap(Comparable[] arr,int pos1,int pos2)
+    {
+        Comparable temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }
