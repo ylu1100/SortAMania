@@ -5,7 +5,8 @@ public class sortAManiaTestRunner
     public static void main(String[] args)
     {
         SortCompetition team6 = new Team6SortCompetition();
-        int[] randIntArr = randomIntsArr(30);
+        int[] randIntArr = randomIntsArr(10);
+        int[] randIntArr2 = randomIntsArr(10);
         int[][] randIntMultiArr = randomIntsMultiArr(10,10);
         String[] randStringArr = randomStringArr(10, 5);
 
@@ -33,15 +34,15 @@ public class sortAManiaTestRunner
         printArr(randStringArr);
 
         System.out.println("Unsorted");
-        printArr(randIntArr);
+        printArr(randIntArr2);
 
-        median = team6.challengeThree(randIntArr);
+        median = team6.challengeThree(randIntArr2);
         time = System.currentTimeMillis() - time;
         System.out.println("ChallengeThree Time Taken: " + time * 0.001 + " Seconds");
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        printArr(randIntArr);
+        printArr(randIntArr2);
 
         System.out.println("Unsorted");
         printArr(randIntMultiArr);
