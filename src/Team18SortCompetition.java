@@ -64,8 +64,9 @@ public class Team18SortCompetition extends SortCompetition
         {
             insertionSort(arr[i]);
             medianArr[i] = arr[i][i];
+            insertionSort(medianArr);
         }
-        insertionSort(medianArr);
+
         median = (medianArr[medianArr.length/2]+ medianArr[(medianArr.length/2)-1])/2;
         return median;
     }
