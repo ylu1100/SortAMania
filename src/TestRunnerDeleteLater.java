@@ -12,7 +12,7 @@ public class TestRunnerDeleteLater
         int median1 = team2.challengeOne(randIntArr);
         long time1end = System.nanoTime();
         long time1net = time1end - time1start;
-        System.out.println("Challenge One Time Taken: " + time1net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge One Time Taken: " + time1net + " nanoseconds.");
         System.out.println("Median equals: " + median1);
         System.out.println("Sorted");
         printArr(randIntArr);
@@ -24,7 +24,7 @@ public class TestRunnerDeleteLater
         int median2 = team2.challengeTwo(randStringArr,"ABCDE");
         long time2end = System.nanoTime();
         long time2net = time2end - time2start;
-        System.out.println("Challenge Two Time Taken: " + time2net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge Two Time Taken: " + time2net + " nanoseconds.");
         System.out.println("First Instance: " + median2);
         System.out.println("Sorted");
         printStringArray(randStringArr);
@@ -42,7 +42,7 @@ public class TestRunnerDeleteLater
         long time3end = System.nanoTime();
         long time3net = time3end - time3start;
         System.out.println("Sorted");
-        System.out.println(time3net/1000000 + " milliseconds");
+        System.out.println(time3net + " nanoseconds.");
         System.out.println("Median = " + median3);
         printArr(c3);
 
@@ -56,7 +56,7 @@ public class TestRunnerDeleteLater
         System.out.println("Sorted");
         printTable.print2D(array2d);
         System.out.println("Median equals: " + median4);
-        System.out.println("Challenge Four Time Taken: " + time4net/1000000  + " Milli-Seconds");
+        System.out.println("Challenge Four Time Taken: " + time4net  + " nanoseconds.");
 
         System.out.println("Unsorted");
         Comparable[] c5 = new Comparable[10000];
@@ -83,18 +83,18 @@ public class TestRunnerDeleteLater
             s+= c5[i] + " ";
         }
         System.out.println(s);
-        System.out.println(time5net/1000000 + " seconds");
+        System.out.println(time5net + " nanoseconds.");
         System.out.println();
 
-        System.out.println("Challenge One Time Taken: " + time1net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge One Time Taken: " + time1net + " nanoseconds.");
         System.out.println("Median equals: " + median1);
-        System.out.println("Challenge Two Time Taken: " + time2net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge Two Time Taken: " + time2net + " nanoseconds.");
         System.out.println("First Instance: " + median2);
-        System.out.println("Challenge Three Time Taken: " + time3net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge Three Time Taken: " + time3net + " nanoseconds.");
         System.out.println("Median = " + median3);
-        System.out.println("Challenge Four Time Taken: " + time4net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge Four Time Taken: " + time4net + " nanoseconds.");
         System.out.println("Median equals: " + median4);
-        System.out.println("Challenge Five Time Taken: " + time5net/1000000 + " Milli-Seconds");
+        System.out.println("Challenge Five Time Taken: " + time5net + " nanoseconds.");
         System.out.println("First instance = " + team2.challengeFive(c5,c));
     }
 
