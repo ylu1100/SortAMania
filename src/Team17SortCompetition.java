@@ -51,7 +51,7 @@ public class Team17SortCompetition extends SortCompetition
     public int challengeFive(Comparable[] arr, Comparable query)
     {
         quickSort(arr,0,arr.length-1);
-        toString(arr);
+
         for(int x = 0; x<arr.length;x++)
         {
             if(arr[x] == query)
@@ -463,21 +463,7 @@ public class Team17SortCompetition extends SortCompetition
         }
         System.out.println(out);
     }
-    public static void toString(Comparable[] list)
-    {
-        String out = "";
 
-        for(int i =0;i<list.length;i++)
-        {
-            out += list[i].value;
-            if(i != list.length-1)
-            {
-                out += ", ";
-            }
-        }
-        System.out.println(out);
-
-    }
 
     /**
      * Creates array of random integers

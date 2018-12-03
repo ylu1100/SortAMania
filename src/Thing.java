@@ -9,8 +9,9 @@ public class Thing implements Comparable<Thing> {
     {
         return this.value - other.value;
     }
-    public int getValue()
+    public String toSting()
     {
-        return(this.value);
+        return(this.value + "");
     }
+
 }

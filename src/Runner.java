@@ -66,7 +66,6 @@ public class Runner {
             challengeFiveList[i] = new Thing();
         }
 
-        Team17SortCompetition.toString(challengeFiveList);
 
         start = System.currentTimeMillis();
         System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[1]));
@@ -75,7 +74,7 @@ public class Runner {
 
         for(int i =0;i<challengeFiveList.length;i++)
         {
-            out += challengeFiveList[i].getValue();
+            System.out.println( challengeFiveList[i]);
             if(i != challengeFiveList.length-1)
             {
                 out += ", ";
