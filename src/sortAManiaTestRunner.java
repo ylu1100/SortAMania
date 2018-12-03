@@ -5,9 +5,9 @@ public class sortAManiaTestRunner
     public static void main(String[] args)
     {
         SortCompetition team6 = new Team6SortCompetition();
-        int[] randIntArr = randomIntsArr(10000);
-        int[][] randIntMultiArr = randomIntsMultiArr(10000,10000);
-        String[] randStringArr = randomStringArr(10000, 5);
+        int[] randIntArr = randomIntsArr(10);
+        int[][] randIntMultiArr = randomIntsMultiArr(10,10);
+        String[] randStringArr = randomStringArr(10, 5);
 
         System.out.println("Unsorted");
         printArr(randIntArr);
@@ -30,10 +30,10 @@ public class sortAManiaTestRunner
         System.out.println("String found at: " + median);
 
         System.out.println("Sorted");
-        //printArr(randStringArr);
+        printArr(randStringArr);
 
         System.out.println("Unsorted");
-        //printArr(randIntArr);
+        printArr(randIntArr);
 
         median = team6.challengeThree(randIntArr);
         time = System.currentTimeMillis() - time;
@@ -41,10 +41,10 @@ public class sortAManiaTestRunner
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        //printArr(randIntArr);
+        printArr(randIntArr);
 
         System.out.println("Unsorted");
-        //printArr(randIntMultiArr);
+        printArr(randIntMultiArr);
 
         median = team6.challengeFour(randIntMultiArr);
         time = System.currentTimeMillis() - time;
@@ -52,7 +52,7 @@ public class sortAManiaTestRunner
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        //printArr(randIntMultiArr);
+        printArr(randIntMultiArr);
 
 
         System.out.println("Unsorted");
