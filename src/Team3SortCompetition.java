@@ -20,6 +20,7 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public int challengeFour(int[][] arr) {
+        
         return 0;
     }
 
@@ -92,7 +93,7 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public int partition(int[] arr, int left, int right){
-        int pivotpos = (int)(Math.random()*arr.length); //has to be a random number between left and right
+        int pivotpos = left + (int)(Math.random()* (right - left)); //has to be a random number between left and right
         int pivot = arr[pivotpos];
         swap(arr,right,pivotpos);
         int index = left-1;
