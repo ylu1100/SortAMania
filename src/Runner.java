@@ -1,6 +1,9 @@
 import Challenges.Team11SortCompetition;
+import Challenges.Challenge5;
+
 
 import java.util.Scanner;
+
 
 public class Runner {
     public static int[] setUp1(int num)
@@ -76,6 +79,10 @@ public class Runner {
             System.out.println("this is next nine  ");
 
         }
+    }
+    public static void setUp5() {
+        Challenge5 generated = new Challenge5();
+        generated.randomArr(generated.value);
     }
     public static void runChallenge1() {
         Team11SortCompetition Team11 = new Team11SortCompetition();

@@ -1,7 +1,7 @@
 package Challenges;
 
 public  class Challenge5 implements Comparable<Challenge5> {
-    private int value;
+    public int value;
     public Challenge5() {
         this.value = (int)(Math.random()*10000);
     }
