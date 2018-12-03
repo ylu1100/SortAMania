@@ -91,6 +91,9 @@ public class Team0SortCompetition extends SortCompetition
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
+
+
+        /*
         int a = 1;
         Comparable y;
         while(a != 0)
@@ -115,6 +118,7 @@ public class Team0SortCompetition extends SortCompetition
             }
         }
         return -1;
+        */
     }
 
     @Override
