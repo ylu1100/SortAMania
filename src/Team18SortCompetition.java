@@ -203,18 +203,4 @@ public class Team18SortCompetition extends SortCompetition
         }
         return z;
     }
-    public static int findMedian(int[] arr)
-    {
-        int median = 0;
-        if(arr.length%2 == 0)
-        {
-            median = (arr[arr.length/2] + arr[(arr.length/2)-1])/2;
-        }
-        if(arr.length%2 != 0)
-        {
-            median =  arr[(arr.length-1)/2];
-        }
-        return median;
-    }
-
 }
