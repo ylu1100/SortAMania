@@ -8,12 +8,12 @@ public class Runner {
             //System.out.println("Array at postion ("+i+")" +rand[i]);
         }
 
-        long timeStart = System.nanoTime();
-        int median = Team15SortCompetition.challengeOne(rand);
-        long timeEnd = System.nanoTime() - timeStart;
+        long timeStart = System.currentTimeMillis();
+        int median = Team15SortCompetition.c1(rand);
+        long timeEnd = System.currentTimeMillis() - timeStart;
 
-        System.out.println("Sorted in: "+ timeEnd+ "ns");
-        System.out.println("Sorted in: "+ timeEnd*0.000000001 + " seconds");
+        System.out.println("Sorted in: "+ timeEnd+ "ms");
+        System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
         System.out.println("The median is: "+ median);
 
 
@@ -29,16 +29,16 @@ public class Runner {
 
             //System.out.println("Array at postion ("+i+")" +rand[i]);
         }
-        timeStart = System.nanoTime();
-        median = Team15SortCompetition.challengeThree(mostlyRand);
-        timeEnd = System.nanoTime() - timeStart;
+        timeStart = System.currentTimeMillis();
+        median = Team15SortCompetition.c3(mostlyRand);
+        timeEnd = System.currentTimeMillis() - timeStart;
 
         for (int i=0; i < mostlyRand.length; i++)
         {
             // System.out.println("Array at postion ("+i+")" +mostlyRand[i]);
         }
-        System.out.println("Sorted in: "+ timeEnd+ "ns");
-        System.out.println("Sorted in: "+ timeEnd*0.000000001 + " seconds");
+        System.out.println("Sorted in: "+ timeEnd+ "ms");
+        System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
         System.out.println("The median is: "+ median);
 
         int twoDArr[][] = new int[1000][1000];
@@ -50,12 +50,12 @@ public class Runner {
             }
         }
 
-        timeStart = System.nanoTime();
-        median = Team15SortCompetition.challengeFour(twoDArr);
-        timeEnd = System.nanoTime() - timeStart;
+        timeStart = System.currentTimeMillis();
+        median = Team15SortCompetition.c4(twoDArr);
+        timeEnd = System.currentTimeMillis() - timeStart;
 
-        System.out.println("Sorted in: "+ timeEnd+ "ns");
-        System.out.println("Sorted in: "+ timeEnd*0.000000001 + " seconds");
+        System.out.println("Sorted in: "+ timeEnd+ "ms");
+        System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
         System.out.println("The median is: "+ median);
 
 

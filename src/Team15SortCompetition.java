@@ -50,12 +50,22 @@ public abstract class Team15SortCompetition extends SortCompetition {
         return 0;
     }
 
+    public static int c3(int[] arr)
+    {
+        mergeSort(arr);
+        return findMedian(arr);
+    }
 
+    public static int c4(int[][] arr)
+    {
+        multiDSort(arr);
+        return 0;
+    }
 
-
-
-
-
+    public static int c5(Comparable[] arr, Comparable query)
+    {
+        return 0;
+    }
 
 
     public static int multiDSort(int[][] arr)
