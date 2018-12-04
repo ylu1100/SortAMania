@@ -22,10 +22,9 @@ public class runner
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
 */
-        int[][] c3 = generate2IntArr(4,4);
-        print2dArr(c3);
+        int[][] c3 = generate2IntArr(10000,10000);
         System.out.println(x.challengeFour(c3));
-        print2dArr(c3);
+        System.out.println(timer*.000000001 + " seconds");
 /*
         Comparable[] c5 = new Comparable[10];
         String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};
@@ -55,7 +54,7 @@ public class runner
         {
             for(int j = 0; j<y; j++)
             {
-                arr[i][j] = (int) (Math.random()*10);
+                arr[i][j] = (int) (Math.random()*10000);
             }
         }
         return arr;

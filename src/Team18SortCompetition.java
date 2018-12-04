@@ -62,10 +62,10 @@ public class Team18SortCompetition extends SortCompetition
         for(int i = 0;i<arr.length; i++)
         {
             insertionSort(arr[i]);
-            medianArr[i] = (arr[i][1] + arr[i][2]) / 2;
+            medianArr[i] = (arr[i][4999] + arr[i][5000]) / 2;
         }
         insertionSort(medianArr);
-        return (medianArr[1] + medianArr[2])/2;
+        return (medianArr[4999] + medianArr[5000])/2;
     }
 
     @Override
