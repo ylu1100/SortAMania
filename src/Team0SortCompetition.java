@@ -119,7 +119,7 @@ public class Team0SortCompetition extends SortCompetition
 
     @Override
     public String greeting() {
-        return null;
+        return "Hello";
     }
     public int sorter1(int[] arr) {
         int N = arr.length;
