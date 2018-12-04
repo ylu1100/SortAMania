@@ -231,17 +231,18 @@ public class Team8SortCompetition extends SortCompetition {
     public static int binarySearch(Comparable[] arr, Comparable obj) {
         int left = 0;
         int right = arr.length - 1;
+        int position = -1;
         while (left <= right) {
             int middle = (left + right) / 2;
             if (obj.compareTo(arr[middle]) < 0) {
                 right = middle - 1;
             } else if (obj.compareTo(arr[middle]) > 0) {
                 left = middle + 1;
-            } else if (obj.compareTo(arr[middle]) == 0) { // Handles two objects that are duplicates.
+            } else if (obj.compareTo(arr[middle]) == 0) { // Checks to see if the Object values are equal.
                 if (obj == arr[middle]) { // If the memory address of arr[middle] is the same it will return position middle.
                     return middle;
-                } else if (obj == arr[middle-1]) { // If the memory address is not the same then return the position of the obj.
-                    return middle - 1;
+                } else {  // Otherwise we will return a -1 because although the Object has the same value, it is not same Object in terms of memory location.
+                    return -1;
                 }
             }
         }
