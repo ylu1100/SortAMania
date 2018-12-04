@@ -37,7 +37,7 @@ public class Team9SortingCompetition extends SortCompetition {
     }
 
     @Override
-    public int challengeFive(Thing[] arr, Thing query) {
+    public int challengeFive(Comparable[] arr, Comparable query) {
         comparableBubbleSort(arr);
         for(int i = 0; i < arr.length; i++)
         {
@@ -260,7 +260,7 @@ public class Team9SortingCompetition extends SortCompetition {
             arr[z] = temp[z];
         }
     }
-    public void comparableBubbleSort(Thing[] arr)
+    public void comparableBubbleSort(Comparable[] arr)
     {
         int swaps = 0;
         boolean swapped = true;
@@ -268,7 +268,7 @@ public class Team9SortingCompetition extends SortCompetition {
         {
             for(int i = 0; i < arr.length - 1; i++) {
                 if (arr[i].compareTo(arr[i + 1]) > 0) {
-                    Thing temp = arr[i];
+                    Comparable temp = arr[i];
                     arr[i] = arr[i+1];
                     arr[i+1] = temp;
                     swaps++;
