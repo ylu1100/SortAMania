@@ -34,7 +34,7 @@ public class sortAManiaTestRunner
         printArr(randStringArr);
 
         System.out.println("Unsorted");
-        printArr(randIntArr2);
+        //printArr(randIntArr2);
 
         median = team6.challengeThree(randIntArr2);
         time = System.currentTimeMillis() - time;
@@ -42,10 +42,10 @@ public class sortAManiaTestRunner
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        printArr(randIntArr2);
+        //printArr(randIntArr2);
 
         System.out.println("Unsorted");
-        printArr(randIntMultiArr);
+        //printArr(randIntMultiArr);
 
         median = team6.challengeFour(randIntMultiArr);
         time = System.currentTimeMillis() - time;
@@ -53,7 +53,7 @@ public class sortAManiaTestRunner
         System.out.println("Median equals: " + median);
 
         System.out.println("Sorted");
-        printArr(randIntMultiArr);
+        //printArr(randIntMultiArr);
 
 
         System.out.println("Unsorted");
