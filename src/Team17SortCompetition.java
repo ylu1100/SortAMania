@@ -35,7 +35,8 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeThree(int[] arr)
     {
-        insertionSort(arr);
+        quickSort(arr,0,arr.length-1);
+
         toString(arr);
 
         return findMed(arr);
