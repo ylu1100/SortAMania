@@ -16,6 +16,11 @@ public class Runner {
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
         System.out.println("The median is: "+ median);
 
+        for (int i=0; i< rand.length;i++)
+        {
+           //System.out.println("Array at postion ("+i+")" +rand[i]);
+        }
+
 
         int[] mostlyRand = new int[100000];
         for (int i=0; i< mostlyRand.length;i++)
@@ -41,12 +46,12 @@ public class Runner {
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
         System.out.println("The median is: "+ median);
 
-        int twoDArr[][] = new int[1000][1000];
+        int twoDArr[][] = new int[100][100];
         for (int i=0 ; i < twoDArr.length; i++)
         {
             for (int n=0; n < twoDArr[i].length; n++)
             {
-                twoDArr[i][n] = (int)((Math.random()*twoDArr.length)+1);
+                twoDArr[i][n] = (int)((Math.random()*100000)+1);
             }
         }
 
