@@ -73,15 +73,8 @@ public class Team18SortCompetition extends SortCompetition
 
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
-        return 0;
-    }
 
-    @Override
-/*
-    public int challengeFive(Comparable[] arr, Comparable query) {
-
-
-        bubbleSort(arr);
+        bubbleSort2(arr);
 
         for(int i=0;i<arr.length;i++)
         {
@@ -90,8 +83,10 @@ public class Team18SortCompetition extends SortCompetition
                 return i;
             }
         }
+        return -1;
     }
-*/
+
+
     public String greeting() {
         return null;
     }
@@ -128,8 +123,41 @@ public class Team18SortCompetition extends SortCompetition
             a--;
         }
     }
+    public static void bubbleSort2(Comparable[] arr)
+    {
+        boolean checkStorted = false;
+        int a = arr.length-1;
+        while(!checkStorted)
+        {
+            checkStorted = true;
+            for(int i=0; i<a; i++)
+            {
+                if(arr[i].compareTo(arr[i+1]) > 0 )
+                {
+                    Comparable Temp = arr[i+1];
+                    arr[i+1] = arr[i];
+                    arr[i] = Temp;
+                    checkStorted = false;
+                }
+            }
+            a--;
+        }
+    }
+    public static void mergeSort(String[] arr)
+    {
 
-    public void insertionSort(int[] list1)
+
+
+
+
+
+
+
+
+
+    }
+
+    public static void insertionSort(int[] list1)
     {
     int swapPos;
     int min;
@@ -187,4 +215,5 @@ public class Team18SortCompetition extends SortCompetition
         }
         return result;
     }
+
 }
