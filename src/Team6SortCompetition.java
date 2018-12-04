@@ -67,9 +67,6 @@ public class Team6SortCompetition extends SortCompetition{
             }
             arr2[i] = median2;
         }
-
-        int[] sortedArr2 = quickSort(arr2,0,arr2.length-1);
-
         int min;
         for(int i = 1; i < arr2.length; i++)
         {
@@ -81,35 +78,29 @@ public class Team6SortCompetition extends SortCompetition{
                 {
                     arr2[z+1] = arr2[z];
                     arr2[z] = temp;
-
                     int[] temparr = new int[arr[z].length];
                     for(int t = 0; t < arr[z].length; t++)
                     {
-                        temparr[t] = arr[z][t];
-                    }
-                    for(int t = 0; t < arr[z].length; t++)
-                    {
+                        temparr[t] = arr[z+1][t];
                         arr[z+1][t] = arr[z][t];
                         arr[z][t] = temparr[t];
                     }
                 }
             }
         }
-
-
         while(x != y)
         {
             x++;
             y--;
             if((x+1) == y || (y-1) == x)
             {
-                int total = sortedArr2[x] + sortedArr2[y];
+                int total = arr2[x] + arr2[y];
                 median = (total/2);
                 break;
             }
             else
             {
-                median = sortedArr2[x];
+                median = arr2[x];
             }
         }
         return median;

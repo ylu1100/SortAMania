@@ -5,9 +5,9 @@ public class sortAManiaTestRunner
     public static void main(String[] args)
     {
         SortCompetition team6 = new Team6SortCompetition();
-        int[] randIntArr = randomIntsArr(10);
-        int[] randIntArr2 = randomIntsArr(10);
-        int[][] randIntMultiArr = randomIntsMultiArr(10,10);
+        int[] randIntArr = randomIntsArr(3);
+        int[] randIntArr2 = randomIntsArr(3);
+        int[][] randIntMultiArr = randomIntsMultiArr(3,3);
         String[] randStringArr = randomStringArr(10, 5);
 
         System.out.println("Unsorted");
