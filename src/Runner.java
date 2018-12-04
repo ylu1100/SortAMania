@@ -46,7 +46,7 @@ public class Runner {
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
         System.out.println("The median is: "+ median);
 
-        int twoDArr[][] = new int[100][100];
+        int twoDArr[][] = new int[1000][1000];
         for (int i=0 ; i < twoDArr.length; i++)
         {
             for (int n=0; n < twoDArr[i].length; n++)

@@ -213,10 +213,6 @@ public abstract class Team15SortCompetition extends SortCompetition {
         int[] temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
-
     }
-
-
-
 
 }
