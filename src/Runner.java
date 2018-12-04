@@ -31,18 +31,29 @@ public class Runner {
         String tempArr1[] = new String[amount1];
         String Letters[] = new String[25];
         String Alphabet = "abcdefghijklmnopqrstuvwxyz";
+        String tempString = "";
+        int current = 0;
         for(int z =0;z<Letters.length;z++)
         {
             Letters[z] = Alphabet.substring(z,z+1);
         }
-        for (int i = 0; i < amount1; i++)
+        while(!(amount1 == current))
         {
-            for(int x = 0;x<length;x++)
+            for(int b = 0;b<length;b++)
             {
-                int
+                tempString += Letters[((int)(Math.random()*Letters.length))];
             }
-
+            current++;
         }
         return tempArr1;
+    }
+    public static void printArr(int[]Arr)
+    {
+        String array = "";
+        for(int i =0;i<Arr.length;i++)
+        {
+            array += String.valueOf(Arr[i]);
+        }
+        System.out.println(array);
     }
 }
