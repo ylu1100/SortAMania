@@ -11,7 +11,7 @@ public class Runner {
         int[] array3 = new int[num];
         for (int j = 0; j < num; j++) {
 
-            array3[j] = (int) (Math.random() * 10000) + 1;;
+            array3[j] = (int) (Math.random() * 10000) + 1;
 
         }
         return array3;
@@ -80,10 +80,6 @@ public class Runner {
 
         }
     }
-    public static void setUp5() {
-        Challenge5 generated = new Challenge5();
-        generated.randomArr(generated.value);
-    }
     public static void runChallenge1() {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         int[] array1 = setUp3(10000);
@@ -112,6 +108,16 @@ public class Runner {
         System.out.println("the median is" + Team11.challengeFour(array4));
         printArr4(array4);
     }
+    public void runChallenge5()
+    {
+        Team11SortCompetition Team11 = new Team11SortCompetition();
+        Challenge5 generated = new Challenge5();
+        Challenge5[] arr = generated.randomArr(10000);
+        Challenge5.BubbleSort(arr);
+        System.out.println(arr);
+
+
+    }
 
     public static void main(String[] args) {
 
@@ -129,6 +135,10 @@ public class Runner {
             runChallenge3();
         }
         else if (response.equals("4")) {
+            runChallenge4();
+        }
+        else if (response.equals("5"))
+        {
             runChallenge4();
         }
 
