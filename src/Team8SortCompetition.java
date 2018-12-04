@@ -25,7 +25,7 @@ public class Team8SortCompetition extends SortCompetition {
     @Override
     public int challengeTwo(String[] arr, String query) {
         lsdRadixSortStr(arr, 5);
-        return binarySearch(arr, query);
+        return binarySearch(arr, 0 , arr.length - 1, query);
     }
 
     /**
@@ -82,7 +82,7 @@ public class Team8SortCompetition extends SortCompetition {
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
         insertionSortComparable(arr);
-        return binarySearch(arr, query);
+        return binarySearch(arr, 0, arr.length - 1, query);
     }
 
     @Override
@@ -223,29 +223,43 @@ public class Team8SortCompetition extends SortCompetition {
     }
 
     /**
-     * Binary Search for Objects that implement the Comparable Interface. E.G - String
-     * @param arr Any 1D Array of Comparable Objects.
-     * @param obj Comparable Object to be searched for.
-     * @return Integer representing the position of the Object in the Array. (-1 if not found)
+     * Helper Method for Binary Search.
+     * @param arr Any 1D Comparable Array.
+     * @param index Integer representing the Position to compare.
+     * @param obj Any Comparable Object.
+     * @return If the Object at index is greater or equal than obj, return true.
+     *         Else false.
      */
-    public static int binarySearch(Comparable[] arr, Comparable obj) {
-        int left = 0;
-        int right = arr.length - 1;
-        int position = -1;
-        while (left <= right) {
+    private static boolean isGreaterThanEqualTo(Comparable[] arr, int index, Comparable obj) {
+        if (arr[index].compareTo(obj) >=  0) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Binary Search that only obtains the first instance of a Comparable object.
+     * @param arr 1D Comparable Array.
+     * @param left Integer representing the left bound of the Array (arr).
+     * @param right Integer representing the right bound of the Array (arr).
+     * @param obj Any Comparable object.
+     * @return The first position of the Object (obj) inside of the Comparable Array (arr).
+     */
+    private static int binarySearch(Comparable[] arr, int left, int right, Comparable obj) {
+        while (left < right) {
             int middle = (left + right) / 2;
-            if (obj.compareTo(arr[middle]) < 0) {
-                right = middle - 1;
-            } else if (obj.compareTo(arr[middle]) > 0) {
+            if (isGreaterThanEqualTo(arr, middle, obj)) {
+                right = middle;
+            } else {
                 left = middle + 1;
-            } else if (obj.compareTo(arr[middle]) == 0) { // Checks to see if the Object values are equal.
-                if (obj == arr[middle]) { // If the memory address of arr[middle] is the same it will return position middle.
-                    return middle;
-                } else {  // Otherwise we will return a -1 because although the Object has the same value, it is not same Object in terms of memory location.
-                    return -1;
-                }
             }
         }
-        return -1;
+        if (arr[left].compareTo(obj) == 0 && arr[left] == obj) {
+            return left;
+        } else if (arr[right].compareTo(obj) == 0 && arr[right] == obj) {
+            return right;
+        } else {
+            return -1;
+        }
     }
 }
