@@ -1,3 +1,3 @@
 public interface Comparables<Thing> {
-    int compareTo(Thing);
+    int compareTo(Thing thing);
 }
