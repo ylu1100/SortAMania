@@ -1,5 +1,3 @@
-package C4method;
-
 public class challengeFourMethods2 {
 
     public static void InsertionSort(int[][] arr,int[] med,int[] temp ) {

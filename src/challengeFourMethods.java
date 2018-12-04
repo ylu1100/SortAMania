@@ -1,5 +1,3 @@
-package C4method;
-
 public class challengeFourMethods {
     public  challengeFourMethods(int[][] arr,int index) {
         int n = arr.length;

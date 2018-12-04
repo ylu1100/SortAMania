@@ -1,5 +1,3 @@
-package Challenges;
-
 public  class Challenge5 implements Comparable<Challenge5> {
     public int value;
     public Challenge5() {

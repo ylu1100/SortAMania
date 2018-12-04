@@ -1,6 +1,3 @@
-import Challenges.Challenge5;
-
-
 import java.util.Scanner;
 
 

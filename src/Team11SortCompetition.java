@@ -1,8 +1,3 @@
-import C4method.challengeFourMethods;
-import C4method.challengeFourMethods2;
-import Challenges.Challenge5;
-import Challenges.Comparable;
-
 public class Team11SortCompetition extends SortCompetition //implements Comparable<Challenge5>
 {
 
@@ -60,7 +55,7 @@ public class Team11SortCompetition extends SortCompetition //implements Comparab
         return (medianArr[medianArr.length/2]);
     }
 
-    @Override
+    //@Override
     public int challengeFive(java.lang.Comparable[] arr, java.lang.Comparable query) {
         return 0;
     }
