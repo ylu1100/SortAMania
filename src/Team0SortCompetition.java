@@ -91,8 +91,6 @@ public class Team0SortCompetition extends SortCompetition
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-
-
         int a = 1;
         Comparable y;
         while(a != 0)
@@ -111,7 +109,7 @@ public class Team0SortCompetition extends SortCompetition
         }
         for(int l=0;l<arr.length;l++)
         {
-            if(query.equals(arr[l]))//change maybe
+            if(query.equals(arr[l]))
             {
                 return l;
             }
