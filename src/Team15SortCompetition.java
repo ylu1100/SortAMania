@@ -36,7 +36,7 @@ public abstract class Team15SortCompetition extends SortCompetition {
 
     public static String greet()
     {
-        return null;
+        return "\n And Here Come's Team 15's Sorting Algorithms. Nazmus & Sabrun will without a doubt be the winners today! \n";
     }
 
     public static int c1(int[] arr)
@@ -47,7 +47,8 @@ public abstract class Team15SortCompetition extends SortCompetition {
 
     public static int c2(String [] arr, String query)
     {
-        return 0;
+        insertionSort(arr);
+        return findStr(arr,query);
     }
 
     public static int c3(int[] arr)
@@ -66,6 +67,17 @@ public abstract class Team15SortCompetition extends SortCompetition {
         return 0;
     }
 
+    public static int findStr(String[] arr, String str)
+    {
+        for (int i=0; i <arr.length; i++)
+        {
+            if (arr[i].equals(str))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     public static int multiDSort(int[][] arr)
     {
@@ -74,8 +86,8 @@ public abstract class Team15SortCompetition extends SortCompetition {
             mergeSort(arr[i]);
         }
         insertionSort(arr);
-        /*
-         for (int i= 0; i < arr.length; i++)
+
+        /* for (int i= 0; i < arr.length; i++)
          {
              String output = "Array ["+i+"]: ";
              for(int n=0; n <arr[i].length;n++)
@@ -84,7 +96,7 @@ public abstract class Team15SortCompetition extends SortCompetition {
              }
              System.out.println(output + " The Median is: "+ findMedian(arr[i]));
          }
-         */
+        */
         return ((findMedian(arr[arr.length/2]) + findMedian(arr[(arr.length+1)/2]))/2);
 
     }
@@ -201,9 +213,43 @@ public abstract class Team15SortCompetition extends SortCompetition {
         }
     }
 
+    public static void insertionSort(String[] list1)
+    {
+        int pos;
+        String min;
+
+        for(int i = 1;i<list1.length;i++)
+        {
+            pos = i;
+            min = list1[pos];
+
+            for(int a = i-1;a>=0;a--)
+            {
+                if(list1[a].compareTo(min)>0)
+                {
+                    swap(list1,pos,a);
+                    pos = a;
+                    min = list1[pos];
+                }
+                else
+                {
+                    a=-1;
+                }
+            }
+        }
+    }
+
+
     public static void swap(int[] arr, int pos1, int pos2)
     {
         int temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
+
+    public static void swap(String[] arr, int pos1, int pos2)
+    {
+        String temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }
