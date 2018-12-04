@@ -2,14 +2,14 @@ public class Runner {
     public static void main(String [] args)
     {
         SortCompetition team1 = new Team10SortCompetition();
-        int[] randIntArr = randomIntsArr(10000);
+        int[] randIntArr = randomIntsArr(100000);
         String[] ranStringArr = randomStringArr(10000,5);
 
         System.out.println("Unsorted");
         printArr(randIntArr);
 
         long time= System.currentTimeMillis();
-        int median = team1.challengeOne(randIntArr);
+        int median = team1.challengeThree(randIntArr);
         time = System.currentTimeMillis() - time;
         System.out.println("challenge One Time Taken: " + time * 0.001 + "seceonds");
         System.out.println("Median equals: " + median);
@@ -53,6 +53,7 @@ public class Runner {
         for(int i =0;i<Arr.length;i++)
         {
             array += String.valueOf(Arr[i]);
+            array += " ";
         }
         System.out.println(array);
     }

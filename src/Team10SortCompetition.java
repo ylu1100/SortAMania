@@ -3,7 +3,7 @@ public class Team10SortCompetition extends SortCompetition
 {
     public int challengeOne(int[] arr)
     {
-        int temp1;
+        /*int temp1;
         int temp2 = 0;
         for (int i = 0; i < arr.length; i++)
         {
@@ -20,6 +20,25 @@ public class Team10SortCompetition extends SortCompetition
             }
             arr[temp1] = arr[i];
             arr[i] = temp2;
+        }
+        int median = ((arr[5000] + arr[5001]) / 2);
+        return median;
+        */
+        int swaps = 1;
+        int temp = 0;
+        while(swaps!=0)
+        {
+            swaps = 0;
+            for(int i =0; i< arr.length-1;i++)
+            {
+                if(arr[i]>arr[i+1])
+                {
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    swaps++;
+                }
+            }
         }
         int median = ((arr[5000] + arr[5001]) / 2);
         return median;
@@ -59,7 +78,7 @@ public class Team10SortCompetition extends SortCompetition
 
     public int challengeThree(int[] arr)
     {
-        int temp1 = 0;
+        /*int temp1 = 0;
         int temp2 = 0;
         int median = 0;
         for (int i = 0; i < arr.length; i++)
@@ -77,6 +96,25 @@ public class Team10SortCompetition extends SortCompetition
             arr[i] = temp2;
         }
         median = ((arr[50000] + arr[50001]) / 2);
+        return median;
+        */
+        int swaps = 1;
+        int temp = 0;
+        while(swaps!=0)
+        {
+            swaps = 0;
+            for(int i =0; i< arr.length-1;i++)
+            {
+                if(arr[i]>arr[i+1])
+                {
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    swaps++;
+                }
+            }
+        }
+        int median = ((arr[50000] + arr[50001]) / 2);
         return median;
     }
     public int challengeFour(int[][] arr)
