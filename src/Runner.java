@@ -41,6 +41,7 @@ public class Runner
             }
             arr2[i]=c;
         }
+
         System.out.print("Unsorted Array: ");
         //for(int i=0;i<arr.length;i++) { System.out.print(arr2[i]+" ");}
 
@@ -107,7 +108,7 @@ public class Runner
 
         System.out.println("\n"+"Competition5");
 
-        //int ba=a1.challengeFive(arr2,"JH");
-        //System.out.println(ba);
+        int ba=a1.challengeFive(arr2,"WDMEO");
+        System.out.println(ba);
     }
 }
