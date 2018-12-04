@@ -8,7 +8,6 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
-        toString(arr);
 
         return (findMed(arr));
     }
@@ -23,7 +22,6 @@ public class Team17SortCompetition extends SortCompetition
     public int challengeTwo(String[] arr, String query)
     {
         quickSort(arr,0,arr.length-1);
-        toString(arr);
         return binarySearch(arr,query);
     }
 
@@ -35,9 +33,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeThree(int[] arr)
     {
-        quickSort(arr,0,arr.length-1);
-
-        toString(arr);
+        quickSort(arr,0, arr.length-1);
 
         return findMed(arr);
     }
@@ -58,16 +54,9 @@ public class Team17SortCompetition extends SortCompetition
 
             mids[i] = findMed(arr[i]);
         }
-        toString(mids);
 
         quickSort(mids,arr,0,mids.length-1);
-        System.out.println("SORTED ARR");
-        toString(arr);
-        System.out.println("SORTED MIDS");
-        toString(mids);
-
         return findMed(mids);
-        /**QUESTION: if even # of arrays, find avg. of two mid arrays or just one?*/
     }
 
     /**
@@ -85,13 +74,10 @@ public class Team17SortCompetition extends SortCompetition
         {
             if(arr[x] == query)
             {
-                System.out.println(query + "found at " + x);
                 return x;
             }
         }
-     return(binarySearch(arr,query));
-
-
+        return(binarySearch(arr,query));
     }
 
     /**
@@ -486,8 +472,8 @@ public class Team17SortCompetition extends SortCompetition
      * prints a String representing an int array
      * @param list array to print
      */
-    public static void toString(int[] list) {
-
+    public static void toString(int[] list)
+    {
         String out = "";
 
         for(int i =0;i<list.length;i++)

@@ -6,39 +6,50 @@ public class Runner {
         int[] challengeOneList = Team17SortCompetition.randIntArr(10000);
         System.out.println("unsorted");
         Team17SortCompetition.toString(challengeOneList);
-        long start = System.currentTimeMillis();
+
+        long start = System.nanoTime();
         System.out.println("Median: " + c1.challengeOne(challengeOneList));
-        long diff = System.currentTimeMillis() - start;
+        long diff = System.nanoTime() - start;
         System.out.println("Time Taken: " + diff + "\n");
+
         System.out.println("sorted");
         Team17SortCompetition.toString(challengeOneList);
+        System.out.println();
+
         //CHALLENGE 2
         Team17SortCompetition c2 = new Team17SortCompetition();
         String[] challengeTwoList = Team17SortCompetition.randStringArr(10000,5);
-                //{"yoyoy","omgma","justi","cando","youyo","alst","catss","juan","classic",
-                // "silly"};
         System.out.println("unsorted");
         Team17SortCompetition.toString(challengeTwoList);
-        start = System.currentTimeMillis();
+
+        start = System.nanoTime();
         System.out.println("Found Idx: " + c2.challengeTwo(challengeTwoList,challengeTwoList[0]));
-        diff = System.currentTimeMillis() - start;
+        diff = System.nanoTime() - start;
         System.out.println("Time Taken: " + diff + "\n");
+
+
         System.out.println("sorted");
         Team17SortCompetition.toString(challengeTwoList);
+        System.out.println();
+
         //CHALLENGE 3
         Team17SortCompetition c3 = new Team17SortCompetition();
-        int[] challengeThreeList = Team17SortCompetition.randIntArr(100000);
+        int[] challengeThreeList = Team17SortCompetition.randIntArr(10000);
         System.out.println("unsorted");
         Team17SortCompetition.toString(challengeThreeList);
-        start = System.currentTimeMillis();
-        diff = System.currentTimeMillis() - start;
+
+        start = System.nanoTime();
         System.out.println("Median: " + c3.challengeThree(challengeThreeList));
+        diff = System.nanoTime() - start;
+
         System.out.println("Time Taken: " + diff + "\n");
         System.out.println("sorted");
+        Team17SortCompetition.toString(challengeThreeList);
+        System.out.println();
 
         //CHALLENGE 4
         Team17SortCompetition c4 = new Team17SortCompetition();
-        int count = 3;
+        int count = 10;
         int[][] challengeFourList = new int[count][count];
 
         for(int i = 0;i<challengeFourList.length;i++)
@@ -47,29 +58,36 @@ public class Runner {
         }
         System.out.println("unsorted");
         Team17SortCompetition.toString(challengeFourList);
-        start = System.currentTimeMillis();
+
+        start = System.nanoTime();
         System.out.println("Median: " + c4.challengeFour(challengeFourList));
-        diff = System.currentTimeMillis() - start;
+        diff = System.nanoTime() - start;
+
         System.out.println("Time Taken: " + diff + "\n");
         System.out.println("sorted");
         Team17SortCompetition.toString(challengeFourList);
+        System.out.println();
+
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
         count = 5;
-        Comparable[] challengeFiveList = new Comparable[count];
+        Thing[] challengeFiveList = new Thing[count];
+        String out = "";
         for(int i = 0;i<challengeFiveList.length;i++)
         {
             challengeFiveList[i] = new Thing();
+            out += challengeFiveList[i].value + ", ";
         }
+        System.out.println(out);
 
         start = System.currentTimeMillis();
         System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[1]));
         diff = System.currentTimeMillis() - start;
-        String out = "";
+        out = "";
 
         for(int i =0;i<challengeFiveList.length;i++)
         {
-            System.out.println( challengeFiveList[i]);
+            out += challengeFiveList[i].value;
             if(i != challengeFiveList.length-1)
             {
                 out += ", ";

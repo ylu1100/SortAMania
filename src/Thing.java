@@ -1,6 +1,6 @@
 public class Thing implements Comparable<Thing> {
 
-    private int value;
+    public int value;
     public Thing()
     {
         this.value = (int) (Math.random()*10001);
@@ -9,9 +9,4 @@ public class Thing implements Comparable<Thing> {
     {
         return this.value - other.value;
     }
-    public String toSting()
-    {
-        return(this.value + "");
-    }
-
 }
