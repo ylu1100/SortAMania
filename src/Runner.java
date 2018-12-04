@@ -10,6 +10,7 @@ public class Runner {
         Team16 runner = new Team16();
         int[] c1Arr = randIntArr(10000);
         String[] c2Arr = randomStringArr(10000, 5);
+        int[] c3Arr = randIntArr(100000);
         int[][] c4Arr = rand2DIntArr(1000, 1000);
         Comparable[] c5Arr = randomObjArr(10000);
 
@@ -34,6 +35,12 @@ public class Runner {
         System.out.print("\n");
 
         //Challenge 3
+        System.out.println("Challenge 3");
+        startTime = System.nanoTime();
+        System.out.println("Median: " + runner.challengeThree(c3Arr));
+        endTime = (System.nanoTime() - startTime);
+        System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
+        printIntArray(c3Arr);
 
         System.out.print("\n");
 
@@ -51,10 +58,10 @@ public class Runner {
         System.out.println("Challenge 5");
         Thing obj = new Thing(3);
         startTime = System.nanoTime();
-        System.out.println("Index of Query: " + runner.challengeFive(c5Arr, 5));
+        System.out.println("Index of Query: " + runner.challengeFive(c5Arr, obj));
         endTime = (System.nanoTime() - startTime);
         System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
-        printObjArray(c5Arr);
+        //printObjArray(c5Arr);
     }
 
     public static int[] randIntArr(int count)

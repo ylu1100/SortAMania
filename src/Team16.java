@@ -32,7 +32,7 @@ public class Team16 extends SortCompetition {
     }
     private static int partitionInt(int[] list, int left, int right)
     {
-        int pivot = list[right];
+        int pivot = list[(int)(Math.random() * (right - left - 1) + left)];
         int i = left - 1;
 
         for (int j = left; j < right; j++)
@@ -48,7 +48,6 @@ public class Team16 extends SortCompetition {
 
         return i + 1;
     }
-
 
     public int challengeTwo(String[] arr, String query)
     {
@@ -146,7 +145,20 @@ public class Team16 extends SortCompetition {
 
     public int challengeThree(int[] arr)
     {
-        return 0;
+        for (int i = 1; i < arr.length; i++)
+        {
+            int swap = arr[i];
+            int j = i - 1;
+
+            while (j >= 0 && arr[j] > swap)
+            {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = swap;
+        }
+
+        return getMedian(arr);
     }
 
 
