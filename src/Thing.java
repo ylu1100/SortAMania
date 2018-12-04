@@ -1,5 +1,5 @@
-public class Thing implements Comparables<Thing> {
-    public int compareTo()
+public abstract class Thing implements Comparables<Thing> {
+    public int compareTo(Thing thing)
     {
         return 0;
     }
