@@ -33,7 +33,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeThree(int[] arr)
     {
-        quickSort(arr,0, arr.length-1);
+       insertionSort(arr);
 
         return findMed(arr);
     }
@@ -87,7 +87,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public String greeting()
     {
-        return "Yoyoyo You ready to do some sorting??";
+        return "Yoyoyo This is Sheba and Mir. We are team 17. You ready to do some sorting??";
     }
 
 
