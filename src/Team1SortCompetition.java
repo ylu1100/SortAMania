@@ -42,12 +42,10 @@ public class Team1SortCompetition extends SortCompetition {
 
     public int challengeFour(int[][] arr) {
         for(int i=0;i<arr.length;i++){
-
             quickSort(arr[i],0,arr[i].length-1);
         }
-
         quickMSort(arr,0,arr.length-1);
-        return getMedian(arr);
+        return getMMedian(arr);
     }
 
     public int challengeFive(Comparable[] arr, Comparable query) {
@@ -66,19 +64,19 @@ public class Team1SortCompetition extends SortCompetition {
         return "Hello.";
     }
 
-    public static int getMedian(int[][] arr){
+    public static int getMMedian(int[][] arr){
         if((int)(arr.length/2.0)+1%2==0){
-            return (getMedian(arr[(arr.length/2)-1]) + getMedian(arr[arr.length/2])/2);
-        } else {
             return getMedian(arr[(arr.length/2)]);
+        } else {
+            return (getMedian(arr[(arr.length/2)-1]) + getMedian(arr[arr.length/2]))/2;
         }
     }
 
     public static int getMedian(int[] arr){
         if((int)(arr.length/2.0)+1%2==0){
-            return (arr[(arr.length/2)-1] + arr[arr.length/2])/2;
-        } else {
             return arr[(arr.length/2)];
+        } else {
+            return (arr[(arr.length/2)-1] + arr[arr.length/2])/2;
         }
     }
 
@@ -98,11 +96,11 @@ public class Team1SortCompetition extends SortCompetition {
         for (int j = left; j < right; j++) {
             if (getMedian(arr[j]) <= pivot) {
                 i++;
-                swap(arr, i, j);
+                mSwap(arr, i, j);
             }
         }
 
-        swap(arr, i + 1, right);
+        mSwap(arr, i + 1, right);
         return i + 1;
     }
 
@@ -137,7 +135,7 @@ public class Team1SortCompetition extends SortCompetition {
         arr[b] = temp;
     }
 
-    public void swap(int[][] arr, int a, int b) {
+    public void mSwap(int[][] arr, int a, int b) {
         int[] temp = arr[a];
         arr[a] = arr[b];
         arr[b] = temp;

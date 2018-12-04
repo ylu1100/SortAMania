@@ -1,10 +1,12 @@
 public class Runner {
     public static void main(String[] args)
     {
-        System.out.println("Challenge 1");
         Team1SortCompetition x = new Team1SortCompetition();
 
-        int[] c1 = generateIntArr(10000);
+        System.out.println("Challenge 1");
+
+
+        int[] c1 = generateIntArr(10);
         System.out.println("Unsorted");
         printIntArray(c1);
 
@@ -35,7 +37,7 @@ public class Runner {
 
         System.out.println("\nChallenge 3");
 
-        int[] c3 = new int[100000];
+        int[] c3 = new int[10];
 
         c3[0] = (int)(Math.random () * 10) + 1;
         for (int a = 1; a < c3.length; a++) {
@@ -53,10 +55,11 @@ public class Runner {
         System.out.println("Sorted");
         printIntArray(c3);
 
+
         System.out.println("\nChallenge 4");
         int[][] c4 =  generate2DIntArr(1000);
 
-        timer = System.nanoTime();
+       timer = System.nanoTime();
 
         System.out.println(x.challengeFour(c4));
         timer = System.nanoTime() - timer;
@@ -88,6 +91,7 @@ public class Runner {
         }
         System.out.println(s);
         System.out.println(timer*.000000001 + " seconds");
+
     }
 
 
@@ -97,7 +101,7 @@ public class Runner {
         int[] z = new int[x];
         for(int i=0;i<x;i++)
         {
-            z[i] = (int)(Math.random()*10000);
+            z[i] = (int)(Math.random()*10);
         }
         return z;
     }
@@ -106,7 +110,7 @@ public class Runner {
         int[][] z = new int[x][x];
         for(int i=0;i<z.length;i++){
             for(int j=0;j<z[i].length;j++){
-                z[i][j] = (int)(Math.random()*10001);
+                z[i][j] = (int)(Math.random()*10);
             }
         }
         return z;
