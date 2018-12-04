@@ -1,8 +1,8 @@
 public class Runner {
     public static void main(String[] args) {
         SortCompetition team3 = new Team3SortCompetition();
-        int[] randIntarr = randomIntsArr(100);
-        String[] randStringArr = randomStringArr(100, 5);
+        int[] randIntarr = randomIntsArr(10000);
+        String[] randStringArr = randomStringArr(10000, 5);
 
         System.out.println("Unsorted");
         printarr(randIntarr);
@@ -111,8 +111,8 @@ public class Runner {
         String chars = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
         String temp = "";
         for(int i = 0;i<arrLength;i++){
+            temp = "";
             for(int j = 0;j<wordLength;j++){
-                temp = "";
                 temp += chars.charAt((int)(Math.random() * (chars.length())));
             }
             randStringArray[i] = temp;

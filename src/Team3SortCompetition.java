@@ -7,11 +7,8 @@ public class Team3SortCompetition extends SortCompetition {
 
     public int challengeTwo(String[] arr, String query) {
         stringMergeSort(arr);
-        for(int i = 0;i<arr.length;i++){
-            if(arr[i].equalsIgnoreCase(query))
-            return i;
-        }
-        return -1;
+        return recursiveBinarySearch(arr,0,arr.length-1,query);
+
     }
 
     public int challengeThree(int[] arr) {
@@ -20,12 +17,18 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public int challengeFour(int[][] arr) {
-        
+        int[] medians = new int[arr.length];
+        for(int i=0;i<arr.length;i++){
+            quickSort(arr[i],0,arr.length-1);
+            medians[i] = findMedian(arr[i]);
+        }
+
         return 0;
     }
 
     public int challengeFive(Comparable[] arr, Comparable query) {
-        return 0;
+        compMergeSort(arr);
+       return recursiveBinarySearch(arr,0,arr.length-1,query);
     }
 
     public String greeting() {
@@ -48,6 +51,33 @@ public class Team3SortCompetition extends SortCompetition {
             return (int) arr[arr.length / 2];
         }
     }
+
+    public int recursiveBinarySearch(Comparable[] arr, int left, int right, Comparable query){
+        if(right >= 1){
+            int mid = 1 + (right -1)/2;
+            if(arr[mid].compareTo(query) == 0)
+                return mid;
+            if(arr[mid].compareTo(query) > 0) {
+                return recursiveBinarySearch(arr,1,mid - 1, query);
+            }else{
+                return recursiveBinarySearch(arr,mid+1, right, query);
+            }
+        } return -1;
+    }
+
+    public int recursiveBinarySearch(String arr[], int left, int right, String query){
+        if(right >= 1){
+            int mid = 1 + (right -1)/2;
+            if(arr[mid].contains(query))
+                return mid;
+            if(arr[mid].compareTo(query) > 0) {
+                return recursiveBinarySearch(arr, 1, mid - 1, query);
+            }else{
+                return recursiveBinarySearch(arr, mid+1, right, query);
+            }
+        } return -1;
+    }
+
     /*
     ----------------------------------SORTING-METHODS--------------------------------
      */
@@ -150,4 +180,44 @@ public class Team3SortCompetition extends SortCompetition {
         }
 
     }
+
+    public void compMergeSort(Comparable[] list) {
+        int length = list.length;
+        Comparable[] temp = new Comparable[length];
+        compMergeSortHelper(list, 0, length - 1, temp);
+    }
+    public void compMergeSortHelper(Comparable[] list, int left, int right, Comparable[] temp){
+        if(left<right){
+            int mid = (left+right)/2;
+            compMergeSortHelper(list,left,mid,temp);
+            compMergeSortHelper(list,mid+1,right,temp);
+            compMerge(list,left,mid,right,temp);
+        }
+    }
+
+    public void compMerge(Comparable[] list, int left, int mid, int right, Comparable[] temp){
+        int i = left; int j = mid; int k = left;
+        while(i<=mid && j<=right){
+            if(list[i].compareTo(list[j]) < 0){
+                temp[k] = list[i];
+                i++;
+            }else{
+                temp[k] = list[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<=mid){
+            temp[k]=list[i];
+            i++;k++;
+        }
+        while(j<=right){
+            temp[k]=list[j];
+            j++;k++;
+        }
+        for(int p = left;p<=right;p++){
+            list[p] = temp[p];
+        }
+    }
+
 }
