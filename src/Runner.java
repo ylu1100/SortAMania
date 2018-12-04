@@ -16,8 +16,6 @@ public class Runner {
         //CHALLENGE 2
         Team17SortCompetition c2 = new Team17SortCompetition();
         String[] challengeTwoList = Team17SortCompetition.randStringArr(10000,5);
-                //{"yoyoy","omgma","justi","cando","youyo","alst","catss","juan","classic",
-                // "silly"};
 
         Team17SortCompetition.toString(challengeTwoList);
 

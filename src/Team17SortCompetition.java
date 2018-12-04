@@ -1,5 +1,10 @@
 public class Team17SortCompetition extends SortCompetition
 {
+    /**
+     * sorts array of integers using quickSort and then returns the median
+     * @param arr array to sort
+     * @return median of sorted array
+     */
     @Override
     public int challengeOne(int[] arr) {
         quickSort(arr,0,arr.length-1);
@@ -8,6 +13,12 @@ public class Team17SortCompetition extends SortCompetition
         return (findMed(arr));
     }
 
+    /**
+     * sorts array of Strings using quickSort and then returns index of query in arr
+     * @param arr array to sort and look for query in
+     * @param query String to search for in arr
+     * @return index of query in arr or -1 if not found
+     */
     @Override
     public int challengeTwo(String[] arr, String query)
     {
@@ -16,6 +27,11 @@ public class Team17SortCompetition extends SortCompetition
         return binarySearch(arr,query);
     }
 
+    /**
+     * sorts mostly sorted int array with insertionSort and then returns median
+     * @param arr array to sort
+     * @return median of sorted array
+     */
     @Override
     public int challengeThree(int[] arr)
     {
@@ -25,6 +41,11 @@ public class Team17SortCompetition extends SortCompetition
         return findMed(arr);
     }
 
+    /**
+     * Sorts arrays, then sorts them by median, and finally returns the median of the median array
+     * @param arr 2D array to sort and find the median of
+     * @return median of the median array of arr
+     */
     @Override
     public int challengeFour(int[][] arr)
     {
@@ -45,8 +66,15 @@ public class Team17SortCompetition extends SortCompetition
         toString(mids);
 
         return findMed(mids);
+        /**QUESTION: if even # of arrays, find avg. of two mid arrays or just one?*/
     }
 
+    /**
+     * sorts Comparable objects and the returns index of query in arr
+     * @param arr array to sort and search for query in
+     * @param query Comparable object we are looking for in arr
+     * @return index of query in arr or -1 if not found
+     */
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
@@ -65,17 +93,21 @@ public class Team17SortCompetition extends SortCompetition
 
     }
 
+    /**
+     * Greets user
+     * @return String representing the greeting that will be given
+     */
     @Override
     public String greeting()
     {
-        return null;
+        return "Yoyoyo You ready to do some sorting??";
     }
 
 
 
     /**
      * Sorts an array of integers using quickSort
-     * @param arr array to sort
+     * @param arr int array to sort
      * @param left left element position
      * @param right right element position
      */
@@ -89,6 +121,14 @@ public class Team17SortCompetition extends SortCompetition
             quickSort(arr,pivot+1,right);
         }
     }
+
+    /**
+     * Sorts a 2D array based on median
+     * @param mids int array with median value for every array in norm
+     * @param norm int 2D array to be sorted
+     * @param left left element position
+     * @param right right element position
+     */
     public static void quickSort(int[] mids, int[][] norm, int left, int right)
     {
         if(left<right)
@@ -100,6 +140,12 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
+    /**
+     * Sorts an array of Strings using quickSort
+     * @param arr String array to sort
+     * @param left left element position
+     * @param right right element position
+     */
     public static void quickSort(String[] arr, int left, int right)
     {
         if(left<right)
@@ -110,6 +156,13 @@ public class Team17SortCompetition extends SortCompetition
             quickSort(arr,pivot+1,right);
         }
     }
+
+    /**
+     * Sorts an array of Comparable objects using quickSort
+     * @param arr Comparable array to sort
+     * @param left left element position
+     * @param right right element position
+     */
     public static void quickSort(Comparable[] arr, int left, int right)
     {
         if(left<right)
@@ -120,6 +173,14 @@ public class Team17SortCompetition extends SortCompetition
             quickSort(arr,pivot+1,right);
         }
     }
+
+    /**
+     * Creates a partition to sort two sides separately
+     * @param arr String array to create a partition in
+     * @param left left element position
+     * @param right right element position
+     * @return int representing the partition position in arr
+     */
     public static int partition(String[] arr, int left, int right)
     {
         String pivot = arr[right];
@@ -137,7 +198,13 @@ public class Team17SortCompetition extends SortCompetition
         return(i+1);
     }
 
-
+    /**
+     * Creates a partition to sort two sides separately
+     * @param arr Comparable array to create a partition in
+     * @param left left element position
+     * @param right right element position
+     * @return int representing the partition position in arr
+     */
     public static int partition(Comparable[] arr, int left, int right)
     {
         Comparable pivot = arr[right];
@@ -158,7 +225,7 @@ public class Team17SortCompetition extends SortCompetition
 
     /**
      * Creates a partition to sort two sides separately
-     * @param arr array to create a partition in
+     * @param arr int array to create a partition in
      * @param left left element position
      * @param right right element position
      * @return int representing the partition position in arr
@@ -180,14 +247,6 @@ public class Team17SortCompetition extends SortCompetition
         return(i+1);
     }
 
-
-    /**
-     * Sorts an array of integers using quickSort
-     * @param mids median array to sort
-     * @param norm 2D array to sort
-     * @param left left element position
-     * @param right right element position
-     */
 
     /**
      * Creates a partition to sort two sides separately
@@ -247,6 +306,7 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
+    /**
     public static void insertionSort(Comparable[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -258,7 +318,7 @@ public class Team17SortCompetition extends SortCompetition
             }
             arr[x + 1] = key;
         }
-    }
+    }*/
 
     /**
      * Sorts an array of Strings into alphabetical order using bubble sort
@@ -361,6 +421,13 @@ public class Team17SortCompetition extends SortCompetition
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }
+
+    /**
+     * swaps two items in a Comparable object array
+     * @param arr array we will swap items for
+     * @param pos1 selected position value to swap
+     * @param pos2 other selected position value to swap
+     */
     public static void swap(Comparable[] arr,int pos1,int pos2)
     {
         Comparable temp = arr[pos1];
@@ -395,6 +462,11 @@ public class Team17SortCompetition extends SortCompetition
     }
 
 
+    /**
+     * finds and returns the median in an int array
+     * @param arr int array to find a median in
+     * @return int representing the median of an int array
+     */
     public static int findMed(int[] arr)
     {
         int idx = arr.length/2;
@@ -409,7 +481,10 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
-    //toString int array
+    /**
+     * prints a String representing an int array
+     * @param list array to print
+     */
     public static void toString(int[] list) {
 
         String out = "";
@@ -426,7 +501,10 @@ public class Team17SortCompetition extends SortCompetition
 
     }
 
-    //toString String array
+    /**
+     * prints a String representing a String array
+     * @param list array to print
+     */
     public static void toString(String[] list)
     {
         String out = "";
@@ -444,7 +522,10 @@ public class Team17SortCompetition extends SortCompetition
     }
 
 
-    //toString Double String array
+    /**
+     * prints a String representing a 2D array
+     * @param list array to print
+     */
     public static void toString(int[][] list)
     {
         String out = "";
