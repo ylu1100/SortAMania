@@ -10,6 +10,7 @@ public class runner
         long timer = System.nanoTime();
 /*
         System.out.println("median is " + x.challengeOne(c1));
+        printIntArray(c1);
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
 
@@ -24,6 +25,7 @@ public class runner
         int[][] c3 = generate2IntArr(4,4);
         print2dArr(c3);
         System.out.println(x.challengeFour(c3));
+        print2dArr(c3);
 /*
         Comparable[] c5 = new Comparable[10];
         String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};

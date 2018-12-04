@@ -58,17 +58,14 @@ public class Team18SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr)
     {
-        int[]medianArr = new int[arr.length];
-        double median;
-
+        int[] medianArr = new int[arr.length];
         for(int i = 0;i<arr.length; i++)
         {
             insertionSort(arr[i]);
-            medianArr[i] = arr[i][arr[i].length/2];
+            medianArr[i] = (arr[i][1] + arr[i][2]) / 2;
         }
         insertionSort(medianArr);
-        return (medianArr[medianArr.length/2]+ medianArr[(medianArr.length/2)-1])/2;
-
+        return (medianArr[1] + medianArr[2])/2;
     }
 
     @Override
@@ -178,13 +175,17 @@ public class Team18SortCompetition extends SortCompetition
         }
         return z;
     }
-    public static int[] medianArrList(int[][] arr)
+    public static int findMedian(int[] arr)
     {
-        int[] result = new int[1000];
-        for(int i =0; i<arr.length;i++)
+        int median = 0;
+        if(arr.length%2 == 0)
         {
-            result[i] = (arr[i][499]+ arr[i][500])/2;
+            median = (arr[arr.length/2] + arr[(arr.length/2)-1])/2;
         }
-        return result;
+        if(arr.length%2 != 0)
+        {
+            median =  arr[(arr.length-1)/2];
+        }
+        return median;
     }
 }
