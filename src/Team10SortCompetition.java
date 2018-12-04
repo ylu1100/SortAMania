@@ -1,5 +1,5 @@
 /*TRAFVIS*/
-public abstract class Team10SortCompetition extends SortCompetition
+public class Team10SortCompetition extends SortCompetition
 {
     public int challengeOne(int[] arr)
     {
@@ -8,12 +8,14 @@ public abstract class Team10SortCompetition extends SortCompetition
         for (int i = 0; i < arr.length; i++)
         {
             temp1 = i;
+            temp2 = arr[i];
             for (int x = i; x < arr.length; x++)
             {
                 if (arr[i] < temp2)
                 {
                     temp1 = x;
                     temp2 = arr[x];
+
                 }
             }
             arr[temp1] = arr[i];
@@ -77,4 +79,20 @@ public abstract class Team10SortCompetition extends SortCompetition
         median = ((arr[50000] + arr[50001]) / 2);
         return median;
     }
+    public int challengeFour(int[][] arr)
+    {
+        return 0;
+    }
+    public int challengeFive(Comparable[] arr, Comparable query)
+    {return 0;
+
+    }
+
+    public String greeting()
+    {
+        return "as";
+    }
+
+
+
 }
