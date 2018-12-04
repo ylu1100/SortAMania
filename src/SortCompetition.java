@@ -1,6 +1,9 @@
 //Implement this abstract class in your own class in this project.
+//Name your class Team#SortCompetition.
+//e.g. Team 1 should name their class Team1SortCompetition
 
-import Challenges.Comparable;
+
+//import Challenges.Comparable;
 
 public abstract class SortCompetition {
 
