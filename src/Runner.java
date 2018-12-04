@@ -34,13 +34,13 @@ public class Runner {
 
         //CHALLENGE 3
         Team17SortCompetition c3 = new Team17SortCompetition();
-        int[] challengeThreeList = Team17SortCompetition.randIntArr(10000);
+        int[] challengeThreeList = Team17SortCompetition.randIntArr(100000);
         System.out.println("unsorted");
         Team17SortCompetition.toString(challengeThreeList);
 
         start = System.nanoTime();
         System.out.println("Median: " + c3.challengeThree(challengeThreeList));
-        diff = System.nanoTime() - start;
+        diff = (System.nanoTime() - start);
 
         System.out.println("Time Taken: " + diff + "\n");
         System.out.println("sorted");
@@ -49,7 +49,7 @@ public class Runner {
 
         //CHALLENGE 4
         Team17SortCompetition c4 = new Team17SortCompetition();
-        int count = 10;
+        int count = 10000;
         int[][] challengeFourList = new int[count][count];
 
         for(int i = 0;i<challengeFourList.length;i++)
@@ -70,7 +70,7 @@ public class Runner {
 
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
-        count = 5;
+        count = 10000;
         Thing[] challengeFiveList = new Thing[count];
         String out = "";
         for(int i = 0;i<challengeFiveList.length;i++)
