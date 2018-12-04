@@ -45,7 +45,7 @@ public class sortAManiaTestRunner
         printArr(randIntArr2);
 
         System.out.println("Unsorted");
-        //printArr(randIntMultiArr);
+        printArr(randIntMultiArr);
 
         median = team6.challengeFour(randIntMultiArr);
         time = System.currentTimeMillis() - time;
