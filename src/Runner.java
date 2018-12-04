@@ -113,7 +113,7 @@ public class Runner {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         Challenge5 generated = new Challenge5();
         Challenge5[] arr = generated.randomArr(10000);
-        Challenge5.BubbleSort(arr);
+        Team11SortCompetition.BubbleSort(arr);
         for (int n = 0; n < arr.length; n++) {
 
             if (arr[n].value == goal) {
