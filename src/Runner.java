@@ -98,24 +98,36 @@ public class Runner {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         int[] array1 = setUp3(100000);
         //printArr3(array3);
-        System.out.println("the median is" + Team11.challengeOne(array1));
+        System.out.println("the median is " + Team11.challengeOne(array1));
         printArr3(array1);
     }
     public static void runChallenge4() {
         Team11SortCompetition Team11 = new Team11SortCompetition();
-        int[][] array4 = setUp4(10000,10000);
+        int[][] array4 = setUp4(1000,1000);
         // printArr4(array4);
         System.out.println("the median is" + Team11.challengeFour(array4));
         printArr4(array4);
     }
-    public void runChallenge5()
+    public static void runChallenge5(int goal)
     {
         Team11SortCompetition Team11 = new Team11SortCompetition();
         Challenge5 generated = new Challenge5();
         Challenge5[] arr = generated.randomArr(10000);
         Challenge5.BubbleSort(arr);
-        System.out.println(arr);
+        for (int n = 0; n < arr.length; n++) {
 
+            if (arr[n].value == goal) {
+                System.out.print(n);
+            }
+            else {
+                System.out.println("-1");
+            }
+
+        }
+        for (int n = 0; n < arr.length; n++) {
+
+            System.out.println(arr[n].value);
+        }
 
     }
 
@@ -139,10 +151,7 @@ public class Runner {
         }
         else if (response.equals("5"))
         {
-            runChallenge4();
+            runChallenge5(  2342);
         }
-
-
-
     }
 }
