@@ -57,7 +57,7 @@ public class sortAManiaTestRunner
 
 
         System.out.println("Unsorted");
-        printArr(randIntMultiArr);
+        printArr(randStringArr);
 
         median = team6.challengeFive(randStringArr, "words");
         time = System.currentTimeMillis() - time;
@@ -65,7 +65,7 @@ public class sortAManiaTestRunner
         System.out.println("String found at: " + median);
 
         System.out.println("Sorted");
-        printArr(randIntMultiArr);
+        printArr(randStringArr);
     }
     public static int[] randomIntsArr(int num)
     {
