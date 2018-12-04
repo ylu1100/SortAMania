@@ -58,17 +58,17 @@ public class Team18SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr)
     {
-        int[] medianArr = new int[arr.length];
-        int median = 0;
+        int[]medianArr = new int[arr.length];
+        double median;
+
         for(int i = 0;i<arr.length; i++)
         {
             insertionSort(arr[i]);
-            medianArr[i] = arr[i][i];
-            insertionSort(medianArr);
+            medianArr[i] = arr[i][arr[i].length/2];
         }
+        insertionSort(medianArr);
+        return (medianArr[medianArr.length/2]+ medianArr[(medianArr.length/2)-1])/2;
 
-        median = (medianArr[medianArr.length/2]+ medianArr[(medianArr.length/2)-1])/2;
-        return median;
     }
 
     @Override
@@ -131,28 +131,28 @@ public class Team18SortCompetition extends SortCompetition
 
     public void insertionSort(int[] list1)
     {
-        int swapPos;
-        int min;
+    int swapPos;
+    int min;
 
-        for(int i = 1;i<list1.length;i++)
+    for(int i = 1;i<list1.length;i++)
+    {
+        swapPos = i;
+        min = list1[swapPos];
+
+        for(int a = i-1;a>=0;a--)
         {
-            swapPos = i;
-            min = list1[swapPos];
-
-            for(int a = i-1;a>=0;a--)
+            if(list1[a]>min)
             {
-                if(list1[a]>min)
-                {
-                    swap(list1,swapPos,a);
-                    swapPos = a;
-                    min = list1[swapPos];
-                }
-                else
-                {
-                    a=-1;
-                }
+                swap(list1,swapPos,a);
+                swapPos = a;
+                min = list1[swapPos];
+            }
+            else
+            {
+                a=-1;
             }
         }
+    }
     }
 
     public static void selectionSort(double[] arr)
@@ -177,5 +177,14 @@ public class Team18SortCompetition extends SortCompetition
             z[i] = (int)(Math.random()*10000);
         }
         return z;
+    }
+    public static int[] medianArrList(int[][] arr)
+    {
+        int[] result = new int[1000];
+        for(int i =0; i<arr.length;i++)
+        {
+            result[i] = (arr[i][499]+ arr[i][500])/2;
+        }
+        return result;
     }
 }
