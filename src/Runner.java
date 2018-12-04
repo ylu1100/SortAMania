@@ -1,4 +1,3 @@
-import Challenges.Team11SortCompetition;
 import Challenges.Challenge5;
 
 

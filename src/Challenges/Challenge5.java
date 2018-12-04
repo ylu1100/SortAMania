@@ -15,6 +15,8 @@ public  class Challenge5 implements Comparable<Challenge5> {
         }
         return five;
     }
+    //Name your class Team#SortCompetition.
+//e.g. Team 1 should name their class Team1SortCompetition
 
 
 }

@@ -1,7 +1,7 @@
-package Challenges;
-
 import C4method.challengeFourMethods;
 import C4method.challengeFourMethods2;
+import Challenges.Challenge5;
+import Challenges.Comparable;
 
 public class Team11SortCompetition extends SortCompetition //implements Comparable<Challenge5>
 {
