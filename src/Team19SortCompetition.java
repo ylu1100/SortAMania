@@ -25,7 +25,7 @@ public class Team19SortCompetition extends SortCompetition{
         for(int i = 0; i < arr.length; i++){
             mergeSort(arr[i]);
         }
-        System.out.println(Arrays.toString(arr[0]));
+        System.out.println("Sorted: " + Arrays.toString(arr[0]));
         int[] medianArr = medianString(arr);
         mergeSort(medianArr);
 
@@ -43,7 +43,7 @@ public class Team19SortCompetition extends SortCompetition{
     }
 
     public String greeting(){
-        return "Wassup yo? It is I, DIO.";
+        return "Wassup yo? It is I, DIO. Here to bring you with only ZA WARUDO's fastest sorting methods-- made by Team 19!";
     }
     //===========================================================================================
     private static void mergeSort(int[] elements){
@@ -111,7 +111,7 @@ public class Team19SortCompetition extends SortCompetition{
         arr[val2] = x;
     }
     //---------------------------------------------------
-    private static void insertionSort(int[] list1){
+    /*private static void insertionSort(int[] list1){
         boolean done = false;
         for(int i = 1; i < list1.length; i++){ // For every value in the array
             for(int j = i; j > 0; j--){
@@ -126,7 +126,36 @@ public class Team19SortCompetition extends SortCompetition{
         int x = arr[val1];
         arr[val1] = arr[val2];
         arr[val2] = x;
+    }*/
+
+    /*public static void insertionSort2(int[] list1){
+        for(int i = 0; i < list1.length; i++){ //For every number in the array
+            int k = list1[i]; //Keeps track of current lowest number
+            int pos = i; //Keeps track of position of current lowest number
+            for(int j = i+1; j < list1.length; j++){ //For every unsorted number
+                if(list1[j] < k){ //If there is a number lower than the current low
+                    k = list1[j]; //Set that equal to the lowest number
+                    pos = j; //Keep track of position of the lowest number
+                }
+            }
+            int temp = list1[pos]; //Keep track of minimum number
+            if(k!= list1[i]){ //If the lowest number is not the current number
+                for(int j = pos; j > i; j--){
+                    list1[j] = list1[j-1];
+                }
+            }
+            list1[i] = temp;
+        }
     }
+
+    public static boolean contains(int[] arr, int x){
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == x){
+                return true;
+            }
+        }
+        return false;
+    }*/
     //---------------------------------------------------
     private static int[] medianString(int[][] arr){
         int[] output = new int[1000];

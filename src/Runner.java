@@ -34,7 +34,7 @@ public abstract class Runner extends SortCompetition {
         System.out.println("Challenge 3 Duration: " + duration * 0.001 + " seconds \n");
 
         int[][] arr4 = random3DIntArr(1000,10000);
-        System.out.println(Arrays.toString(arr4[0]));
+        System.out.println("Unsorted: " + Arrays.toString(arr4[0]));
         duration = System.currentTimeMillis();
         System.out.println("Returns: " + team19.challengeFour(arr4));
         duration = System.currentTimeMillis() - duration;
