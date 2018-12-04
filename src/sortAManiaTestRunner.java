@@ -5,10 +5,10 @@ public class sortAManiaTestRunner
     public static void main(String[] args)
     {
         SortCompetition team6 = new Team6SortCompetition();
-        int[] randIntArr = randomIntsArr(3);
-        int[] randIntArr2 = randomIntsArr(3);
-        int[][] randIntMultiArr = randomIntsMultiArr(3,3);
-        String[] randStringArr = randomStringArr(10, 5);
+        int[] randIntArr = randomIntsArr(10000);
+        int[] randIntArr2 = randomIntsArr(100000);
+        int[][] randIntMultiArr = randomIntsMultiArr(1000,1000);
+        String[] randStringArr = randomStringArr(10000, 5);
 
         System.out.println("Unsorted");
         printArr(randIntArr);
