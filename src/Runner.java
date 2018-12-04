@@ -107,8 +107,22 @@ public class Runner
         //for(int i=0;i<arr4.length;i++) { for(int k=0;k<arr4[i].length;k++)  {    System.out.print(arr4[i][k] + " ");    }   System.out.println(); }System.out.println("\n"+"Median: "+a1.challengeFour(arr4));
 
         System.out.println("\nCompetition5");
+        String[] arr5 = new String[10000];
+        int a5; String h5; String c5="";
+        String alpha5="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for(int i=0;i<arr2.length;i++)
+        {
+            c5="";
+            for(int k=0;k<5;k++)
+            {
+                a5= (int)(Math.random()*25)+0;
+                h5=alpha.substring(a5,a5+1);
+                c5=c5+h5;
+            }
+            arr5[i]=c5;
+        }
         long time5 = System.nanoTime();
-        int ba=a1.challengeFive(arr2,"WDMEO");
+        int ba=a1.challengeFive(arr5,"WDMEO");
         System.out.println("\nTime: "+(double)(System.nanoTime() - time5)/(100000000)+" secs");
         System.out.println(ba);
     }
