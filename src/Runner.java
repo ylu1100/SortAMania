@@ -1,5 +1,3 @@
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 public class Runner {
     public static void main(String[] args)
     {
@@ -98,7 +96,9 @@ public class Runner {
 
         System.out.println("\nChallenge 4 Sorted in: "+ timeEnd+ "ms");
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
-        System.out.println("The median is: "+ median);
+        System.out.println("The median is: "+ median + "\n");
+        
+
 
 
 
