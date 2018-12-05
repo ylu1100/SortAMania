@@ -361,12 +361,7 @@ public class Team17SortCompetition extends SortCompetition
      * @param pos1 selected position value to swap
      * @param pos2 other selected position value to swap
      */
-    public static void swap(Comparable[] arr,int pos1,int pos2)
-    {
-        Comparable temp = arr[pos1];
-        arr[pos1] = arr[pos2];
-        arr[pos2] = temp;
-    }
+
 
     /**
      * swaps two items in a String array
