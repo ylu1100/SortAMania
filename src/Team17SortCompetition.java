@@ -33,7 +33,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeThree(int[] arr)
     {
-       insertionSort(arr);
+        insertionSort(arr);
 
         return findMed(arr);
     }
@@ -82,8 +82,6 @@ public class Team17SortCompetition extends SortCompetition
     {
         return "Yoyoyo, this is Mir and Sheba. We are team 17. You ready to do some sorting??";
     }
-
-
 
     /**
      * Sorts an array of integers using quickSort
@@ -160,31 +158,6 @@ public class Team17SortCompetition extends SortCompetition
         swap(arr,i+1,right);
         return(i+1);
     }
-
-    /**
-     * Creates a partition to sort two sides separately
-     * @param arr Comparable array to create a partition in
-     * @param left left element position
-     * @param right right element position
-     * @return int representing the partition position in arr
-     */
-    public static int partition(Comparable[] arr, int left, int right)
-    {
-        Comparable pivot = arr[right];
-        int i = left-1;
-
-        for(int j = left;j<right;j++)
-        {
-            if(arr[j].compareTo(pivot)< 1)
-            {
-                i++;
-                swap(arr,i,j);
-            }
-        }
-        swap(arr,i+1,right);
-        return(i+1);
-    }
-
 
     /**
      * Creates a partition to sort two sides separately
@@ -269,6 +242,10 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
+    /**
+     * Sorts array of Comparable objects using insertionSort
+     * @param arr Comparable array to sort
+     */
     public static void insertionSort(Comparable[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -279,27 +256,6 @@ public class Team17SortCompetition extends SortCompetition
                 x--;
             }
             arr[x + 1] = key;
-        }
-    }
-
-    /**
-     * Sorts an array of Strings into alphabetical order using bubble sort
-     * @param list1 array to sort
-     */
-    public static void bubbleSort(String[] list1)
-    {
-        int swapNum = 1;
-        while(swapNum!=0)
-        {
-            swapNum = 0;
-            for(int i = 0;i<list1.length-1;i++)
-            {
-                if(list1[i].compareTo(list1[i+1])>0)
-                {
-                    swap(list1,i,i+1);
-                    swapNum++;
-                }
-            }
         }
     }
 
@@ -380,19 +336,6 @@ public class Team17SortCompetition extends SortCompetition
     public static void swap(int[] arr,int pos1,int pos2)
     {
         int temp = arr[pos1];
-        arr[pos1] = arr[pos2];
-        arr[pos2] = temp;
-    }
-
-    /**
-     * swaps two items in a Comparable object array
-     * @param arr array we will swap items for
-     * @param pos1 selected position value to swap
-     * @param pos2 other selected position value to swap
-     */
-    public static void swap(Comparable[] arr,int pos1,int pos2)
-    {
-        Comparable temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }

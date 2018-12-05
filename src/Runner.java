@@ -49,7 +49,7 @@ public class Runner {
 
         //CHALLENGE 4
         Team17SortCompetition c4 = new Team17SortCompetition();
-        int count = 10000;
+        int count = 1000;
         int[][] challengeFourList = new int[count][count];
 
         for(int i = 0;i<challengeFourList.length;i++)
@@ -70,7 +70,7 @@ public class Runner {
 
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
-        count = 10;
+        count = 10000;
         Thing[] challengeFiveList = new Thing[count];
         String out = "";
         for(int i = 0;i<challengeFiveList.length;i++)
