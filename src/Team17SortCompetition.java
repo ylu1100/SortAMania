@@ -46,6 +46,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeFour(int[][] arr)
     {
+        System.out.println("one");
         int[] mids = new int[arr.length];
 
         for(int i = 0;i<arr.length;i++)
@@ -168,22 +169,7 @@ public class Team17SortCompetition extends SortCompetition
      * @param right right element position
      * @return int representing the partition position in arr
      */
-    public static int partition(Comparable[] arr, int left, int right)
-    {
-        Comparable pivot = arr[right];
-        int i = left-1;
 
-        for(int j = left;j<right;j++)
-        {
-            if(arr[j].compareTo(pivot)< 1)
-            {
-                i++;
-                swap(arr,i,j);
-            }
-        }
-        swap(arr,i+1,right);
-        return(i+1);
-    }
 
 
     /**
@@ -286,22 +272,7 @@ public class Team17SortCompetition extends SortCompetition
      * Sorts an array of Strings into alphabetical order using bubble sort
      * @param list1 array to sort
      */
-    public static void bubbleSort(String[] list1)
-    {
-        int swapNum = 1;
-        while(swapNum!=0)
-        {
-            swapNum = 0;
-            for(int i = 0;i<list1.length-1;i++)
-            {
-                if(list1[i].compareTo(list1[i+1])>0)
-                {
-                    swap(list1,i,i+1);
-                    swapNum++;
-                }
-            }
-        }
-    }
+
 
     /**
      * finds query in String array using binary search
