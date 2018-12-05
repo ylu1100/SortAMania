@@ -120,7 +120,7 @@ public abstract class Team15SortCompetition extends SortCompetition {
              System.out.println(output + " The Median is: "+ findMedian(arr[i]));
          }
         */
-        return ((findMedian(arr[(arr.length)/2]) + findMedian(arr[(arr.length/2)-1]))/2);
+        return ((findMedian(arr[(arr.length)/2]) + findMedian(arr[(arr.length/2)+1]))/2);
 
     }
 
@@ -129,7 +129,7 @@ public abstract class Team15SortCompetition extends SortCompetition {
     {
         if (arr.length%2 ==0)
         {
-            return (arr[(arr.length)/2] + arr[(arr.length/2) -1])/2;
+            return (arr[(arr.length)/2] + arr[(arr.length/2) +1])/2;
         } else
         {
             return arr[(arr.length +1 )/ 2];
