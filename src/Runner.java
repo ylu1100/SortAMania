@@ -70,7 +70,7 @@ public class Runner {
 
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
-        int count = 10;
+        count = 10;
         Thing[] challengeFiveList = new Thing[count];
         String out = "";
         for(int i = 0;i<challengeFiveList.length;i++)
@@ -80,9 +80,9 @@ public class Runner {
         }
         System.out.println(out);
 
-        long start = System.currentTimeMillis();
+        start = System.currentTimeMillis();
         System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[0]));
-        long diff = System.currentTimeMillis() - start;
+        diff = System.currentTimeMillis() - start;
         out = "";
 
         for(int i =0;i<challengeFiveList.length;i++)
