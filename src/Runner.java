@@ -52,7 +52,7 @@ public class Runner {
         time = end - start;
 
         System.out.println("CHALLENGE FIVE TIME: " + time * 0.001 + " Seconds");
-        System.out.println("OBJECT QUERY POSITION: " + objPos);
+        System.out.println("Object Query Position: " + objPos);
     }
 
     /**

@@ -25,7 +25,7 @@ public class Team8SortCompetition extends SortCompetition {
     @Override
     public int challengeTwo(String[] arr, String query) {
         lsdRadixSortStr(arr, 5);
-        return binarySearch(arr, 0 , arr.length - 1, query);
+        return binarySearchStr(arr, 0 , arr.length - 1, query);
     }
 
     /**
@@ -81,7 +81,7 @@ public class Team8SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
-        insertionSortComparable(arr);
+        quickSortComparable(arr, 0, arr.length - 1);
         return binarySearch(arr, 0, arr.length - 1, query);
     }
 
@@ -103,8 +103,9 @@ public class Team8SortCompetition extends SortCompetition {
             quickSortInt(arr, pivot + 1, right);
         }
     }
+
     /**
-     * Recursive Method that breaks down the Array around a "pivot" position.
+     * Recursive Method that breaks down the Array around a "pivot" Integer.
      * @param arr SAME 1D Integer Array used in quickSort().
      * @param left Integer representing the starting position of the partition.
      * @param right Integer representing the ending position of the partition.
@@ -167,31 +168,56 @@ public class Team8SortCompetition extends SortCompetition {
      * @param arr Any 1D Integer Array.
      */
     private static void insertionSort (int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            int currHold = arr[i];
-            int currPos = i;
-            while (currPos > 0 && arr[currPos -1] > currHold) {
-                arr[currPos] = arr[currPos - 1];
-                currPos--;
-            }
-            arr[currPos] = currHold;
+      int arrLength = arr.length;
+      for (int i = 1; i < arrLength; i++) {
+          int key = arr[i];
+          int j = i - 1;
+
+          while (j >= 0 && arr[j] > key) {
+              arr[j + 1] = arr[j];
+              j = j - 1;
+          }
+          arr[j + 1 ] = key;
+      }
+    }
+
+    /**
+     * Initiates the recursive quick-sort algorithm. (Implemented for Comparable Objects.)
+     * Quick-Sort is considered in place. *Technically*
+     * @param arr Any 1D Comparable Array.
+     * @param left Integer representing the starting position of the Array / sector to be sorted. (Begins the sort here - [Usually 0])
+     * @param right Integer representing the ending position of the Array / sector to be sorted. (Usually Array.length - 1)
+     */
+    private static void quickSortComparable(Comparable[] arr, int left, int right) {
+        if (left < right) {
+            int pivot = partitionComparable(arr, left, right);
+            quickSortComparable(arr, left, pivot - 1);
+            quickSortComparable(arr, pivot + 1, right);
         }
     }
 
     /**
-     * Optimized Insertion Sort for Comparable Objects.
-     * @param arr Any 1D Comparable Array.
+     * Recursive Method that breaks down the Comparable Array around a "pivot" Comparable Object.
+     * @param arr SAME 1D Comparable Array used in quickSortComparable().
+     * @param left Integer representing the starting position of the partition.
+     * @param right Integer representing the ending position of the partition.
+     * @return Integer representing the new "pivot" Comparable Object.
      */
-    private static void insertionSortComparable (Comparable[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            Comparable currHold = arr[i];
-            int currPos = i;
-            while (currPos > 0 && arr[currPos -1].compareTo(currHold) > 0) {
-                arr[currPos] = arr[currPos - 1];
-                currPos--;
+    private static int partitionComparable(Comparable[] arr, int left, int right) {
+        Comparable pivot = arr[right];
+        int i = left - 1;
+        for (int j = left; j < right; j++) {
+            if (arr[j].compareTo(pivot) <= 0){
+                i++;
+                Comparable temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-            arr[currPos] = currHold;
         }
+        Comparable temp = arr[right];
+        arr[right] = arr[i + 1];
+        arr[i + 1] = temp;
+        return i+ 1;
     }
 
     /**
@@ -238,12 +264,40 @@ public class Team8SortCompetition extends SortCompetition {
     }
 
     /**
+     * Binary Search that only obtains the first instance of a String.
+     * @param arr 1D String Array.
+     * @param left Integer representing the left bound of the Array (arr).
+     * @param right Integer representing the right bound of the Array (arr).
+     * @param str Any String.
+     * @return The first position of the String (str) inside of the String Array (arr).
+     *         If the String is not found this method returns a -1.
+     */
+    private static int binarySearchStr(String[] arr, int left, int right, String str) {
+        while (left < right) {
+            int middle = (left + right) / 2;
+            if (isGreaterThanEqualTo(arr, middle, str)) {
+                right = middle;
+            } else {
+                left = middle + 1;
+            }
+        }
+        if (arr[left].compareTo(str) == 0 && arr[left] == str) {
+            return left;
+        } else if (arr[right].compareTo(str) == 0 && arr[right] == str) {
+            return right;
+        } else {
+            return -1;
+        }
+    }
+
+    /**
      * Binary Search that only obtains the first instance of a Comparable object.
      * @param arr 1D Comparable Array.
      * @param left Integer representing the left bound of the Array (arr).
      * @param right Integer representing the right bound of the Array (arr).
      * @param obj Any Comparable object.
      * @return The first position of the Object (obj) inside of the Comparable Array (arr).
+     *         If the Object is not found this method returns a -1.
      */
     private static int binarySearch(Comparable[] arr, int left, int right, Comparable obj) {
         while (left < right) {
@@ -254,10 +308,13 @@ public class Team8SortCompetition extends SortCompetition {
                 left = middle + 1;
             }
         }
+        // Checks to make sure memory addresses match.
         if (arr[left].compareTo(obj) == 0 && arr[left] == obj) {
             return left;
         } else if (arr[right].compareTo(obj) == 0 && arr[right] == obj) {
             return right;
+        } else if (left == right && left + right / 2 != 0) { // Fix for a weird case of Objects with the same value.
+            return left + right / 2;
         } else {
             return -1;
         }
