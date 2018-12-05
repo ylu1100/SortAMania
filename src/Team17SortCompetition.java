@@ -68,15 +68,8 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public int challengeFive(Comparable[] arr, Comparable query)
     {
-        quickSort(arr,0,arr.length-1);
+        insertionSort(arr);
 
-        for(int x = 0; x<arr.length;x++)
-        {
-            if(arr[x] == query)
-            {
-                return x;
-            }
-        }
         return(binarySearch(arr,query));
     }
 
@@ -87,7 +80,7 @@ public class Team17SortCompetition extends SortCompetition
     @Override
     public String greeting()
     {
-        return "Yoyoyo This is Sheba and Mir. We are team 17. You ready to do some sorting??";
+        return "Yoyoyo, this is Mir and Sheba. We are team 17. You ready to do some sorting??";
     }
 
 
@@ -134,23 +127,6 @@ public class Team17SortCompetition extends SortCompetition
      * @param right right element position
      */
     public static void quickSort(String[] arr, int left, int right)
-    {
-        if(left<right)
-        {
-            int pivot = partition(arr,left,right);
-
-            quickSort(arr,left,pivot-1);
-            quickSort(arr,pivot+1,right);
-        }
-    }
-
-    /**
-     * Sorts an array of Comparable objects using quickSort
-     * @param arr Comparable array to sort
-     * @param left left element position
-     * @param right right element position
-     */
-    public static void quickSort(Comparable[] arr, int left, int right)
     {
         if(left<right)
         {
@@ -293,19 +269,18 @@ public class Team17SortCompetition extends SortCompetition
         }
     }
 
-    /**
     public static void insertionSort(Comparable[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             Comparable key = arr[i];
             int x = i - 1;
-            while ((x > -1) && (arr[x].compareTo(key) >= 0)) {
+            while ((x > -1) && (arr[x].compareTo(key) > 0)) {
                 arr[x + 1] = arr[x];
                 x--;
             }
             arr[x + 1] = key;
         }
-    }*/
+    }
 
     /**
      * Sorts an array of Strings into alphabetical order using bubble sort

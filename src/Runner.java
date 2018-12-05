@@ -70,24 +70,24 @@ public class Runner {
 
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
-        count = 10000;
+        int count = 10;
         Thing[] challengeFiveList = new Thing[count];
         String out = "";
         for(int i = 0;i<challengeFiveList.length;i++)
         {
             challengeFiveList[i] = new Thing();
-            out += challengeFiveList[i].value + ", ";
+            out += challengeFiveList[i].value + " id: " + challengeFiveList[i].id + ", ";
         }
         System.out.println(out);
 
-        start = System.currentTimeMillis();
-        System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[1]));
-        diff = System.currentTimeMillis() - start;
+        long start = System.currentTimeMillis();
+        System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[0]));
+        long diff = System.currentTimeMillis() - start;
         out = "";
 
         for(int i =0;i<challengeFiveList.length;i++)
         {
-            out += challengeFiveList[i].value;
+            out += challengeFiveList[i].value + " id: " + challengeFiveList[i].id;
             if(i != challengeFiveList.length-1)
             {
                 out += ", ";
