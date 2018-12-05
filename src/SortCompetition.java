@@ -1,5 +1,3 @@
-//Brandon Smith and Jackie Fang 12.4.18
-
 //Implement this abstract class in your own class in this project.
 //Name your class Team#SortCompetition.
 //e.g. Team 1 should name their class Team1SortCompetition
