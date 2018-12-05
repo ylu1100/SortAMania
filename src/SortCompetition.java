@@ -14,5 +14,4 @@ public abstract class SortCompetition {
 	public abstract int challengeFive(Comparable[] arr, Comparable query);
 	
 	//Add a custom greeting so your sorter can introduce itself
-	public abstract String greeting();
 }
