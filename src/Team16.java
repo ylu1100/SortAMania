@@ -1,7 +1,7 @@
 //Alexander Cox
 //Wednesday, November 28, 2018
 
-public class Team16 extends SortCompetition {
+public class Team16SortCompetition extends SortCompetition {
 
     public int challengeOne(int[] arr)
     {
