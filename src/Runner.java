@@ -40,7 +40,7 @@ public class Runner {
         System.out.println("Median: " + runner.challengeThree(c3Arr));
         endTime = (System.nanoTime() - startTime);
         System.out.println("Time Taken: " + (endTime / 1000000000) + "s");
-        printIntArray(c3Arr);
+        //printIntArray(c3Arr);
 
         System.out.print("\n");
 
