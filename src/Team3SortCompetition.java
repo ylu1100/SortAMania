@@ -7,8 +7,11 @@ public class Team3SortCompetition extends SortCompetition {
 
     public int challengeTwo(String[] arr, String query) {
         stringMergeSort(arr);
-        return recursiveBinarySearch(arr,0,arr.length-1,query);
-
+       for(int i=0;i<arr.length;i++){
+           if(arr[i].contains(query)){
+               return 0;
+           }
+       }return -1;
     }
 
     public int challengeThree(int[] arr) {
@@ -28,7 +31,11 @@ public class Team3SortCompetition extends SortCompetition {
 
     public int challengeFive(Comparable[] arr, Comparable query) {
         compMergeSort(arr);
-       return recursiveBinarySearch(arr,0,arr.length-1,query);
+        for(int i=0;i<arr.length;i++){
+            if(arr[i].compareTo(query)>0){
+                return 0;
+            }
+        }return -1;
     }
 
     public String greeting() {
@@ -53,28 +60,27 @@ public class Team3SortCompetition extends SortCompetition {
     }
 
     public int recursiveBinarySearch(Comparable[] arr, int left, int right, Comparable query){
-        if(right >= 1){
+        while(right >= 1){
             int mid = 1 + (right -1)/2;
             if(arr[mid].compareTo(query) == 0)
                 return mid;
-            if(arr[mid].compareTo(query) > 0) {
+            if(arr[mid].compareTo(query) > 0)
                 return recursiveBinarySearch(arr,1,mid - 1, query);
-            }else{
+
                 return recursiveBinarySearch(arr,mid+1, right, query);
-            }
+
         } return -1;
     }
 
     public int recursiveBinarySearch(String arr[], int left, int right, String query){
-        if(right >= 1){
+        while(right >= 1){
             int mid = 1 + (right -1)/2;
             if(arr[mid].contains(query))
                 return mid;
-            if(arr[mid].compareTo(query) > 0) {
+            if(arr[mid].compareTo(query) > 0)
                 return recursiveBinarySearch(arr, 1, mid - 1, query);
-            }else{
+
                 return recursiveBinarySearch(arr, mid+1, right, query);
-            }
         } return -1;
     }
 
