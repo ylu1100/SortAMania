@@ -34,7 +34,7 @@ public class Runner {
 
         //CHALLENGE 3
         Team17SortCompetition c3 = new Team17SortCompetition();
-        int[] challengeThreeList = Team17SortCompetition.randIntArr(100000);
+        int[] challengeThreeList = Team17SortCompetition.randIntArr(1000);
         System.out.println("unsorted");
         Team17SortCompetition.toString(challengeThreeList);
 
@@ -49,7 +49,7 @@ public class Runner {
 
         //CHALLENGE 4
         Team17SortCompetition c4 = new Team17SortCompetition();
-        int count = 1000;
+        int count = 10000;
         int[][] challengeFourList = new int[count][count];
 
         for(int i = 0;i<challengeFourList.length;i++)
@@ -70,7 +70,7 @@ public class Runner {
 
         //CHALLENGE 5
         Team17SortCompetition c5 = new Team17SortCompetition();
-        count = 10000;
+        count = 10;
         Thing[] challengeFiveList = new Thing[count];
         String out = "";
         for(int i = 0;i<challengeFiveList.length;i++)
@@ -82,7 +82,7 @@ public class Runner {
 
         start = System.currentTimeMillis();
         System.out.println("Index found: " + c5.challengeFive(challengeFiveList,challengeFiveList[0]));
-        diff = System.currentTimeMillis() - start;
+         diff = System.currentTimeMillis() - start;
         out = "";
 
         for(int i =0;i<challengeFiveList.length;i++)
