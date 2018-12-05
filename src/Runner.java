@@ -1,3 +1,5 @@
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+
 public class Runner {
     public static void main(String[] args)
     {
@@ -16,22 +18,43 @@ public class Runner {
 
         System.out.println("\nChallenge 1 Sorted in: "+ timeEnd+ "ms");
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
-        System.out.println("The median is: "+ median);
+        System.out.println("The median is: "+ median +"\n");
 
         for (int i=0; i< rand.length;i++)
         {
            //System.out.println("Array at postion ("+i+")" +rand[i]);
         }
 
-        String[] c2L =  randStringArr(10000,10);
-        int queryIdx =(int)(Math.random()*c2L.length+100);
+        String[] c2L =  randStringArr(10000,5);
+
+        for (int i=0; i < c2L.length;i++)
+        {
+            System.out.println(c2L[i]);
+        }
+
+        int queryIdx =(int)(Math.random()*c2L.length);
         timeStart = System.currentTimeMillis();
         median = Team15SortCompetition.c2(c2L,c2L[queryIdx]);
         timeEnd = System.currentTimeMillis() - timeStart;
+        System.out.println("\n");
+        for (int i=0; i < c2L.length;i++)
+        {
+            System.out.println(c2L[i]);
+        }
 
         System.out.println("\nChallenge 2 Sorted in: "+ timeEnd+ "ms");
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");
-        System.out.println(c2L[queryIdx]+" idx: "+ median + " check: "+ queryIdx);
+        System.out.println(c2L[queryIdx]+" idx: "+ median );
+        System.out.println(c2L[median]);
+        for (int i=0; i < c2L.length; i++)
+        {
+            if (c2L[i].equals(c2L[queryIdx]))
+            {
+                System.out.println("Its "+ i);
+                System.out.println(c2L[i]);
+            }
+        }
+
 
 
         int[] mostlyRand = new int[100000];
@@ -70,6 +93,8 @@ public class Runner {
         timeStart = System.currentTimeMillis();
         median = Team15SortCompetition.c4(twoDArr);
         timeEnd = System.currentTimeMillis() - timeStart;
+
+        System.out.println(10000/2);
 
         System.out.println("\nChallenge 4 Sorted in: "+ timeEnd+ "ms");
         System.out.println("Sorted in: "+ timeEnd*0.001 + " seconds");

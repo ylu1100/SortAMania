@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public abstract class Team15SortCompetition extends SortCompetition {
 
     @Override
     public  String greeting() {
-        return null;
+        return "\n And Here Come's Team 15's Sorting Algorithms. Nazmus & Sabrun will without a doubt be the winners today! \n";
     }
 
     @Override
@@ -13,7 +15,15 @@ public abstract class Team15SortCompetition extends SortCompetition {
 
     @Override
     public  int challengeTwo(String[] arr, String query) {
-        return 0;
+        insertionSort(arr);
+        for (int i=0; i < arr.length;i++)
+        {
+            if (arr[i].equals(query))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -24,13 +34,20 @@ public abstract class Team15SortCompetition extends SortCompetition {
 
     @Override
     public  int challengeFour(int[][] arr) {
-        multiDSort(arr);
-        return 0;
+        return multiDSort(arr);
     }
 
     @Override
     public  int challengeFive(Comparable[] arr, Comparable query) {
-        return 0;
+        bubbleSort(arr);
+        for(int i=0; i < arr.length; i++)
+        {
+            if (arr[i].compareTo(query) >0)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
 
@@ -48,7 +65,14 @@ public abstract class Team15SortCompetition extends SortCompetition {
     public static int c2(String [] arr, String query)
     {
         insertionSort(arr);
-        return findStr(arr,query);
+        for (int i=0; i < arr.length;i++)
+        {
+            if (arr[i].equals(query))
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static int c3(int[] arr)
@@ -97,7 +121,7 @@ public abstract class Team15SortCompetition extends SortCompetition {
              System.out.println(output + " The Median is: "+ findMedian(arr[i]));
          }
         */
-        return ((findMedian(arr[arr.length/2]) + findMedian(arr[(arr.length+1)/2]))/2);
+        return ((findMedian(arr[(arr.length)/2]) + findMedian(arr[(arr.length/2)-1]))/2);
 
     }
 
@@ -106,12 +130,13 @@ public abstract class Team15SortCompetition extends SortCompetition {
     {
         if (arr.length%2 ==0)
         {
-            return (arr[arr.length/2] + arr[(arr.length/2) +1])/2;
+            return (arr[(arr.length)/2] + arr[(arr.length/2) -1])/2;
         } else
         {
-            return arr[arr.length / 2];
+            return arr[(arr.length +1 )/ 2];
         }
     }
+
 
 
     public static void insertionSort(int[][] list1)
@@ -239,10 +264,29 @@ public abstract class Team15SortCompetition extends SortCompetition {
         }
     }
 
-
-    public static void swap(int[] arr, int pos1, int pos2)
+    public static void bubbleSort(Comparable[] arr)
     {
-        int temp = arr[pos1];
+        int swapCount = 1;
+            while (swapCount != 0)
+            {
+                swapCount = 0;
+                for (int i = 0; i < arr.length - 1; i++)
+                {
+                    if (arr[i].compareTo(arr[i + 1]) > 0)
+                    {
+                        Comparable temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        swapCount++;
+                    }
+                }
+            }
+    }
+
+
+    public static void swap(Comparable[] arr, int pos1, int pos2)
+    {
+        Comparable temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }
