@@ -1,3 +1,5 @@
+//Brandon Smith and Jackie Fang 12.4.18
+
 public class Things implements Comparable<Things>{
     public int value;
 

@@ -1,3 +1,5 @@
+//Brandon Smith and Jackie Fang 12.4.18
+
 import java.util.Arrays;
 
 public class Team19SortCompetition extends SortCompetition{
@@ -25,7 +27,7 @@ public class Team19SortCompetition extends SortCompetition{
         for(int i = 0; i < arr.length; i++){
             mergeSort(arr[i]);
         }
-        System.out.println("Sorted: " + Arrays.toString(arr[0]));
+        //System.out.println("Sorted: " + Arrays.toString(arr[0]));
         int[] medianArr = medianString(arr);
         mergeSort(medianArr);
 
@@ -93,7 +95,6 @@ public class Team19SortCompetition extends SortCompetition{
     //---------------------------------------------------
     private static void bubbleSort(String[] list1){
         int swaps = 1;
-        int x = 0;
         while(swaps != 0){
             swaps = 0;
             for(int i = 0; i < list1.length-1; i++){

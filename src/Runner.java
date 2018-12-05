@@ -1,3 +1,5 @@
+//Brandon Smith and Jackie Fang 12.4.18
+
 import java.util.Arrays;
 
 public abstract class Runner extends SortCompetition {
