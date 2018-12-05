@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public abstract class Team15SortCompetition extends SortCompetition {
 
