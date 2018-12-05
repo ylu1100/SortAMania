@@ -21,21 +21,56 @@ public class runner
         timer = System.nanoTime() - timer;
         System.out.println(timer*.000000001 + " seconds");
         printStringArray(c2);
-*/
+
         int[][] c3 = generate2IntArr(10000,10000);
         System.out.println(x.challengeFour(c3));
         System.out.println(timer*.000000001 + " seconds");
-/*
-        Comparable[] c5 = new Comparable[10];
-        String[] C5S = {"asd","abc","john","tse","mouse","phone","computer","screen","qaz","wsx","edc"};
-        for(int i=0; i<C5S.length; i++)
+   */
+
+
+        System.out.println("\nChallenge 5");
+        Comparable[] c5 = new Comparable[10000];
+        String[] t = randomStringArr(c5.length,2);
+        for(int i=0;i<c5.length;i++)
         {
-            c5[i] =
+            c5[i] = new arrz(t[i]);
         }
-*/
 
+        String s= "";
+        for(int i=0;i<c5.length;i++)
+        {
+            s += c5[i] + " ";
+        }
+        System.out.println(s);
+        timer = System.nanoTime();
+        String a = "HA";
+        arrz c = new arrz(a);
+        System.out.println(x.challengeFive(c5,c));
+        timer = System.nanoTime()-timer;
+        s= "";
+        for(int i=0;i<c5.length;i++)
+        {
+            s+= c5[i] + " ";
+        }
+        System.out.println(s);
+        System.out.println(timer*.000000001 + " seconds");
 
-
+    }
+    public static String[] randomStringArr(int num, int length) {
+        String[] arr = new String[num];
+        while (num > 0) {
+            int i = 0;
+            String s = "";
+            while (i < length) {
+                char c = (char) ((Math.random() * 26) + 97);
+                s = s + c;
+                s = s.toUpperCase();
+                i++;
+            }
+            num--;
+            arr[num] = s;
+        }
+        return arr;
     }
 
     public static int[] generateIntArr(int x)
