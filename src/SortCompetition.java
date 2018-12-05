@@ -1,8 +1,4 @@
-// Afaq Anwar
-
-/**
- * Predefined Abstract Class.
- */
+//Implement this abstract class in your own class in this project.
 public abstract class SortCompetition {
 	
 	public abstract int challengeOne(int[] arr);
