@@ -1,3 +1,4 @@
+//Mir and Sheba
 public class Team17SortCompetition extends SortCompetition
 {
     /**
