@@ -6,16 +6,16 @@ public class Runner {
         String[] ranStringArr = randomStringArr(10000,5);
 
         System.out.println("Unsorted");
-        printArr(randIntArr);
+        printArr(ranStringArr);
 
         long time= System.currentTimeMillis();
-        int median = team1.challengeThree(randIntArr);
+        int median = team1.challengeTwo(ranStringArr,"apple");
         time = System.currentTimeMillis() - time;
         System.out.println("challenge One Time Taken: " + time * 0.001 + "seceonds");
         System.out.println("Median equals: " + median);
 
         System.out.println("sorted");
-        printArr(randIntArr);
+        printArr(ranStringArr);
     }
     public static int[] randomIntsArr(int amount)
     {
@@ -39,15 +39,17 @@ public class Runner {
         }
         while(!(amount1 == current))
         {
-            for(int b = 0;b<length;b++)
-            {
-                tempString += Letters[((int)(Math.random()*Letters.length))];
+            for(int i = 0;i<tempArr1.length;i++) {
+                for (int b = 0; b < length; b++) {
+                    tempString += Letters[((int) (Math.random() * Letters.length))];
+                }
+                tempArr1[i] += tempString;
             }
             current++;
         }
         return tempArr1;
     }
-    public static void printArr(int[]Arr)
+    public static void printArr(String[]Arr)
     {
         String array = "";
         for(int i =0;i<Arr.length;i++)

@@ -46,7 +46,7 @@ public class Team10SortCompetition extends SortCompetition
 
     public int challengeTwo(String[] arr, String query)
     {
-        String temp = "";
+        /*String temp = "";
         int x = 0;
         int wordPos = -1;
         boolean sorting = false;
@@ -74,6 +74,29 @@ public class Team10SortCompetition extends SortCompetition
             }
         }
         return wordPos;
+        */
+        int swaps = 1;
+        String temp = "";
+        int answer = -1;
+        while(swaps!=0)
+        {
+            swaps = 0;
+            for(int i =0; i< arr.length-1;i++)
+            {
+                if(arr[i].compareTo(arr[i+1])==1)
+                {
+                    temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    swaps++;
+                }
+                if(arr[i].compareTo(query)==0)
+                {
+                    answer = i;
+                }
+            }
+        }
+        return answer;
     }
 
     public int challengeThree(int[] arr)
