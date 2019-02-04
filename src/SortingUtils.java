@@ -48,4 +48,31 @@ public class SortingUtils {
            swap(list1,i,minIndex(list1,i));
         }
     }
+    
 }
+ public static void insertionSort(int[]list1){
+
+        for(int i = 1;i<list1.length;i++){
+
+            for(int j = i;j>0;j--){
+
+                if(list1[j-1]>list1[j]){
+
+                    SortingUtil.swap(list1,j-1,j);
+
+                }
+
+                else{
+
+                    j=0;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
