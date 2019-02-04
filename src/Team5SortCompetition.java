@@ -7,8 +7,8 @@ public class Team5SortCompetition extends SortCompetition{
         for(int i = 0;i<arr.length;i++){
             newarray[i]=arr[i];
             SortingUtils.selectionSort(newarray);
-            return ((newarray[5000]+newarray[5001])/2);
         }
+        return ((newarray[5000]+newarray[5001])/2);
     }
 
     @Override
