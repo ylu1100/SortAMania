@@ -58,7 +58,7 @@ public class SortingUtils {
 
                 if(list1[j-1]>list1[j]){
 
-                    SortingUtil.swap(list1,j-1,j);
+                    swap(list1,j-1,j);
 
                 }
 
