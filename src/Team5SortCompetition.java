@@ -6,7 +6,7 @@ public class Team5SortCompetition extends SortCompetition{
         int[]newarray=new int [arr.length];
         for(int i = 0;i<arr.length;i++){
             newarray[i]=arr[i];
-            SortingUtils.selectionSort(newarray);
+            SortingUtils.insertionSort(newarray);
         }
         return ((newarray[5000]+newarray[5001])/2);
     }
