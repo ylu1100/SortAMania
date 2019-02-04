@@ -1,3 +1,4 @@
+
 public class SortingUtils {
     public static int[] randomIntsArr(int count){
         int [] arr = new int[count];
@@ -32,5 +33,19 @@ public class SortingUtils {
             arr[count] = s;
         }
         return arr;
+    }
+    public static int minIndex(int arr[],int ind){
+        int index = ind;
+        for(int i = index+1;i<arr.length;i++){
+            if(arr[i]<arr[index]){
+                index=i;
+            }
+        }
+        return index;
+    }
+    public static void selectionSort(int[] list1) {
+        for (int i = 0; i < list1.length; i++) {
+           swap(list1,i,minIndex(list1,i));
+        }
     }
 }
