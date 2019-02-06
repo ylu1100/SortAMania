@@ -42,12 +42,12 @@ public class Team5SortCompetition extends SortCompetition{
         for(int i = 0;i<arr.length/2;i++){
             newarray[i]=arr[i];
         }
-        for(int x = arr.length/2;x<arr.length;x++){
+        for(int x = 0;x<newarray2.length/2;x++){
             newarray2[x]=arr[x];
         }
         SortingUtils.insertionSort(newarray);
         SortingUtils.insertionSort(newarray2);
-        
+        for()
     }
 
     @Override
