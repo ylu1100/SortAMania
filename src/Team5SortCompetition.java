@@ -33,12 +33,12 @@ public class Team5SortCompetition extends SortCompetition{
         for(int i = 0;i<arr.length/2;i++){
             newarray[i]=arr[i];
         }
-        for(int x = 0;x<newarray2.length/2;x++){
-            newarray2[x]=arr[x];
+        for(int x = 0;x<newarray2.length;x++){
+            newarray2[x]=arr[newarray.length+x];
         }
         insertionSort(newarray);
         insertionSort(newarray2);
-        arr=simpleMerge(newarray,newarray2);
+        simpleMerge(arr,newarray,newarray2);
         if(arr.length%2==1){
             return arr[(arr.length/2)+1];
         }
@@ -129,7 +129,7 @@ public class Team5SortCompetition extends SortCompetition{
     public static void insertionSort(String[]list1){
         for(int i = 1;i<list1.length;i++){
             for(int j = i;j>0;j--){
-                if(list1[j-1].compareTo(list1[j]) >1){
+                if(list1[j-1].compareTo(list1[j]) >0){
                     swap(list1,j-1,j);
                 }
                 else{
@@ -138,7 +138,8 @@ public class Team5SortCompetition extends SortCompetition{
             }
         }
     }
-    public static int[] simpleMerge(int[] arr1, int[] arr2) {
+
+    public static void simpleMerge(int[]arr,int[] arr1, int[] arr2) {
         int[] combarray = new int[arr1.length + arr2.length];
         int ind = 0;
         int ind1=0;
@@ -162,8 +163,9 @@ public class Team5SortCompetition extends SortCompetition{
                 }
             }
         }
-
-        return combarray;
+        for(int x = 0;x<combarray.length;x++){
+            arr[x]=combarray[x];
+        }
     }
 }
 
