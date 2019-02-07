@@ -96,7 +96,7 @@ public class Team5SortCompetition extends SortCompetition{
 
     @Override
     public String greeting() {
-        return null;
+        return "Hello it's the accepted into college gang";
     }
         public static int[] randomIntsArr(int count) {
         int[] arr = new int[count];
