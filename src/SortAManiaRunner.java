@@ -1,4 +1,3 @@
-
 public class SortAManiaRunner {
 
     public static void main(String[] args) {
@@ -6,6 +5,7 @@ public class SortAManiaRunner {
         int[]randomIntArr= Team5SortCompetition.randomIntsArr(10000);
         String[]randStringArr=Team5SortCompetition.randomStrArr(10000,5);
         int[]randomIntArr2= Team5SortCompetition.randomIntsArr(100000);
+        int[][]randomIntArr3=Team5SortCompetition.randomIntsArr(1000,1000);
         System.out.println("Unsorted");
         printArr(randomIntArr);
         long time = System.currentTimeMillis();
@@ -36,6 +36,16 @@ public class SortAManiaRunner {
         System.out.println("Sorted");
         printArr(randomIntArr2);
         System.out.println();
+        System.out.println("Unsorted");
+        printArr(randomIntArr3);
+        long time3 = System.currentTimeMillis();
+        int median3=team5.challengeFour(randomIntArr3);
+        time3 = System.currentTimeMillis()-time3;
+        System.out.println("Challenge 3 Time Taken: "+ time3*.001+" Seconds");
+        System.out.println("Median Equals: "+median3);
+        System.out.println("Sorted");
+        printArr(randomIntArr3);
+        System.out.println();
         // write your code here
     }
     public static void printArr(int[]arr){
@@ -45,5 +55,13 @@ public class SortAManiaRunner {
     public static void printArr(String[]arr){
         for (String i:arr)
             System.out.print(i+" ");
+    }
+    public static void printArr(int[][]arr){
+        for(int x = 0; x < arr.length;x++){
+            for(int y = 0; y <arr[x].length;y++){
+                System.out.print(arr[x][y]+" ");
+            }
+            System.out.println();
+        }
     }
 }
