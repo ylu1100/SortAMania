@@ -5,11 +5,7 @@ import java.util.Arrays;
 public class Team5SortCompetition extends SortCompetition{
     @Override
     public int challengeOne(int[] arr) {
-        int[]newarray=new int [arr.length];
-        for(int i = 0;i<arr.length;i++){
-            newarray[i]=arr[i];
-        }
-        SortingUtils.insertionSort(newarray);
+       insertionSort(arr);
         if(arr.length%2==1){
             return arr[(arr.length/2)+1];
         }
@@ -21,11 +17,7 @@ public class Team5SortCompetition extends SortCompetition{
 
     @Override
     public int challengeTwo(String[] arr, String query) {
-        String[]newarray = new String[arr.length];
-        for(int i = 0;i<arr.length;i++){
-            newarray[i]=arr[i];
-        }
-        SortingUtils.insertionSort(newarray);
+        insertionSort(arr);
         if(Arrays.binarySearch(arr,query)<0){
             return -1;
         }
@@ -45,8 +37,8 @@ public class Team5SortCompetition extends SortCompetition{
         for(int x = 0;x<newarray2.length/2;x++){
             newarray2[x]=arr[x];
         }
-        SortingUtils.insertionSort(newarray);
-        SortingUtils.insertionSort(newarray2);
+        insertionSort(newarray);
+        insertionSort(newarray2);
         for()
     }
 
