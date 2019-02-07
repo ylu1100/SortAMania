@@ -30,7 +30,6 @@ public class Team5SortCompetition extends SortCompetition{
     public int challengeThree(int[] arr) {
         int[]newarray=new int [arr.length/2];
         int[]newarray2=new int[arr.length-newarray.length];
-        int[]combnewarray=new int[arr.length];
         for(int i = 0;i<arr.length/2;i++){
             newarray[i]=arr[i];
         }
@@ -39,7 +38,14 @@ public class Team5SortCompetition extends SortCompetition{
         }
         insertionSort(newarray);
         insertionSort(newarray2);
-        for()
+        arr=simpleMerge(newarray,newarray2);
+        if(arr.length%2==1){
+            return arr[(arr.length/2)+1];
+        }
+        else
+        {
+            return (arr[(arr.length/2)]+arr[(arr.length/2)+1])/2;
+        }
     }
 
     @Override
@@ -132,5 +138,32 @@ public class Team5SortCompetition extends SortCompetition{
             }
         }
     }
+    public static int[] simpleMerge(int[] arr1, int[] arr2) {
+        int[] combarray = new int[arr1.length + arr2.length];
+        int ind = 0;
+        int ind1=0;
+        int ind2=0;
+        while (ind < combarray.length) {
+            if (ind1 == arr1.length || ind2 == arr2.length) {
+                if (ind1 == arr1.length) {
+                    combarray[ind++] = arr2[ind2++];
 
+                }
+                else {
+                    combarray[ind++] = arr1[ind1++];
+                }
+            }
+            else {
+                if (arr1[ind1] < arr2[ind2]) {
+                    combarray[ind++] = arr1[ind1++];
+                }
+                else {
+                    combarray[ind++] = arr2[ind2++];
+                }
+            }
+        }
+
+        return combarray;
+    }
 }
+
