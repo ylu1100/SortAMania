@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Team5SortCompetition extends SortCompetition{
     @Override
     public int challengeOne(int[] arr) {
-       insertionSort(arr);
+        insertionSort(arr);
         if(arr.length%2==1){
             return arr[(arr.length/2)+1];
         }
@@ -50,29 +50,21 @@ public class Team5SortCompetition extends SortCompetition{
 
     @Override
     public int challengeFour(int[][] arr) {
-         int[][]newarray= arr;
-        for(int x=0; x<=1000; x++)
-        {
-            for(int y=0; y<=1000; x++ )
-            {
-                newarray[x][y]=(int)(Math.random()*10000+1);
-            }
-        }
         int SorteArray[]=new int[1000];
         int RefArray[][]=new int[1000][2];
         for(int z=0;z <=1000; z++)
         {
-        for(int i=0; i<=1000; i++)
-        {
+            for(int i=0; i<=1000; i++)
+            {
 
-           SorteArray[i]=newarray[z][i];
-        }
-        SortingUtils.insertionSort(SorteArray);
-        for(int i=0; i<=1000; i++)
-        {
+                SorteArray[i]=arr[z][i];
+            }
+            selectionSort(SorteArray);
+            for(int i=0; i<=1000; i++)
+            {
 
-            newarray[z][i]=SorteArray[i];
-        }
+                arr[z][i]=SorteArray[i];
+            }
 
         }
 
@@ -81,8 +73,8 @@ public class Team5SortCompetition extends SortCompetition{
 
             for(int i=0; i<1; i++)
             {
-              RefArray[z][i] =z;
-              RefArray[z][i+1]=newarray[z][500];
+                RefArray[z][i] =z;
+                RefArray[z][i+1]=arr[z][500];
             }
 
         }
@@ -98,10 +90,34 @@ public class Team5SortCompetition extends SortCompetition{
     public String greeting() {
         return "Hello it's the accepted into college gang";
     }
-        public static int[] randomIntsArr(int count) {
+    public static int[] randomIntsArr(int count) {
         int[] arr = new int[count];
         for (int i = 0; i < count; i++) {
-            arr[i] = (int) (Math.random() * 100);
+            arr[i] = (int) (Math.random() * 10000);
+        }
+        return arr;
+    }
+    public static int[][] randomIntsArr(int count,int count1) {
+        int[][] arr = new int[count][count1];
+        for(int x = 0; x < count;x++) {
+            for (int i = 0; i < count; i++) {
+                arr[x][i] = (int) (Math.random() * 10000);
+            }
+        }
+        return arr;
+    }
+    public static String[] randomStrArr(int count, int length) {
+        String[] arr = new String[count];
+        while (count > 0) {
+            int i = 0;
+            String s = "";
+            while (i < length) {
+                char c = (char) ((Math.random() * 26) + 97);
+                s = s + c;
+                i++;
+            }
+            count--;
+            arr[count] = s;
         }
         return arr;
     }
@@ -119,21 +135,7 @@ public class Team5SortCompetition extends SortCompetition{
         testArr[y] = temp;
     }
 
-    public static String[] randomStrArr(int count, int length) {
-        String[] arr = new String[count];
-        while (count > 0) {
-            int i = 0;
-            String s = "";
-            while (i < length) {
-                char c = (char) ((Math.random() * 26) + 97);
-                s = s + c;
-                i++;
-            }
-            count--;
-            arr[count] = s;
-        }
-        return arr;
-    }
+
 
     public static int minIndex(int arr[], int ind) {
         int index = ind;
@@ -258,4 +260,3 @@ public class Team5SortCompetition extends SortCompetition{
         }
     }
 }
-
