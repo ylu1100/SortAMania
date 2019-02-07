@@ -3,8 +3,8 @@ public class SortAManiaRunner {
 
     public static void main(String[] args) {
         SortCompetition team5=new Team5SortCompetition();
-        int[]randomIntArr= SortingUtils.randomIntsArr(10000);
-        String[]randStringArr=SortingUtils.randomStrArr(10000,5);
+        int[]randomIntArr= Team5SortCompetition.randomIntsArr(10000);
+        String[]randStringArr=Team5SortCompetition.randomStrArr(10000,5);
         System.out.println("Unsorted");
         printArr(randomIntArr);
         long time = System.currentTimeMillis();
