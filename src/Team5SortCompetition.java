@@ -50,6 +50,42 @@ public class Team5SortCompetition extends SortCompetition{
 
     @Override
     public int challengeFour(int[][] arr) {
+         int[][]newarray= arr;
+        for(int x=0; x<=1000; x++)
+        {
+            for(int y=0; y<=1000; x++ )
+            {
+                newarray[x][y]=(int)(Math.random()*10000+1);
+            }
+        }
+        int SorteArray[]=new int[1000];
+        int RefArray[][]=new int[1000][2];
+        for(int z=0;z <=1000; z++)
+        {
+        for(int i=0; i<=1000; i++)
+        {
+
+           SorteArray[i]=newarray[z][i];
+        }
+        SortingUtils.insertionSort(SorteArray);
+        for(int i=0; i<=1000; i++)
+        {
+
+            newarray[z][i]=SorteArray[i];
+        }
+
+        }
+
+        for(int z=0; z<=1000; z++)
+        {
+
+            for(int i=0; i<1; i++)
+            {
+              RefArray[z][i] =z;
+              RefArray[z][i+1]=newarray[z][500];
+            }
+
+        }
         return 0;
     }
 
