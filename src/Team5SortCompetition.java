@@ -52,7 +52,7 @@ public class Team5SortCompetition extends SortCompetition{
     public int challengeFour(int[][] arr) {
         int SorteArray[]=new int[1000];
 
-  int RefArray[][]=new int[1000][1000];
+  int RefArray[][]=new int[1000][2];
 
   for(int z=0;z <=1000; z++)
 
