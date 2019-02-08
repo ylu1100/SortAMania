@@ -50,23 +50,61 @@ public class Team5SortCompetition extends SortCompetition{
 
     @Override
     public int challengeFour(int[][] arr) {
-        int[] temparr = new int[1000];
-        for (int x = 0; x < arr.length; x++) {
-            for (int i = 0; i < temparr.length - 1; i++) {
-                temparr[i] = arr[x][i];
-            }
-            insertionSort(temparr);
+        int SorteArray[]=new int[1000];
 
-                    for(int j = x;j>0;j--){
-                        if (temparr[temparr.length / 2] > arr[j][arr[j].length/2])
-                        {
-                          for(int i = 0;i<arr[x].length;i++){
-                              arr[j][i]=temparr[i];
-                          }
-                }
-            }
-        }
-    }
+  int RefArray[][]=new int[1000][1000];
+
+  for(int z=0;z <=1000; z++)
+
+  {
+
+      for(int i=0; i<1000; i++)
+
+      {
+
+
+          SorteArray[i]=arr[z][i];
+
+      }
+
+      selectionSort(SorteArray);
+
+      for(int i=0; i<1000; i++)
+
+      {
+
+
+          arr[z][i]=SorteArray[i];
+
+      }
+
+
+  }
+
+
+  for(int z=0; z<1000; z++)
+
+  {
+
+
+      for(int i=0; i<1; i++)
+
+      {
+
+          RefArray[z][i] =z;
+
+          RefArray[z][i+1]=arr[z][500];
+
+      }
+
+
+  }
+
+  return 0;
+
+}
+
+
 
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
