@@ -50,35 +50,22 @@ public class Team5SortCompetition extends SortCompetition{
 
     @Override
     public int challengeFour(int[][] arr) {
-        int SorteArray[]=new int[1000];
-        int RefArray[][]=new int[1000][2];
-        for(int z=0;z <=1000; z++)
-        {
-            for(int i=0; i<=1000; i++)
-            {
-
-                SorteArray[i]=arr[z][i];
+        int[] temparr = new int[1000];
+        for (int x = 0; x < arr.length; x++) {
+            for (int i = 0; i < temparr.length - 1; i++) {
+                temparr[i] = arr[x][i];
             }
-            selectionSort(SorteArray);
-            for(int i=0; i<=1000; i++)
-            {
+            insertionSort(temparr);
 
-                arr[z][i]=SorteArray[i];
+                    for(int j = x;j>0;j--){
+                        if (temparr[temparr.length / 2] > arr[j][arr[j].length/2])
+                        {
+                          for(int i = 0;i<arr[x].length;i++){
+                              arr[j][i]=temparr[i];
+                          }
+                }
             }
-
         }
-
-        for(int z=0; z<=1000; z++)
-        {
-
-            for(int i=0; i<1; i++)
-            {
-                RefArray[z][i] =z;
-                RefArray[z][i+1]=arr[z][500];
-            }
-
-        }
-        return 0;
     }
 
     @Override
@@ -89,6 +76,18 @@ public class Team5SortCompetition extends SortCompetition{
     @Override
     public String greeting() {
         return "Hello it's the accepted into college gang";
+    }
+    public static void insertionSort(int[]list1){
+        for(int i = 1;i<list1.length;i++){
+            for(int j = i;j>0;j--){
+                if(list1[j-1]>list1[j]){
+                    swap(list1,j-1,j);
+                }
+                else{
+                    j=0;
+                }
+            }
+        }
     }
     public static int[] randomIntsArr(int count) {
         int[] arr = new int[count];
@@ -152,18 +151,7 @@ public class Team5SortCompetition extends SortCompetition{
             swap(list1, i, minIndex(list1, i));
         }
     }
-    public static void insertionSort(int[]list1){
-        for(int i = 1;i<list1.length;i++){
-            for(int j = i;j>0;j--){
-                if(list1[j-1]>list1[j]){
-                    swap(list1,j-1,j);
-                }
-                else{
-                    j=0;
-                }
-            }
-        }
-    }
+
     public static void insertionSort(String[]list1){
         for(int i = 1;i<list1.length;i++){
             for(int j = i;j>0;j--){
