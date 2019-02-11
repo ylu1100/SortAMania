@@ -104,6 +104,34 @@ public class Team5SortCompetition extends SortCompetition{
         }
         return arr[arr.length / 2][arr[arr.length / 2].length / 2];
     }
+
+    @Override
+    public int challengeFive(Comparable[] arr, Comparable query) {
+        insertionSort(arr);
+        if(Arrays.binarySearch(arr,query)<0){
+            return -1;
+        }
+        else {
+            return Arrays.binarySearch(arr,query);
+        }
+    }
+    public static void insertionSort(Comparable[]list1){
+        for(int i = 1;i<list1.length;i++){
+            for(int j = i;j>0;j--){
+                if(list1[j-1].compareTo(list1[j]) >0){
+                    swap(list1,j-1,j);
+                }
+                else{
+                    j=0;
+                }
+            }
+        }
+    }
+
+    @Override
+    public String greeting() {
+        return "Hello it's the accepted into college gang";
+    }
     public static void insertionSort(int[]list1){
         for(int i = 1;i<list1.length;i++){
             for(int j = i;j>0;j--){
@@ -117,15 +145,6 @@ public class Team5SortCompetition extends SortCompetition{
         }
     }
 
-    @Override
-    public int challengeFive(Comparable[] arr, Comparable query) {
-        return 0;
-    }
-
-    @Override
-    public String greeting() {
-        return "Hello it's the accepted into college gang";
-    }
 
     public static int[] randomIntsArr(int count) {
         int[] arr = new int[count];
@@ -171,6 +190,12 @@ public class Team5SortCompetition extends SortCompetition{
         testArr[x] = testArr[y];
         testArr[y] = temp;
     }
+    public static void swap(Comparable[] testArr, int x, int y) {
+        Comparable temp;
+        temp = testArr[x];
+        testArr[x] = testArr[y];
+        testArr[y] = temp;
+    }
 
 
 
@@ -202,6 +227,7 @@ public class Team5SortCompetition extends SortCompetition{
             }
         }
     }
+
 
     public static void simpleMerge(int[]arr,int[] arr1, int[] arr2) {
         int[] combarray = new int[arr1.length + arr2.length];
