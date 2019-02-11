@@ -52,7 +52,6 @@ public class Team5SortCompetition extends SortCompetition{
     public int challengeFour(int[][] arr) {
         int median;
         int median1;
-        int evenmedia;
         int[] temparr = new int[arr.length];
         int[] switcharr = new int[arr.length];
         for (int x = 0; x < arr.length; x++) {
