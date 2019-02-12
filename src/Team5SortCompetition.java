@@ -1,3 +1,5 @@
+
+
 import java.util.Arrays;
 
 
@@ -5,7 +7,7 @@ import java.util.Arrays;
 public class Team5SortCompetition extends SortCompetition{
     @Override
     public int challengeOne(int[] arr) {
-        insertionSort(arr);
+        MergeSort(arr);
         if(arr.length%2!=0){
             return arr[(arr.length/2)];
         }
@@ -36,8 +38,8 @@ public class Team5SortCompetition extends SortCompetition{
         for(int x = 0;x<newarray2.length;x++){
             newarray2[x]=arr[newarray.length+x];
         }
-        insertionSort(newarray);
-        insertionSort(newarray2);
+        MergeSort(newarray);
+        MergeSort(newarray2);
         simpleMerge(arr,newarray,newarray2);
         if(arr.length%2!=0){
             return arr[(arr.length/2)];
@@ -58,7 +60,7 @@ public class Team5SortCompetition extends SortCompetition{
             for (int i = 0; i < arr[x].length; i++) {
                 temparr[i] = arr[x][i];
             }
-            insertionSort(temparr);
+            MergeSort(temparr);
             for (int i = 0; i < arr[x].length; i++) {
                 arr[x][i] = temparr[i];
             }
@@ -262,20 +264,18 @@ public class Team5SortCompetition extends SortCompetition{
         }
     }
 
-    public class MyMergeSort {
-
-        private int[] arr;
-        private int[] temp;
-        private int length;
 
 
-        public void sort(int inputArr[]) {
-            this.arr = inputArr;
+    private int[] arr;
+    private int[] temp;
+    private int length;
+
+        public void MergeSort(int inputArr[]) {
+           this.arr = inputArr;
             this.length = inputArr.length;
             this.temp = new int[length];
             doMergeSort(0, length - 1);
         }
-
         private void doMergeSort(int lowerIndex, int higherIndex) {
 
             if (lowerIndex < higherIndex) {
@@ -315,4 +315,4 @@ public class Team5SortCompetition extends SortCompetition{
 
         }
     }
-}
+
