@@ -68,8 +68,8 @@ public class Team5SortCompetition extends SortCompetition{
         if (arr[0].length % 2 == 0) {
             for (int x = 1; x != arr.length; x++) {
                 for (int j = x; j > 0; j--) {
-                    median = (arr[j - 1][arr[j - 1].length / 2] + arr[j - 1][(arr[j - 1].length / 2) + 1]) / 2;
-                    median1 = (arr[j][arr[j].length / 2] + arr[j][(arr[j].length / 2) + 1]) / 2;
+                    median = (arr[j - 1][arr[j - 1].length / 2] + arr[j - 1][(arr[j - 1].length / 2) - 1]) / 2;
+                    median1 = (arr[j][arr[j].length / 2] + arr[j][(arr[j].length / 2) - 1]) / 2;
                     if (median > median1) {
                         for (int sArrIndex = 0; sArrIndex < switcharr.length; sArrIndex++) {
                             switcharr[sArrIndex] = arr[j][sArrIndex];
