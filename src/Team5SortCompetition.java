@@ -6,12 +6,12 @@ public class Team5SortCompetition extends SortCompetition{
     @Override
     public int challengeOne(int[] arr) {
         insertionSort(arr);
-        if(arr.length%2==1){
-            return arr[(arr.length/2)+1];
+        if(arr.length%2!=0){
+            return arr[(arr.length/2)];
         }
         else
         {
-            return (arr[(arr.length/2)]+arr[(arr.length/2)+1])/2;
+            return (arr[(arr.length/2)]+arr[(arr.length/2)-1])/2;
         }
     }
 
@@ -39,12 +39,12 @@ public class Team5SortCompetition extends SortCompetition{
         insertionSort(newarray);
         insertionSort(newarray2);
         simpleMerge(arr,newarray,newarray2);
-        if(arr.length%2==1){
-            return arr[(arr.length/2)+1];
+        if(arr.length%2!=0){
+            return arr[(arr.length/2)];
         }
         else
         {
-            return (arr[(arr.length/2)]+arr[(arr.length/2)+1])/2;
+            return (arr[(arr.length/2)]+arr[(arr.length/2)-1])/2;
         }
     }
 
@@ -60,14 +60,14 @@ public class Team5SortCompetition extends SortCompetition{
             }
             insertionSort(temparr);
             for (int i = 0; i < arr[x].length; i++) {
-                arr[x][i]=temparr[i];
+                arr[x][i] = temparr[i];
             }
         }
-        if(arr[0].length%2==0) {
+        if (arr[0].length % 2 == 0) {
             for (int x = 1; x != arr.length; x++) {
                 for (int j = x; j > 0; j--) {
-                    median = (arr[j - 1][arr[j - 1].length / 2]+arr[j - 1][(arr[j - 1].length / 2)+1])/2;
-                    median1 = (arr[j ][arr[j ].length / 2]+arr[j ][(arr[j].length / 2)+1])/2;
+                    median = (arr[j - 1][arr[j - 1].length / 2] + arr[j - 1][(arr[j - 1].length / 2) + 1]) / 2;
+                    median1 = (arr[j][arr[j].length / 2] + arr[j][(arr[j].length / 2) + 1]) / 2;
                     if (median > median1) {
                         for (int sArrIndex = 0; sArrIndex < switcharr.length; sArrIndex++) {
                             switcharr[sArrIndex] = arr[j][sArrIndex];
@@ -81,8 +81,7 @@ public class Team5SortCompetition extends SortCompetition{
                     }
                 }
             }
-        }
-        else{
+        } else {
             for (int x = 1; x < arr.length; x++) {
                 for (int j = x; j > 0; j--) {
                     median = arr[j - 1][arr[j - 1].length / 2];
@@ -101,7 +100,13 @@ public class Team5SortCompetition extends SortCompetition{
                 }
             }
         }
-        return arr[arr.length / 2][arr[arr.length / 2].length / 2];
+        if (arr.length % 2 != 0) {
+            return arr[arr.length / 2][arr[arr.length / 2].length / 2];
+        }
+        else {
+            return (arr[arr.length / 2][arr[arr.length / 2].length/2] + arr[arr.length / 2][(arr[arr.length / 2].length/2) - 1] +
+                    arr[(arr.length / 2) - 1][arr[arr.length / 2].length/2] + arr[(arr.length / 2) - 1][(arr[arr.length / 2].length/2) - 1]) / 4;
+        }
     }
 
     @Override
